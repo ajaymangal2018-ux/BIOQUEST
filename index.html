@@ -1,0 +1,6310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BIOCHECK — Biological Intelligence</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="stylesheet"
+          href="style-upgrade.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<!-- =================================================
+     PROFILE LOGIN MODAL
+================================================= -->
+
+<div class="profile-modal" id="profileModal">
+
+    <div class="profile-modal-box">
+
+        <button
+            class="profile-close"
+            id="profileClose">
+            ×
+        </button>
+
+        <div class="profile-title">
+            BIOQUEST
+        </div>
+
+        <h2 id="authTitle">
+            WELCOME BACK
+        </h2>
+
+        <p class="auth-subtitle" id="authSubtitle">
+            Login to access your health profile.
+        </p>
+
+
+        <!-- SIGN UP NAME -->
+
+        <div
+            class="auth-field signup-only"
+            style="display:none;">
+
+            <label>NAME</label>
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Your name">
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="auth-field">
+
+            <label>EMAIL</label>
+
+            <input
+                type="email"
+                id="authEmail"
+                placeholder="your@email.com">
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="auth-field">
+
+            <label>PASSWORD</label>
+
+            <input
+                type="password"
+                id="authPassword"
+                placeholder="Enter password">
+
+        </div>
+
+
+        <button
+            class="auth-submit"
+            id="authSubmit">
+
+            LOGIN
+
+        </button>
+
+
+        <p
+            class="auth-switch"
+            id="authSwitch">
+
+            Don't have an account?
+            <span>CREATE ACCOUNT</span>
+
+        </p>
+
+
+        <p
+            class="auth-message"
+            id="authMessage">
+        </p>
+
+    </div>
+
+</div>
+<!-- =================================================
+     LOGGED-IN PROFILE
+================================================= -->
+
+<div class="profile-dashboard" id="profileDashboard">
+
+    <div class="profile-dashboard-box">
+
+        <button
+            class="profile-close"
+            id="profileDashboardClose">
+            ×
+        </button>
+
+        <div class="profile-title">
+            BIOQUEST
+        </div>
+
+        <h2 id="profileUserName">
+            YOUR PROFILE
+        </h2>
+
+        <p class="profile-email" id="profileUserEmail">
+        </p>
+
+
+        <!-- HEALTH PROFILE -->
+
+        <div class="profile-section">
+
+            <div class="profile-section-title">
+                HEALTH PROFILE
+            </div>
+
+            <div class="profile-grid">
+
+                <div class="profile-item">
+                    <span>AGE</span>
+                    <strong id="profileAgeDisplay">—</strong>
+                </div>
+
+                <div class="profile-item">
+                    <span>GENDER</span>
+                    <strong id="profileGender">—</strong>
+                </div>
+
+                <div class="profile-item">
+                    <span>HEIGHT</span>
+                    <strong id="profileHeightDisplay">—</strong>
+                </div>
+
+                <div class="profile-item">
+                    <span>WEIGHT</span>
+                    <strong id="profileWeightDisplay">—</strong>
+                </div>
+                <button
+    id="editProfileBtn"
+    class="profile-action-btn">
+    EDIT PROFILE
+</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SAVED REPORTS -->
+
+        <div class="profile-section">
+
+            <div class="profile-section-title">
+                SAVED REPORTS
+            </div>
+
+            <div
+                id="profileReports"
+                class="profile-reports">
+
+                <p class="profile-empty">
+                    Loading reports...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGOUT -->
+
+        <button
+            class="profile-logout"
+            id="profileLogout">
+
+            LOG OUT
+
+        </button>
+
+    </div>
+
+</div>
+<body>
+
+
+<!-- =================================================
+     HEADER
+================================================= -->
+
+<header>
+
+    <a href="#home" class="header-logo">
+        <img src="images/bioquest logo b.png" alt="BioQuest">
+    </a>
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#analyzeSection">
+            Analyze
+        </a>
+
+        <a href="#bioLearn">
+            BIOLEARN
+        </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+<button
+    class="profile-button"
+    id="profileBtn">
+
+    <span class="profile-icon">
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+
+            <circle
+                cx="12"
+                cy="8"
+                r="3.5">
+            </circle>
+
+            <path
+                d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6">
+            </path>
+
+        </svg>
+    </span>
+
+    <span>PROFILE</span>
+
+</button>
+
+        <button
+            class="nav-button"
+            id="startBtn">
+
+            START
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- =================================================
+     HERO
+================================================= -->
+
+<section
+    class="hero"
+    id="home">
+
+
+    <div class="hero-content">
+
+
+        <div class="eyebrow">
+            BIOLOGICAL INTELLIGENCE PLATFORM
+        </div>
+
+
+        <h1>
+
+            KNOW<br>
+
+            YOUR
+
+            <span>
+                BIOLOGY.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            BIOCHECK transforms laboratory data into
+            understandable biological insights — helping
+            users understand what their numbers represent.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                id="heroStartBtn">
+
+                ANALYZE MY DATA →
+
+            </button>
+
+
+            <button
+                class="secondary-btn"
+                onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+
+                DISCOVER BIOCHECK
+
+            </button>
+            
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+
+        <div class="dna-orbit"></div>
+
+
+        <div class="data-card">
+
+
+            <div class="card-top">
+
+                <span>
+                    BIOCHECK
+                </span>
+
+                <span>
+                    PROFILE
+                </span>
+
+            </div>
+
+
+            <div class="card-value">
+                78
+            </div>
+
+
+            <div class="card-label">
+                AWARENESS INDEX
+            </div>
+
+
+            <div class="mini-bars">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     IDEA SECTION
+========================================================= -->
+
+<section id="ideaSection" class="idea-section">
+
+    <div class="idea-inner">
+
+        <!-- IMAGE -->
+
+        <div class="idea-visual">
+
+            <div class="idea-image-glow"></div>
+
+            <img
+                src="Bioquest pic.jpeg"
+                alt="Biometric Health Parameters"
+                class="idea-health-image"
+            >
+
+        </div>
+
+
+        <!-- TEXT -->
+
+        <div class="idea-content">
+
+            <span class="idea-eyebrow">
+                THE IDEA
+            </span>
+
+            <h2>
+                YOUR REPORT
+                <span>TELLS A</span>
+                <br>
+                <span>STORY.</span>
+            </h2>
+
+            <p>
+                Laboratory reports contain valuable biological
+                information, but numbers alone can be difficult
+                to understand.
+            </p>
+
+            <p>
+                BioQuest converts selected laboratory parameters
+                into a visual biological profile, helping users
+                understand what each parameter represents and
+                whether it falls within the provided prototype
+                reference range.
+            </p>
+
+            <div class="idea-divider"></div>
+
+            <div class="idea-bottom">
+
+                <span class="idea-number">
+                    01
+                </span>
+
+                <span class="idea-caption">
+                    FROM NUMBERS<br>
+                    TO BIOLOGICAL INSIGHT
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PERSONAL HEALTH PROFILE
+========================================================= -->
+
+<section id="healthProfileSection" class="health-profile-section">
+
+    <div class="health-profile-container">
+
+        <div class="profile-heading">
+            <span class="profile-eyebrow">YOUR BIOLOGICAL PROFILE</span>
+
+            <h2>Tell us about yourself.</h2>
+
+            <p>
+                These details help BioCheck personalize your
+                health analysis and calculate your wellness indicators.
+            </p>
+        </div>
+
+
+        <div class="profile-form">
+
+            <!-- NAME -->
+
+            <div class="profile-field full-width">
+
+                <label for="profileName">
+                    NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="profileName"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div class="profile-field">
+
+                <label for="profileAge">
+                    AGE
+                </label>
+
+                <input
+                    type="number"
+                    id="profileAge"
+                    placeholder="e.g. 20"
+                    min="1"
+                    max="120"
+                >
+
+            </div>
+
+
+            <!-- SEX -->
+
+            <div class="profile-field">
+
+                <label>
+                    BIOLOGICAL SEX
+                </label>
+
+                <div class="sex-options">
+
+                    <label class="sex-option">
+
+                        <input
+                            type="radio"
+                            name="profileSex"
+                            value="male"
+                        >
+
+                        <span>Male</span>
+
+                    </label>
+
+
+                    <label class="sex-option">
+
+                        <input
+                            type="radio"
+                            name="profileSex"
+                            value="female"
+                        >
+
+                        <span>Female</span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEIGHT -->
+
+            <div class="profile-field">
+
+                <label for="profileHeight">
+                    HEIGHT (CM)
+                </label>
+
+                <input
+                    type="number"
+                    id="profileHeight"
+                    placeholder="e.g. 173"
+                    min="50"
+                    max="250"
+                >
+
+            </div>
+
+
+            <!-- WEIGHT -->
+
+            <div class="profile-field">
+
+                <label for="profileWeight">
+                    WEIGHT (KG)
+                </label>
+
+                <input
+                    type="number"
+                    id="profileWeight"
+                    placeholder="e.g. 70"
+                    min="10"
+                    max="300"
+                    step="0.1"
+                >
+
+            </div>
+
+
+            <!-- PHYSICAL ACTIVITY -->
+
+            <div class="profile-field">
+
+                <label for="profileActivity">
+                    PHYSICAL ACTIVITY
+                </label>
+
+                <select id="profileActivity">
+
+                    <option value="">
+                        Select activity level
+                    </option>
+
+                    <option value="sedentary">
+                        Sedentary — little or no exercise
+                    </option>
+
+                    <option value="light">
+                        Lightly active — 1–3 days/week
+                    </option>
+
+                    <option value="moderate">
+                        Moderately active — 3–5 days/week
+                    </option>
+
+                    <option value="active">
+                        Active — 6–7 days/week
+                    </option>
+
+                    <option value="very-active">
+                        Very active — intense daily activity
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SLEEP -->
+
+            <div class="profile-field">
+
+                <label for="profileSleep">
+                    SLEEP (HOURS / NIGHT)
+                </label>
+
+                <input
+                    type="number"
+                    id="profileSleep"
+                    placeholder="e.g. 7.5"
+                    min="0"
+                    max="24"
+                    step="0.5"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- CALCULATED HEALTH INFORMATION -->
+
+        <div
+            id="profileResults"
+            class="profile-results"
+            style="display:none;"
+        >
+
+            <div class="profile-result-card">
+
+                <span>BMI</span>
+
+                <strong id="profileBMI">
+                    —
+                </strong>
+
+                <small id="profileBMICategory">
+                    —
+                </small>
+
+            </div>
+
+
+            <div class="profile-result-card">
+
+                <span>HEALTH INDEX</span>
+
+                <strong id="profileHealthIndex">
+                    —
+                </strong>
+
+                <small>
+                    / 100
+                </small>
+
+            </div>
+
+
+            <div class="profile-result-card">
+
+                <span>ACTIVITY</span>
+
+                <strong id="profileActivityScore">
+                    —
+                </strong>
+
+                <small>
+                    / 100
+                </small>
+
+            </div>
+
+
+            <div class="profile-result-card">
+
+                <span>SLEEP</span>
+
+                <strong id="profileSleepScore">
+                    —
+                </strong>
+
+                <small>
+                    / 100
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="saveProfileBtn"
+            class="profile-continue-btn"
+        >
+            CONTINUE →
+        </button>
+        <button
+    type="button"
+    id="downloadHealthProfileBtn"
+    class="download-health-profile-btn"
+>
+    DOWNLOAD HEALTH PROFILE ↓
+</button>
+
+
+        <p
+            id="profileStatus"
+            class="profile-status"
+        ></p>
+
+    </div>
+
+</section>
+
+<!-- =================================================
+     ANALYZE SECTION
+================================================= -->
+
+<section
+    class="analyze-section"
+    id="analyzeSection">
+
+
+    <div class="section-label">
+        02 — ANALYZE
+    </div>
+
+
+    <h2>
+
+        CHOOSE HOW
+        <span>
+            TO BEGIN.
+        </span>
+
+    </h2>
+
+
+    <div class="choice-container">
+
+
+        <!-- MANUAL ENTRY -->
+
+        <div class="choice-card">
+
+
+            <div class="choice-icon">
+                🧪
+            </div>
+
+
+            <h3>
+                MANUAL ENTRY
+            </h3>
+
+
+            <p>
+
+                Enter your laboratory values manually
+                for BioCheck analysis.
+
+            </p>
+
+
+            <button
+                class="choice-btn"
+                id="reportBtn">
+
+                ENTER DATA →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- UPLOAD REPORT -->
+
+        <div class="choice-card">
+
+
+            <div class="choice-icon">
+                📄
+            </div>
+
+
+            <h3>
+                UPLOAD REPORT
+            </h3>
+
+
+            <p>
+
+                Upload a blood-test report and let
+                BioCheck extract available parameters
+                for analysis.
+
+            </p>
+
+
+            <input
+                type="file"
+                id="reportUpload"
+                accept=".pdf,.jpg,.jpeg,.png"
+                hidden>
+
+
+            <button
+                class="choice-btn"
+                id="uploadReportBtn">
+
+                UPLOAD REPORT →
+
+            </button>
+
+
+            <p
+                id="uploadStatus"
+                class="upload-status">
+
+            </p>
+
+
+        </div>
+
+    </div>
+    <!-- =========================================
+     NO REPORT SECTION
+========================================= -->
+
+<div class="no-report-section" id="noReportSection">
+
+    <div class="no-report-content">
+
+        <span class="section-eyebrow">NO LAB REPORT?</span>
+
+        <h2>YOU CAN STILL<br>START YOUR BIO JOURNEY.</h2>
+
+        <p>
+            Don't have a laboratory report with you?
+            That's okay. Explore your biological parameters,
+            learn what they mean, and understand your health
+            data before your next test.
+        </p>
+
+       <button id="noReportBtn" class="no-report-btn">
+    I DON'T HAVE A REPORT →
+</button>
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =================================================
+     DATA ENTRY
+================================================= -->
+
+<section
+    class="data-section"
+    id="dataSection">
+
+
+    <div class="section-label">
+        02.1 — DATA
+    </div>
+
+
+    <h2>
+
+        ENTER YOUR
+        <span>
+            PARAMETERS.
+        </span>
+
+    </h2>
+
+
+    <p class="data-description">
+
+        Enter the values exactly as shown on your
+        laboratory report. You may enter any available
+        parameters; BioCheck will analyze only the values provided.
+
+    </p>
+
+
+   <div class="sex-options">
+
+    <label class="sex-option">
+        <input
+            type="radio"
+            name="biologicalSex"
+            value="male"
+            id="male">
+        <span>♂ MALE</span>
+    </label>
+
+    <label class="sex-option">
+        <input
+            type="radio"
+            name="biologicalSex"
+            value="female"
+            id="female">
+        <span>♀ FEMALE</span>
+    </label>
+
+</div>
+        <p class="sex-selector-note">
+            The selected profile is used for parameters with sex-specific prototype reference intervals.
+        </p>
+
+    </div>
+
+
+    <div class="data-grid">
+
+
+        <!-- HEMOGLOBIN -->
+
+        <div class="input-card">
+
+            <label>
+                HEMOGLOBIN
+            </label>
+
+            <input
+                type="number"
+                id="hemoglobin"
+                placeholder="12.4"
+                step="0.1">
+
+            <span>
+                g/dL
+            </span>
+
+        </div>
+
+
+
+        <!-- GLUCOSE -->
+
+        <div class="input-card">
+
+            <label>
+                GLUCOSE
+            </label>
+
+            <input
+                type="number"
+                id="glucose"
+                placeholder="94">
+
+            <span>
+                mg/dL
+            </span>
+
+        </div>
+
+
+
+        <!-- WBC -->
+
+        <div class="input-card">
+
+            <label>
+                WBC
+            </label>
+
+            <input
+                type="number"
+                id="wbc"
+                placeholder="7000">
+
+            <span>
+                /µL
+            </span>
+
+        </div>
+
+
+
+        <!-- PLATELETS -->
+
+        <div class="input-card">
+
+            <label>
+                PLATELETS
+            </label>
+
+            <input
+                type="number"
+                id="platelets"
+                placeholder="250000">
+
+            <span>
+                /µL
+            </span>
+
+        </div>
+
+
+
+        <!-- MCV -->
+
+        <div class="input-card">
+
+            <label>
+                MCV
+            </label>
+
+            <input
+                type="number"
+                id="mcv"
+                placeholder="88"
+                step="0.1">
+
+            <span>
+                fL
+            </span>
+
+        </div>
+
+
+
+        <!-- LDL -->
+
+        <div class="input-card">
+
+            <label>
+                LDL
+            </label>
+
+            <input
+                type="number"
+                id="ldl"
+                placeholder="138">
+
+            <span>
+                mg/dL
+            </span>
+
+        </div>
+
+    </div>
+
+<div style="display:block; width:100%; margin-top:30px;"></div>
+    <button
+        class="analyze-btn"
+        id="analyzeBtn">
+
+        ANALYZE MY BIOLOGY →
+
+    </button>
+    <!-- =========================================================
+     NO REPORT / BIOLEARN
+========================================================= -->
+
+<section id="bioLearnSection" class="biolearn-section">
+
+    <div class="biolearn-container">
+
+        <div class="biolearn-header">
+
+            <span class="biolearn-eyebrow">
+                BIOQUEST / BIOLEARN
+            </span>
+
+            <h2>
+                NO REPORT?
+                <br>
+                <span>START HERE.</span>
+            </h2>
+
+            <p>
+                You don't need a laboratory report to start
+                understanding your biology.
+            </p>
+
+        </div>
+
+
+        <!-- MAIN CHOICES -->
+
+        <div class="biolearn-choices">
+
+            <button
+                id="haveReportBtn"
+                class="biolearn-choice"
+            >
+
+                <span>01</span>
+
+                <strong>
+                    I HAVE A REPORT
+                </strong>
+
+                <small>
+                    Upload or enter your laboratory values.
+                </small>
+
+            </button>
+
+
+            <button
+                id="noReportBtn"
+                class="biolearn-choice"
+            >
+
+                <span>02</span>
+
+                <strong>
+                    I DON'T HAVE A REPORT
+                </strong>
+
+                <small>
+                    Learn what your biological parameters mean.
+                </small>
+
+            </button>
+
+        </div>
+
+
+        <!-- LEARNING AREA -->
+
+        <div
+            id="bioLearnContent"
+            class="biolearn-content"
+        >
+
+            <div class="biolearn-content-header">
+
+                <span>
+                    EXPLORE YOUR BIOLOGY
+                </span>
+
+                <h3>
+                    Choose a parameter
+                </h3>
+
+            </div>
+
+
+            <div
+                id="bioParameterGrid"
+                class="bio-parameter-grid"
+            ></div>
+
+
+            <!-- PARAMETER DETAIL -->
+
+            <div
+                id="bioParameterDetail"
+                class="bio-parameter-detail"
+            >
+
+                <button
+                    id="closeBioDetail"
+                    class="close-bio-detail"
+                >
+                    ×
+                </button>
+
+                <span
+                    id="bioDetailCategory"
+                >
+                    PARAMETER
+                </span>
+
+                <h3
+                    id="bioDetailName"
+                >
+                    —
+                </h3>
+
+                <p
+                    id="bioDetailDescription"
+                >
+                    —
+                </p>
+
+
+                <div class="bio-detail-grid">
+
+                    <div>
+
+                        <span>
+                            WHAT IT DOES
+                        </span>
+
+                        <p id="bioDetailFunction">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            WHY IT IS TESTED
+                        </span>
+
+                        <p id="bioDetailWhy">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            WHEN LOW
+                        </span>
+
+                        <p id="bioDetailLow">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            WHEN HIGH
+                        </span>
+
+                        <p id="bioDetailHigh">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RELATED GROUPS -->
+
+            <div class="bio-related-section">
+
+                <span>
+                    CONNECT THE DOTS
+                </span>
+
+                <h3>
+                    Related biological systems
+                </h3>
+
+                <div
+                    id="bioRelatedGroups"
+                    class="bio-related-groups"
+                ></div>
+
+            </div>
+
+
+            <!-- HOW TO READ REPORT -->
+
+            <div class="how-to-read">
+
+                <span>
+                    KNOW YOUR REPORT
+                </span>
+
+                <h3>
+                    How to read a laboratory value
+                </h3>
+
+                <div class="reading-steps">
+
+                    <div>
+                        <strong>01</strong>
+                        <h4>Parameter</h4>
+                        <p>
+                            Identify what is being measured.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <h4>Value</h4>
+                        <p>
+                            Look at the number reported by the laboratory.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <h4>Unit</h4>
+                        <p>
+                            Understand what the number is measured in.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>04</strong>
+                        <h4>Reference range</h4>
+                        <p>
+                            Compare the result with the laboratory's
+                            stated reference interval.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDUCATIONAL PROFILE -->
+
+            <div class="bio-profile">
+
+                <span>
+                    BIOLOGICAL PROFILE
+                </span>
+
+                <h3>
+                    Build your profile
+                </h3>
+
+                <p>
+                    When laboratory values are available,
+                    BioQuest can organize them into an
+                    educational biological profile.
+                </p>
+
+                <button
+                    id="buildProfileBtn"
+                    class="build-profile-btn"
+                >
+                    BUILD PROFILE
+                </button>
+
+                <div
+                    id="bioProfileResult"
+                    class="bio-profile-result"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</div>
+<!-- =========================================================
+     BIOCHECK — REPORT SECTION
+========================================================= -->
+
+<section id="dashboardSection" class="report-section">
+
+    <div class="report-container">
+
+        <!-- REPORT HEADER -->
+        <div class="report-header">
+            <button
+    id="backToDataBtn"
+    class="back-to-data-btn"
+>
+    ← EDIT VALUES
+</button>
+
+            <span class="report-eyebrow">
+                BIOCHECK / ANALYSIS
+            </span>
+
+            <h2>
+                YOUR BIOLOGICAL
+                <span>REPORT</span>
+            </h2>
+
+            <p>
+                A structured overview of the laboratory
+                parameters analyzed by BioCheck.
+            </p>
+
+        </div>
+
+
+        <!-- OVERALL RESULT -->
+        <div class="overall-report-card">
+
+            <div class="overall-label">
+                OVERALL RESULT
+            </div>
+
+            <h3 id="overallResult">
+                AWAITING ANALYSIS
+            </h3>
+
+            <p id="overallMessage">
+                Analyze your laboratory values to generate
+                your biological report.
+            </p>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+        <div class="summary-grid">
+
+            <div class="summary-card">
+
+                <span
+                    class="summary-number"
+                    id="normalCount">
+                    0
+                </span>
+
+                <span class="summary-label">
+                    NORMAL
+                </span>
+
+                <p>
+                    Within provided range
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span
+                    class="summary-number"
+                    id="monitorCount">
+                    0
+                </span>
+
+                <span class="summary-label">
+                    MONITOR
+                </span>
+
+                <p>
+                    Slightly outside range
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span
+                    class="summary-number"
+                    id="attentionCount">
+                    0
+                </span>
+
+                <span class="summary-label">
+                    ATTENTION
+                </span>
+
+                <p>
+                    Further review recommended
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-number">
+                    <span id="awarenessScore">0</span>%
+                </span>
+
+                <span class="summary-label">
+                    AWARENESS SCORE
+                </span>
+
+                <p>
+                    Parameters within range
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PARAMETER ANALYSIS -->
+        <div class="results-heading">
+
+            <span>
+                LABORATORY PARAMETERS
+            </span>
+
+            <h3>
+                PARAMETER ANALYSIS
+            </h3>
+
+        </div>
+
+
+        <!-- JavaScript will create the cards here -->
+        <div
+            id="parameterResults"
+            class="parameter-results">
+        </div>
+
+
+        <!-- REFERENCE INFORMATION -->
+        <div class="reference-info-panel">
+
+            <div class="reference-info-title">
+                REFERENCE INFORMATION
+            </div>
+
+            <div class="reference-info-content">
+
+                <p>
+                    BioCheck compares each available laboratory
+                    value with the prototype reference interval.
+                    Actual laboratory reference intervals can
+                    vary between laboratories, methods, age groups
+                    and individual circumstances.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+        <div class="report-disclaimer">
+
+            <span>
+                IMPORTANT
+            </span>
+
+            <p>
+                BioCheck is an educational and informational
+                screening tool. It does not provide a medical
+                diagnosis and does not replace advice, diagnosis
+                or treatment from a qualified healthcare
+                professional.
+            </p>
+
+        </div>
+
+
+        <!-- DOWNLOAD -->
+        <div class="report-actions">
+
+            <button
+                id="downloadReportBtn"
+                class="download-report-btn">
+
+                <span>↓</span>
+
+                DOWNLOAD REPORT
+
+            </button>
+
+        </div>
+
+    </div>
+<!-- =========================================================
+     BIOCHECK REPORT SECTION
+========================================================= -->
+
+<section id="dashboardSection" class="report-section">
+
+    <div class="report-container">
+
+        <!-- HEADER -->
+
+        <div class="report-header">
+
+            <div>
+                <span class="report-eyebrow">
+                    BIOCHECK / ANALYSIS
+                </span>
+
+                <h2>
+                    YOUR BIOLOGICAL<br>
+                    <span>REPORT</span>
+                </h2>
+
+                <p>
+                    A simplified interpretation of the laboratory
+                    values provided for analysis.
+                </p>
+            </div>
+
+            <div class="report-score-box">
+
+                <span>AWareness score</span>
+
+                <strong id="awarenessScore">
+                    0
+                </strong>
+
+                <small>
+                    %
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- OVERALL RESULT -->
+
+        <div class="overall-result-card">
+
+            <div class="overall-label">
+                OVERALL RESULT
+            </div>
+
+            <h3 id="overallResult">
+                —
+            </h3>
+
+            <p id="overallMessage">
+                Your analysis will appear here after
+                the laboratory values are analyzed.
+            </p>
+
+        </div>
+
+
+        <!-- COUNTERS -->
+
+        <div class="report-counters">
+
+            <div class="counter-card">
+
+                <span class="counter-number"
+                      id="normalCount">
+                    0
+                </span>
+
+                <span class="counter-label">
+                    NORMAL
+                </span>
+
+            </div>
+
+
+            <div class="counter-card">
+
+                <span class="counter-number"
+                      id="monitorCount">
+                    0
+                </span>
+
+                <span class="counter-label">
+                    MONITOR
+                </span>
+
+            </div>
+
+
+            <div class="counter-card">
+
+                <span class="counter-number"
+                      id="attentionCount">
+                    0
+                </span>
+
+                <span class="counter-label">
+                    ATTENTION
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PARAMETERS -->
+
+        <div class="parameters-section">
+
+            <div class="section-heading">
+
+                <span>
+                    01 / PARAMETERS
+                </span>
+
+                <h3>
+                    Laboratory overview
+                </h3>
+
+            </div>
+
+
+            <div id="parameterResults"
+                 class="parameter-results">
+
+                <!-- JavaScript inserts parameter cards here -->
+
+            </div>
+
+        </div>
+
+
+        <!-- REFERENCE INFORMATION -->
+
+        <div class="reference-info-panel">
+
+            <div class="reference-info-content">
+
+                <span>
+                    02 / REFERENCE
+                </span>
+
+                <h3>
+                    Understanding your ranges
+                </h3>
+
+                <p>
+                    BioCheck compares each available laboratory
+                    value with a prototype reference interval.
+                    Actual laboratory intervals may vary between
+                    laboratories, testing methods and individual
+                    circumstances.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DOWNLOAD -->
+
+        <div class="report-download">
+
+            <div>
+
+                <span>
+                    BIOCHECK REPORT
+                </span>
+
+                <h3>
+                    Keep a copy of your analysis.
+                </h3>
+
+            </div>
+
+
+            <button id="downloadReportBtn"
+                    class="download-report-btn">
+
+                DOWNLOAD REPORT
+
+                <span>
+                    ↓
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+
+        <div class="report-disclaimer">
+
+            <strong>
+                IMPORTANT
+            </strong>
+
+            <p>
+                BioCheck is an educational and informational
+                screening tool. It does not provide a medical
+                diagnosis and does not replace advice, diagnosis
+                or treatment from a qualified healthcare
+                professional.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+</section>
+<!-- =========================================================
+     BIOCHECK — REPORT / DASHBOARD SECTION
+========================================================= -->
+
+<section id="dashboardSection" class="report-section">
+
+    <div class="report-container">
+
+        <!-- HEADER -->
+        <div class="report-header">
+
+            <span class="report-eyebrow">
+                BIOCHECK / ANALYSIS
+            </span>
+
+            <h2>
+                YOUR BIOLOGICAL
+                <span>REPORT</span>
+            </h2>
+
+            <p>
+                A structured interpretation of the laboratory
+                values provided for analysis.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             OVERALL RESULT
+        ================================================== -->
+
+        <div class="overall-report-card">
+
+            <div class="overall-label">
+                OVERALL RESULT
+            </div>
+
+            <h3 id="overallResult">
+                AWAITING ANALYSIS
+            </h3>
+
+            <p id="overallMessage">
+                Your analyzed laboratory parameters will
+                appear here.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             SUMMARY COUNTERS
+        ================================================== -->
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+
+                <span class="summary-number"
+                      id="normalCount">
+                    0
+                </span>
+
+                <span class="summary-label">
+                    NORMAL
+                </span>
+
+                <p>
+                    Within provided range
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-number"
+                      id="monitorCount">
+                    0
+                </span>
+
+                <span class="summary-label">
+                    MONITOR
+                </span>
+
+                <p>
+                    Slightly outside range
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-number"
+                      id="attentionCount">
+                    0
+                </span>
+
+                <span class="summary-label">
+                    ATTENTION
+                </span>
+
+                <p>
+                    Further review recommended
+                </p>
+
+            </div>
+
+
+            <div class="summary-card awareness-card">
+
+                <span class="summary-number">
+                    <span id="awarenessScore">0</span>%
+                </span>
+
+                <span class="summary-label">
+                    AWARENESS SCORE
+                </span>
+
+                <p>
+                    Parameters within range
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PARAMETER RESULTS
+        ================================================== -->
+
+        <div class="results-heading">
+
+            <span>
+                LABORATORY PARAMETERS
+            </span>
+
+            <h3>
+                PARAMETER ANALYSIS
+            </h3>
+
+        </div>
+
+
+        <div id="parameterResults"
+             class="parameter-results">
+
+            <!-- JavaScript creates parameter cards here -->
+
+        </div>
+
+
+        <!-- =================================================
+             REFERENCE INFORMATION
+        ================================================== -->
+
+        <div class="reference-info-panel">
+
+            <div class="reference-info-title">
+                REFERENCE INFORMATION
+            </div>
+
+            <div class="reference-info-content">
+
+                <p>
+                    BioCheck compares each available laboratory
+                    value with the prototype reference interval.
+                    Actual laboratory intervals can vary between
+                    laboratories, methods, age groups and
+                    individual circumstances.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DISCLAIMER
+        ================================================== -->
+
+        <div class="report-disclaimer">
+
+            <span>
+                IMPORTANT
+            </span>
+
+            <p>
+                BioCheck is an educational and informational
+                screening tool. It does not provide a medical
+                diagnosis and does not replace advice, diagnosis
+                or treatment from a qualified healthcare
+                professional.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             DOWNLOAD
+        ================================================== -->
+
+        <div class="report-actions">
+
+            <button id="downloadReportBtn"
+                    class="download-report-btn">
+
+                <span>
+                    ↓
+                </span>
+
+                DOWNLOAD REPORT
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+</section>
+
+
+
+<!-- =================================================
+     DASHBOARD
+================================================= -->
+
+<section
+    class="dashboard-section"
+    id="dashboardSection">
+
+
+    <div class="dashboard-header">
+
+
+        <div>
+
+            <div class="section-label">
+                03 — BIOCHECK RESULTS
+            </div>
+
+
+            <h2>
+
+                YOUR
+                <span>
+                    BIOLOGICAL
+                </span>
+
+                PROFILE.
+
+            </h2>
+
+        </div>
+
+
+
+        <!-- AWARENESS -->
+
+        <div class="awareness-card">
+
+
+            <div
+                class="awareness-number"
+                id="awarenessScore">
+
+                0
+
+            </div>
+
+
+            <div class="awareness-label">
+
+                AWARENESS INDEX
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- STATUS SUMMARY -->
+
+    <div class="status-summary">
+
+
+        <div class="status-card">
+
+            <span>
+                🟢
+            </span>
+
+            <div>
+
+                <strong id="normalCount">
+                    0
+                </strong>
+
+                <small>
+                    WITHIN RANGE
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <span>
+                🟡
+            </span>
+
+            <div>
+
+                <strong id="monitorCount">
+                    0
+                </strong>
+
+                <small>
+                    MONITOR
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <span>
+                🔴
+            </span>
+
+            <div>
+
+                <strong id="attentionCount">
+                    0
+                </strong>
+
+                <small>
+                    ATTENTION
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+<div class="overall-summary">
+
+    <div class="summary-label">
+        BIOCHECK SUMMARY
+    </div>
+
+    <h3 id="overallResult">
+        ANALYSIS COMPLETE
+    </h3>
+
+    <p id="overallMessage">
+        Your uploaded parameters have been analyzed
+        against the provided reference ranges.
+    </p>
+
+</div>
+<div class="reference-info-panel">
+
+    <div class="reference-info-icon">
+        ⓘ
+    </div>
+
+    <div class="reference-info-content">
+
+        <div class="reference-info-label">
+            REFERENCE INFORMATION
+        </div>
+
+        <h3>
+            Understanding your results
+        </h3>
+
+        <p>
+            The reference ranges displayed by BioCheck are
+            illustrative ranges used for this prototype.
+            Actual laboratory reference intervals may vary
+            depending on the laboratory, testing method,
+            age, sex, and other individual factors.
+        </p>
+
+        <p>
+            Glucose interpretation may also depend on whether
+            the sample was collected while fasting or after eating.
+            Results should therefore be interpreted in the context
+            of the complete laboratory report.
+        </p>
+
+        <div class="reference-warning">
+
+            <strong>Important:</strong>
+
+            BioCheck is an educational and informational
+            screening tool. It does not provide a medical
+            diagnosis or replace advice from a qualified
+            healthcare professional.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- PARAMETERS -->
+
+    <div class="parameters-section">
+
+
+        <div class="parameter-heading">
+
+
+            <p>
+                KEY PARAMETERS
+            </p>
+
+
+            <p>
+                Prototype reference ranges
+            </p>
+
+
+        </div>
+
+
+        <div
+            class="parameter-results"
+            id="parameterResults">
+
+        </div>
+
+    </div>
+<div class="report-action">
+
+    <button
+        id="downloadReportBtn"
+        class="download-report-btn">
+
+        DOWNLOAD BIOCHECK REPORT →
+
+    </button>
+
+</div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="dashboard-note">
+
+        BioCheck is an educational prototype.
+        It does not diagnose disease or replace
+        professional medical advice. Reference ranges
+        can vary between laboratories and individuals.
+
+    </div>
+
+</section>
+<!-- =========================================================
+     BIOQUEST GOAL TRACKER
+========================================================= -->
+
+<section class="goal-tracker-section" id="goalTracker">
+
+    <div class="goal-tracker-label">
+        05 — GOAL TRACKING
+    </div>
+
+    <div class="goal-tracker-heading">
+
+        <div>
+            <span class="goal-eyebrow">
+                YOUR BIOLOGICAL GOALS
+            </span>
+
+            <h2>
+                SMALL STEPS.<br>
+                <span>MEANINGFUL PROGRESS.</span>
+            </h2>
+        </div>
+
+        <p>
+            Set simple personal goals and track your progress
+            over time. Your goals are stored locally on this device.
+        </p>
+
+    </div>
+
+
+    <!-- GOAL CREATOR -->
+
+    <div class="goal-creator">
+
+        <div class="goal-creator-title">
+            CREATE A GOAL
+        </div>
+
+        <div class="goal-form">
+
+            <div class="goal-field">
+
+                <label for="goalType">
+                    GOAL
+                </label>
+
+                <select id="goalType">
+
+                    <option value="">
+                        Select a goal
+                    </option>
+
+                    <option value="sleep">
+                        Sleep
+                    </option>
+
+                    <option value="activity">
+                        Physical Activity
+                    </option>
+
+                    <option value="weight">
+                        Weight
+                    </option>
+
+                    <option value="health">
+                        Health Tracking
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="goal-field">
+
+                <label for="goalTarget">
+                    TARGET
+                </label>
+
+                <input
+                    type="number"
+                    id="goalTarget"
+                    placeholder="e.g. 8"
+                    step="0.1"
+                    min="0"
+                >
+
+            </div>
+
+
+            <div class="goal-field">
+
+                <label for="goalUnit">
+                    UNIT
+                </label>
+
+                <input
+                    type="text"
+                    id="goalUnit"
+                    placeholder="hours / km / kg"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                id="createGoalBtn"
+                class="create-goal-btn"
+            >
+                CREATE GOAL →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GOALS -->
+
+    <div
+        class="goals-empty"
+        id="goalsEmpty"
+    >
+        <span>YOUR GOALS WILL APPEAR HERE.</span>
+
+        <p>
+            Create your first biological goal above.
+        </p>
+    </div>
+
+
+    <div
+        class="goals-grid"
+        id="goalsGrid"
+    ></div>
+
+
+    <div class="goal-tracker-note">
+
+        <strong>BioQuest note:</strong>
+
+        Goal tracking is designed for personal organization
+        and educational use. It does not diagnose conditions
+        or replace professional medical advice.
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     HEALTH TRENDS
+========================================================= -->
+
+<section class="health-trends-section" id="healthTrends">
+
+    <div class="health-trends-label">
+        06 — HEALTH TRENDS
+    </div>
+
+    <div class="health-trends-heading">
+
+        <div>
+            <span class="health-trends-eyebrow">
+                YOUR BIOLOGICAL HISTORY
+            </span>
+
+            <h2>
+                SEE HOW YOUR<br>
+                <span>NUMBERS CHANGE.</span>
+            </h2>
+        </div>
+
+        <p>
+            Track your laboratory values over time
+            and observe patterns across your reports.
+        </p>
+
+    </div>
+
+
+    <div class="health-trends-box">
+
+        <!-- TOP -->
+
+        <div class="health-trends-top">
+
+            <div>
+                <span class="trend-small-label">
+                    SELECT PARAMETER
+                </span>
+
+                <h3 id="trendParameterName">
+                    Hemoglobin
+                </h3>
+            </div>
+
+            <select id="trendParameter">
+
+                <option value="hemoglobin">
+                    Hemoglobin
+                </option>
+
+                <option value="glucose">
+                    Glucose
+                </option>
+
+                <option value="wbc">
+                    WBC
+                </option>
+
+                <option value="platelets">
+                    Platelets
+                </option>
+
+                <option value="mcv">
+                    MCV
+                </option>
+
+                <option value="ldl">
+                    LDL
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- GRAPH -->
+
+        <div class="trend-chart">
+
+            <div class="trend-y-axis">
+
+                <span id="trendMax">
+                    14
+                </span>
+
+                <span id="trendMid">
+                    12
+                </span>
+
+                <span>
+                    10
+                </span>
+
+            </div>
+
+            <div class="trend-chart-area">
+
+                <div class="trend-grid-line"></div>
+                <div class="trend-grid-line"></div>
+                <div class="trend-grid-line"></div>
+
+                <svg
+                    id="trendGraph"
+                    viewBox="0 0 700 250"
+                    preserveAspectRatio="none"
+                >
+
+                    <polyline
+                        id="trendLine"
+                        points=""
+                    />
+
+                    <g id="trendPoints"></g>
+
+                </svg>
+
+            </div>
+
+        </div>
+
+
+        <!-- X AXIS -->
+
+        <div
+            class="trend-x-axis"
+            id="trendXAxis"
+        >
+
+            <span>Report 1</span>
+            <span>Report 2</span>
+            <span>Report 3</span>
+            <span>Report 4</span>
+
+        </div>
+
+
+        <!-- CURRENT VALUE -->
+
+        <div class="trend-summary">
+
+            <div>
+
+                <span class="trend-summary-label">
+                    LATEST VALUE
+                </span>
+
+                <strong id="trendLatestValue">
+                    13.2 g/dL
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="trend-summary-label">
+                    TREND
+                </span>
+
+                <strong
+                    id="trendDirection"
+                    class="trend-direction"
+                >
+                    ↑ Increasing
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="trend-note">
+
+        <strong>BioQuest note:</strong>
+        Trends are visualized from recorded values and are
+        intended for educational tracking. They are not
+        diagnostic conclusions.
+
+    </div>
+
+</section>
+<!-- =========================================================
+     BIOQUEST AI — LAUNCHING SOON
+========================================================= -->
+
+<section class="bioquest-ai-section" id="bioquestAI">
+
+    <div class="ai-glow"></div>
+
+    <div class="bioquest-ai-content">
+
+        <span class="ai-eyebrow">
+            THE NEXT EVOLUTION OF BIOQUEST
+        </span>
+
+        <div class="ai-title-wrap">
+
+            <span class="ai-coming">
+                COMING
+            </span>
+
+            <h2>
+                BIOQUEST
+                <span>AI</span>
+            </h2>
+
+            <span class="ai-soon">
+                SOON
+            </span>
+
+        </div>
+
+        <p class="ai-description">
+            A new intelligence layer for your biological world.
+            Ask questions, explore your results, understand
+            complex biology, and discover more — all in one place.
+        </p>
+
+        <div class="ai-status">
+
+            <span class="ai-status-dot"></span>
+
+            <span>
+                CURRENTLY IN DEVELOPMENT
+            </span>
+
+        </div>
+
+        <div class="ai-line"></div>
+
+        <p class="ai-footer">
+            ANALYZE. LEARN. EXPLORE. INTELLIGENTLY.
+        </p>
+
+    </div>
+
+</section>
+
+<<div class="bio-learn-header">
+
+    <span class="bio-learn-eyebrow">
+        BIOQUEST KNOWLEDGE
+    </span>
+
+    <h2>
+        BIO LEARN
+    </h2>
+
+    <p>
+        Explore the science behind your body, your biology,
+        and the laboratory values you encounter every day.
+    </p>
+
+</div>
+
+    <div class="bio-learn-grid">
+
+        <button class="bio-learn-card" data-topic="human-biology">
+
+            <span class="bio-card-number">01</span>
+
+            <div class="bio-card-icon">
+    <img src="images/human biology.jpeg" alt="Human Biology">
+</div>
+
+            <h3>Human Biology</h3>
+
+            <p>
+                Understand how the human body works.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+
+        <button class="bio-learn-card" data-topic="blood">
+
+            <span class="bio-card-number">02</span>
+
+            <div class="bio-card-icon">
+    <img src="images/hematology.jpeg" alt="Blood and Hematology">
+</div>
+
+            <h3>Blood & Hematology</h3>
+
+            <p>
+                Explore blood cells, hemoglobin and platelets.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+
+       <button class="bio-learn-card" data-topic="heart">
+
+    <span class="bio-card-number">03</span>
+
+    <div class="bio-card-icon">
+    <img src="images/heart and circulation.jpeg" alt="Heart & Circulation">
+</div>
+          <h3>Heart & Circulation</h3>
+
+            <p>
+                Learn how blood travels throughout the body.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+        <button class="bio-learn-card" data-topic="brain">
+
+            <span class="bio-card-number">04</span>
+
+        
+
+            <div class="bio-card-icon">
+    <img src="images/brain and nervous system.jpeg" alt="Brain and Nervous System">
+</div>
+          <h3>Brain & Nervous System</h3>
+
+            <p>
+                Discover how the nervous system controls the body.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+
+        <button class="bio-learn-card" data-topic="respiratory">
+
+            <span class="bio-card-number">05</span>
+
+            <div class="bio-card-icon">
+    <img src="images/respiratory system.jpeg" alt="Respiratory System">
+</div>
+
+            <h3>Respiratory System</h3>
+
+            <p>
+                Understand breathing and oxygen exchange.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+
+        <button class="bio-learn-card" data-topic="microbiology">
+
+            <span class="bio-card-number">06</span>
+
+            <div class="bio-card-icon">
+    <img src="images/microbiology.jpeg" alt="Microbiology">
+</div>
+
+            <h3>Microbiology</h3>
+
+            <p>
+                Explore bacteria, viruses and microorganisms.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+
+        <button class="bio-learn-card" data-topic="biochemistry">
+
+            <span class="bio-card-number">07</span>
+
+            <div class="bio-card-icon">
+    <img src="images/biochemsitry.jpeg" alt="Biochemistry">
+</div>
+
+            <h3>Biochemistry</h3>
+
+            <p>
+                Learn about the chemistry of life.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+
+        <button class="bio-learn-card" data-topic="genetics">
+
+            <span class="bio-card-number">08</span>
+
+            <div class="bio-card-icon">
+    <img src="images/genetics.jpeg" alt="Genetics">
+</div>
+
+            <h3>Genetics</h3>
+
+            <p>
+                Discover DNA, genes and inheritance.
+            </p>
+
+            <span class="bio-card-arrow">→</span>
+
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     HEART & CIRCULATION — BIOLEARN PAGE
+========================================================= -->
+
+<section class="bio-topic-page" id="heartPage">
+
+    <!-- TOP NAVIGATION -->
+
+    <div class="bio-topic-navigation">
+
+        <button
+            class="bio-back-btn"
+            id="heartBack"
+            type="button"
+        >
+            ← BACK TO BIOLEARN
+        </button>
+
+        <span class="bio-topic-number">
+            03 — BIOLEARN
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+   <section class="bio-topic-hero">
+
+    <div class="bio-topic-hero-content">
+
+        <span class="bio-topic-eyebrow">
+            BIOQUEST KNOWLEDGE
+        </span>
+
+        <span class="bio-topic-category">
+            CARDIOVASCULAR SYSTEM
+        </span>
+
+        <h1>
+            HEART
+            <span class="ampersand">&amp;</span>
+            <span class="title-second">CIRCULATION</span>
+        </h1>
+
+        <div class="bio-topic-rule"></div>
+
+        <p class="bio-topic-intro">
+            The cardiovascular system consists of the heart,
+            blood vessels, and blood, working together to deliver
+            oxygen and nutrients throughout the body while
+            removing metabolic waste.
+        </p>
+
+    </div>
+
+
+    <div class="bio-topic-hero-image">
+
+        <span class="bio-topic-number">
+            03
+        </span>
+
+        <img
+            src="images/heart.jpeg.jpeg"
+            alt="Heart and Circulation"
+        >
+
+        <div class="bio-image-overlay"></div>
+
+        <span class="bio-image-caption">
+            HEART &amp; CIRCULATION / 03
+        </span>
+
+    </div>
+
+</section>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ONE CONTINUOUS CONTENT AREA
+    ====================================================== -->
+
+    <div class="bio-topic-content">
+
+
+        <!-- INTRODUCTION -->
+
+        <div class="bio-content-block">
+
+            <div class="bio-content-number">
+                01
+            </div>
+
+            <div class="bio-content-main">
+
+                <span class="bio-content-label">
+                    INTRODUCTION
+                </span>
+
+                <h2>
+                    THE SYSTEM
+                    <em>THAT KEEPS</em>
+                    BLOOD MOVING.
+                </h2>
+
+                <p>
+                    The cardiovascular system consists of the heart,
+                    blood vessels, and blood, working together to
+                    deliver oxygen and nutrients throughout the body
+                    while removing metabolic waste.
+                </p>
+
+                <p>
+                    In medical report analysis, examining heart and
+                    circulation parameters helps evaluate blood vessel
+                    health, cardiac muscle integrity, and overall
+                    pumping efficiency.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TERMINOLOGY -->
+
+        <div class="bio-content-block terminology-block">
+
+            <div class="bio-content-number">
+                02
+            </div>
+
+            <div class="bio-content-main">
+
+                <span class="bio-content-label">
+                    BASIC TERMINOLOGIES &amp; ACRONYMS
+                </span>
+
+                <h2 class="terminology-heading">
+                    KNOW THE
+                    <em>LANGUAGE.</em>
+                </h2>
+
+
+                <!-- TERMINOLOGY GRID -->
+
+                <div class="bio-terms-grid">
+
+
+                    <!-- 01 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                01
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Cardiology
+                        </h3>
+
+                        <p>
+                            The medical specialty focused on diagnosing
+                            and treating conditions of the heart and
+                            blood vessels.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 02 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                02
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Circulation
+                        </h3>
+
+                        <p>
+                            The continuous movement of blood through
+                            systemic (body) and pulmonary (lung)
+                            pathways driven by heart contractions.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 03 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                03
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Hypertension
+                        </h3>
+
+                        <small>
+                            HIGH BLOOD PRESSURE
+                        </small>
+
+                        <p>
+                            The force of blood pushing against your
+                            artery walls is consistently too high,
+                            making your heart work harder.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 04 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                04
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Hypotension
+                        </h3>
+
+                        <small>
+                            LOW BLOOD PRESSURE
+                        </small>
+
+                        <p>
+                            Blood pressure is lower than normal,
+                            which can sometimes cause dizziness or
+                            tiredness because tissues aren't getting
+                            enough flow.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 05 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                05
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            BP
+                        </h3>
+
+                        <small>
+                            BLOOD PRESSURE
+                        </small>
+
+                        <p>
+                            Written as two numbers (e.g., 120/80 mmHg).
+                            The top number (systolic) measures pressure
+                            when your heart beats; the bottom number
+                            (diastolic) measures pressure when your
+                            heart rests between beats.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 06 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                06
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            LDL
+                        </h3>
+
+                        <small>
+                            LOW-DENSITY LIPOPROTEIN
+                        </small>
+
+                        <p>
+                            Often called "bad cholesterol." High levels
+                            can build up in blood vessels. It forms hard
+                            deposits called plaque inside your arteries.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 07 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                07
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            HDL
+                        </h3>
+
+                        <small>
+                            HIGH-DENSITY LIPOPROTEIN
+                        </small>
+
+                        <p>
+                            Known as "good cholesterol." It helps clear
+                            excess cholesterol from your bloodstream.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 08 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                08
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Triglycerides
+                        </h3>
+
+                        <small>
+                            TG
+                        </small>
+
+                        <p>
+                            A type of fat from food stored in your body.
+                            High levels can increase heart risk.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 09 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                09
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            ECG / EKG
+                        </h3>
+
+                        <small>
+                            ELECTROCARDIOGRAM
+                        </small>
+
+                        <p>
+                            A quick sticker-on-chest test that records
+                            your heart's electrical activity and rhythm.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 10 -->
+
+                    <article class="bio-term-card">
+
+                        <div class="bio-term-top">
+
+                            <span>
+                                10
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            ECHO
+                        </h3>
+
+                        <small>
+                            ECHOCARDIOGRAM
+                        </small>
+
+                        <p>
+                            An ultrasound picture of your heart that
+                            shows how well the valves open and how
+                            effectively muscle squeezes blood.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISCELLANEOUS LINKS -->
+
+        <div class="bio-content-block bio-links-block">
+
+            <div class="bio-content-number">
+                03
+            </div>
+
+            <div class="bio-content-main">
+
+                <span class="bio-content-label">
+                    MISCELLANEOUS LINKS
+                </span>
+
+                <h2>
+                    EXPLORE
+                    <em>FURTHER.</em>
+                </h2>
+
+
+                <div class="bio-resource-list">
+
+
+                    <a
+                        href="https://www.heart.org/en/health-topics/high-blood-pressure"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bio-resource"
+                    >
+
+                        <span class="resource-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                American Heart Association
+                            </strong>
+
+                            <small>
+                                Understanding Blood Pressure Levels
+                            </small>
+
+                        </div>
+
+                        <span class="resource-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="https://medlineplus.gov/bloodheartandcirculation.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bio-resource"
+                    >
+
+                        <span class="resource-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                MedlinePlus
+                            </strong>
+
+                            <small>
+                                Understanding Blood Tests &amp;
+                                Cardiac Markers
+                            </small>
+
+                        </div>
+
+                        <span class="resource-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.nhlbi.nih.gov/health/high-blood-pressure"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bio-resource"
+                    >
+
+                        <span class="resource-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                National Heart, Lung,
+                                and Blood Institute
+                            </strong>
+
+                            <small>
+                                Heart Disease Diagnostics
+                            </small>
+
+                        </div>
+
+                        <span class="resource-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         EDUCATIONAL NOTE
+    ====================================================== -->
+
+    <div class="bio-topic-note">
+
+        <div class="bio-note-inner">
+
+            <span>
+                EDUCATIONAL NOTE
+            </span>
+
+            <p>
+                BioLearn describes biological roles and general
+                interpretation concepts. It should not be used to
+                diagnose a condition or make treatment decisions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM BACK -->
+
+    <div class="bio-topic-bottom">
+
+        <button
+            class="bio-back-btn"
+            id="heartBackBottom"
+            type="button"
+        >
+            ← BACK TO BIOLEARN
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     BRAIN & NERVOUS SYSTEM — BIOLEARN TOPIC PAGE
+========================================================= -->
+
+<section id="brainTopicPage" class="bio-topic-page">
+
+    <!-- BACK BUTTON -->
+    <button class="bio-topic-back" id="brainBackBtn">
+        ← BACK TO BIOLEARN
+    </button>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <div class="bio-topic-hero">
+
+        <div class="bio-topic-hero-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                NEUROLOGICAL SYSTEM
+            </span>
+
+            <h1>
+                BRAIN
+                <span>& NERVOUS SYSTEM</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                The nervous system acts as your body’s command center,
+                made up of the brain, spinal cord, and a network of nerves.
+                When reading a neurological or lab report, doctors look at
+                key signals to check how well your brain communicates with
+                your body, measure electrical activity, and detect nerve
+                inflammation or stress.
+            </p>
+
+        </div>
+
+
+        <!-- IMAGE -->
+
+        <div class="bio-topic-hero-image">
+
+            <div class="bio-topic-image-frame">
+
+                <img
+                    src="images/cns.jpeg"
+                    alt="Brain and nervous system illustration"
+                >
+
+            </div>
+
+            <span class="bio-topic-image-caption">
+                BRAIN & NERVOUS SYSTEM / 04
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TERMINOLOGIES
+    ====================================================== -->
+
+    <div class="bio-topic-content">
+
+        <div class="bio-topic-section-heading">
+
+            <span>01 — ESSENTIAL KNOWLEDGE</span>
+
+            <h2>
+                BASIC TERMINOLOGIES
+                <em>& ACRONYMS</em>
+            </h2>
+
+            <p>
+                Key concepts commonly encountered when understanding
+                neurological systems, investigations and reports.
+            </p>
+
+        </div>
+
+
+        <div class="brain-terms-grid">
+
+
+            <!-- CNS -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">01</span>
+
+                <span class="brain-term-label">
+                    CNS
+                </span>
+
+                <h3>
+                    Central Nervous System
+                </h3>
+
+                <p>
+                    The main control hub, consisting of your brain
+                    and spinal cord.
+                </p>
+
+            </article>
+
+
+            <!-- PNS -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">02</span>
+
+                <span class="brain-term-label">
+                    PNS
+                </span>
+
+                <h3>
+                    Peripheral Nervous System
+                </h3>
+
+                <p>
+                    The network of nerves branching off the spinal cord
+                    to connect your brain with your muscles, skin,
+                    and organs.
+                </p>
+
+            </article>
+
+
+            <!-- STROKE -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">03</span>
+
+                <span class="brain-term-label">
+                    CVA
+                </span>
+
+                <h3>
+                    Stroke / CVA
+                </h3>
+
+                <p>
+                    Cerebrovascular Accident. A sudden interruption
+                    of blood flow to part of the brain, either caused
+                    by a blockage or a burst blood vessel.
+                </p>
+
+            </article>
+
+
+            <!-- SEIZURE -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">04</span>
+
+                <span class="brain-term-label">
+                    ELECTRICAL ACTIVITY
+                </span>
+
+                <h3>
+                    Seizure
+                </h3>
+
+                <p>
+                    A sudden surge of uncontrolled electrical activity
+                    in the brain that can alter behavior, movements,
+                    or consciousness.
+                </p>
+
+            </article>
+
+
+            <!-- CSF -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">05</span>
+
+                <span class="brain-term-label">
+                    CSF
+                </span>
+
+                <h3>
+                    Cerebrospinal Fluid Analysis
+                </h3>
+
+                <p>
+                    A test examining the clear fluid surrounding the
+                    brain and spinal cord to check for infections,
+                    inflammation, or autoimmune activity.
+                </p>
+
+            </article>
+
+
+            <!-- EEG -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">06</span>
+
+                <span class="brain-term-label">
+                    EEG
+                </span>
+
+                <h3>
+                    Electroencephalogram
+                </h3>
+
+                <p>
+                    A test using small sensors on the scalp to record
+                    the brain's electrical signals and identify
+                    abnormal activity or seizure patterns.
+                </p>
+
+            </article>
+
+
+            <!-- MRI / CT -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">07</span>
+
+                <span class="brain-term-label">
+                    IMAGING
+                </span>
+
+                <h3>
+                    MRI / CT Brain
+                </h3>
+
+                <p>
+                    Scans that provide detailed visual cross-sections
+                    of brain tissues, blood vessels, and fluid spaces
+                    to look for structural changes, bleeding,
+                    or inflammation.
+                </p>
+
+            </article>
+
+
+            <!-- NCS / EMG -->
+
+            <article class="brain-term-card">
+
+                <span class="brain-term-number">08</span>
+
+                <span class="brain-term-label">
+                    NERVE TESTING
+                </span>
+
+                <h3>
+                    NCS / EMG
+                </h3>
+
+                <p>
+                    Nerve Conduction Study / Electromyography.
+                    Tests measuring how quickly and strongly electrical
+                    signals travel through your peripheral nerves and
+                    muscles to locate nerve compression or damage.
+                </p>
+
+            </article>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESEARCH / LEARNING LINKS
+        ================================================== -->
+
+        <div class="bio-topic-resources">
+
+            <div class="bio-topic-resource-heading">
+
+                <span>02 — CONTINUE EXPLORING</span>
+
+                <h2>
+                    FURTHER
+                    <em>READING</em>
+                </h2>
+
+                <p>
+                    Explore additional educational resources
+                    to learn more about the brain and nervous system.
+                </p>
+
+            </div>
+
+
+            <div class="brain-resource-list">
+
+
+                <a
+                    href="https://medlineplus.gov/brainandnerves.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="brain-resource"
+                >
+
+                    <span class="resource-number">01</span>
+
+                    <div>
+                        <small>MEDLINEPLUS</small>
+                        <h3>Brain & Nervous System Tests Guide</h3>
+                    </div>
+
+                    <span class="resource-arrow">↗</span>
+
+                </a>
+
+
+                <a
+                    href="https://www.ninds.nih.gov/health-information/public-education"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="brain-resource"
+                >
+
+                    <span class="resource-number">02</span>
+
+                    <div>
+                        <small>NINDS</small>
+                        <h3>National Institute of Neurological Disorders and Stroke</h3>
+                    </div>
+
+                    <span class="resource-arrow">↗</span>
+
+                </a>
+
+
+                <a
+                    href="https://www.mayoclinic.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="brain-resource"
+                >
+
+                    <span class="resource-number">03</span>
+
+                    <div>
+                        <small>MAYO CLINIC</small>
+                        <h3>Overview of Neurological Diagnostics</h3>
+                    </div>
+
+                    <span class="resource-arrow">↗</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             EDUCATIONAL NOTE
+        ================================================== -->
+
+        <div class="bio-topic-note">
+
+            <span>EDUCATIONAL NOTE</span>
+
+            <p>
+                BioLearn provides educational information about
+                biological systems and laboratory concepts. It is
+                not intended to diagnose a medical condition or
+                replace professional medical advice.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     BLOOD & HEMATOLOGY DETAIL SECTION
+===================================================== -->
+
+<section id="bloodTopic" class="bio-topic-page">
+
+    <div class="bio-topic-container">
+
+        <!-- LEFT SIDE -->
+        <div class="bio-topic-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                BLOOD & HEMATOLOGY
+            </span>
+
+            <h1>
+                BLOOD &
+                <span>HEMATOLOGY</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                Hematology is the medical science and branch of biology
+                focused on the study of blood, blood-forming organs, and
+                blood diseases. Clinical hematology laboratory reports
+                analyze cellular components of blood to diagnose disorders
+                such as anemia, clotting abnormalities, and leukemia.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT SIDE IMAGE -->
+        <div class="bio-topic-hero-image hematology-image">
+
+            <img
+                src="images/blood and hematology b.jpeg"
+                alt="Blood and Hematology"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- INFORMATION -->
+    <div class="bio-topic-information">
+
+        <div class="bio-info-heading">
+
+            <span>01</span>
+
+            <h2>
+                BASIC TERMINOLOGIES
+                <em>& ACRONYMS</em>
+            </h2>
+
+        </div>
+
+
+        <div class="bio-terms-list">
+
+            <div class="bio-term">
+                <strong>CBC</strong>
+                <span>(Complete Blood Count)</span>
+                <p>
+                    A standard panel of tests providing information about
+                    the types and numbers of cells in the blood, including
+                    RBCs, WBCs, and platelets.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>WBC</strong>
+                <span>(White Blood Cell Count)</span>
+                <p>
+                    Measurement of the number of infection-fighting white
+                    blood cells present in a volume of blood, often
+                    categorized by differential counts such as neutrophils,
+                    lymphocytes, monocytes, eosinophils, and basophils.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>RBC</strong>
+                <span>(Red Blood Cell Count)</span>
+                <p>
+                    Measurement of oxygen-carrying red blood cells
+                    responsible for transporting oxygen from the lungs
+                    to body tissues.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>Hb / Hgb</strong>
+                <span>(Hemoglobin)</span>
+                <p>
+                    The iron-containing protein in red blood cells that
+                    binds oxygen; crucial for assessing anemia.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>Hct</strong>
+                <span>(Hematocrit)</span>
+                <p>
+                    The percentage of total blood volume made up of
+                    red blood cells.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>Plt</strong>
+                <span>(Platelet Count)</span>
+                <p>
+                    Measurement of cell fragments essential for blood
+                    clotting and preventing excessive bleeding.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>ESR</strong>
+                <span>(Erythrocyte Sedimentation Rate)</span>
+                <p>
+                    A blood test that measures how quickly red blood
+                    cells settle to the bottom of a test tube, serving
+                    as a general marker of inflammation.
+                </p>
+            </div>
+
+
+            <div class="bio-term">
+                <strong>PT / INR</strong>
+                <span>(Prothrombin Time / International Normalized Ratio)</span>
+                <p>
+                    Tests that evaluate the extrinsic pathway of the
+                    coagulation cascade, commonly used to monitor
+                    warfarin therapy and bleeding disorders.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- LINKS -->
+        <div class="bio-topic-links">
+
+            <div class="bio-info-heading">
+
+                <span>02</span>
+
+                <h2>
+                    MISCELLANEOUS
+                    <em>LINKS</em>
+                </h2>
+
+            </div>
+
+
+            <div class="bio-links-grid">
+
+                <a
+                    href="https://medlineplus.gov/lab-tests/complete-blood-count-cbc/"
+                    target="_blank"
+                >
+                    <span>MEDLINEPLUS</span>
+                    <strong>Complete Blood Count — CBC</strong>
+                    <b>↗</b>
+                </a>
+
+
+                <a
+                    href="https://my.clevelandclinic.org/health/diagnostics/hematology-tests"
+                    target="_blank"
+                >
+                    <span>CLEVELAND CLINIC</span>
+                    <strong>Hematology Tests</strong>
+                    <b>↗</b>
+                </a>
+
+
+                <a
+                    href="https://www.hematology.org/education/clinicians"
+                    target="_blank"
+                >
+                    <span>ASH</span>
+                    <strong>Hematology Education</strong>
+                    <b>↗</b>
+                </a>
+
+
+                <a
+                    href="https://www.mayoclinic.org/tests-procedures/blood-test/about/icb-20384583"
+                    target="_blank"
+                >
+                    <span>MAYO CLINIC</span>
+                    <strong>Blood Tests</strong>
+                    <b>↗</b>
+                </a>
+
+
+                <a
+                    href="https://training.seer.cancer.gov/abstracting/procedures/clinical/hematologic/"
+                    target="_blank"
+                >
+                    <span>SEER TRAINING</span>
+                    <strong>Hematologic Procedures</strong>
+                    <b>↗</b>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BACK BUTTON -->
+        <button class="bio-topic-back" onclick="closeBioTopic()">
+            ← BACK TO BIO LEARN
+        </button>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     MICROBIOLOGY DETAIL PAGE
+===================================================== -->
+
+<section id="microbiologyTopic" class="bio-topic-detail">
+
+    <div class="bio-topic-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="bio-topic-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                MICROBIOLOGY
+            </span>
+
+            <h1>
+                MICRO
+                <span>BIOLOGY</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                Microbiology is the scientific study of microorganisms,
+                including bacteria, viruses, fungi, protozoa, and algae,
+                focusing on their biology, ecology, and interactions with
+                hosts. Clinical microbiology laboratory reports identify
+                these disease-causing microorganisms from clinical
+                specimens and guide targeted anti-infective therapy.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="bio-topic-hero-image microbiology-image">
+
+            <img
+                src="images/microbiology b.jpeg"
+                alt="Microbiology"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TERMINOLOGIES
+    ================================================== -->
+
+    <div class="bio-topic-information">
+
+        <div class="bio-info-heading">
+
+            <span>01</span>
+
+            <h2>
+                BASIC TERMINOLOGIES
+                <em>& ACRONYMS</em>
+            </h2>
+
+        </div>
+
+
+        <div class="bio-terms-list">
+
+
+            <div class="bio-term">
+
+                <strong>AST</strong>
+
+                <span>
+                    (Antimicrobial Susceptibility Testing)
+                </span>
+
+                <p>
+                    Laboratory procedure to determine which specific
+                    antimicrobial drugs will effectively inhibit or
+                    kill a pathogen.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Culture</strong>
+
+                <p>
+                    The process of growing microorganisms in a nutrient
+                    medium such as agar or broth from a patient specimen.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Gram Stain</strong>
+
+                <p>
+                    A primary differential staining technique dividing
+                    bacteria into Gram-positive (retain purple dye) and
+                    Gram-negative (counterstained pink/red).
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>MIC</strong>
+
+                <span>
+                    (Minimum Inhibitory Concentration)
+                </span>
+
+                <p>
+                    The lowest concentration of an antimicrobial agent
+                    required to visibly inhibit the growth of a
+                    microorganism.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>CFU</strong>
+
+                <span>
+                    (Colony Forming Unit)
+                </span>
+
+                <p>
+                    An estimate of the number of viable microbial cells
+                    in a sample that can form a colony.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Identification (ID)</strong>
+
+                <p>
+                    The process of determining the exact species or genus
+                    of the isolated microorganism using biochemical,
+                    mass spectrometry, or molecular tools.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>PCR</strong>
+
+                <span>
+                    (Polymerase Chain Reaction)
+                </span>
+
+                <p>
+                    A molecular diagnostic method used to amplify and
+                    detect specific microbial DNA or RNA sequences.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             MISCELLANEOUS LINKS
+        ================================================== -->
+
+        <div class="bio-topic-links">
+
+            <div class="bio-info-heading">
+
+                <span>02</span>
+
+                <h2>
+                    MISCELLANEOUS
+                    <em>LINKS</em>
+                </h2>
+
+            </div>
+
+
+            <div class="bio-links-grid">
+
+
+                <a
+                    href="https://microbenotes.com/terminology-used-in-basic-microbiology/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>MICROBIOLOGY</span>
+
+                    <strong>
+                        Basic Microbiology Terminology
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <a
+                    href="https://microbeonline.com/overview-of-biochemical-tests-used-to-identify-bacteria-in-microbiology-laboratory/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>MICROBEONLINE</span>
+
+                    <strong>
+                        Biochemical Tests for Bacterial Identification
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <a
+                    href="https://www.cdc.gov/lab-training/php/courses/core-microbiology-skills.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>CDC</span>
+
+                    <strong>
+                        Core Microbiology Skills
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <a
+                    href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/microbiology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>JOHNS HOPKINS MEDICINE</span>
+
+                    <strong>
+                        Microbiology
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <a
+                    href="https://clinlab.ucsf.edu/microbiology-guide"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>UCSF</span>
+
+                    <strong>
+                        Microbiology Guide
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            class="bio-topic-back"
+            onclick="closeMicrobiologyTopic()"
+        >
+            ← BACK TO BIO LEARN
+        </button>
+
+
+    </div>
+
+</section>
+<!-- =====================================================
+     RESPIRATORY SYSTEM DETAIL PAGE
+===================================================== -->
+
+<section
+    id="respiratoryTopic"
+    class="bio-topic-detail"
+>
+
+    <div class="bio-topic-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="bio-topic-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                RESPIRATORY SYSTEM
+            </span>
+
+            <h1>
+                RESPIRATORY
+                <span>SYSTEM</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                The respiratory system brings oxygen into your body
+                and removes carbon dioxide through your lungs and
+                airways. Medical reports for this system focus on
+                how well air moves into your lungs, how effectively
+                oxygen enters your blood, and whether your airways
+                are clear and free from inflammation.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="bio-topic-hero-image respiratory-image">
+
+            <img
+                src="images/respiratory system b.jpeg"
+                alt="Respiratory System"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TERMINOLOGIES
+    ================================================== -->
+
+    <div class="bio-topic-information">
+
+        <div class="bio-info-heading">
+
+            <span>01</span>
+
+            <h2>
+                BASIC TERMINOLOGIES
+                <em>& ACRONYMS</em>
+            </h2>
+
+        </div>
+
+
+        <div class="bio-terms-list">
+
+
+            <div class="bio-term">
+
+                <strong>Asthma</strong>
+
+                <p>
+                    A condition where airways narrow, swell,
+                    and produce extra mucus, making breathing
+                    difficult.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>COPD</strong>
+
+                <span>
+                    Chronic Obstructive Pulmonary Disease
+                </span>
+
+                <p>
+                    An umbrella term for progressive lung
+                    conditions like emphysema and chronic
+                    bronchitis that block airflow.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Emphysema & Chronic Bronchitis</strong>
+
+                <p>
+                    Long-term lung problems that block airflow
+                    and make it hard to breathe.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Hypoxia</strong>
+
+                <p>
+                    A lower-than-normal level of oxygen in
+                    your body's tissues.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Dyspnea</strong>
+
+                <p>
+                    The medical term for shortness of breath
+                    or uncomfortable, labored breathing.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Pneumonia</strong>
+
+                <p>
+                    An infection that inflames the air sacs
+                    (alveoli) in one or both lungs, which may
+                    fill with fluid or pus.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Bronchitis</strong>
+
+                <p>
+                    Inflammation of the lining of your
+                    bronchial tubes, which carry air to and
+                    from your lungs.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ABG</strong>
+
+                <span>
+                    Arterial Blood Gas
+                </span>
+
+                <p>
+                    A blood test taken from an artery to
+                    measure oxygen (PaO₂), carbon dioxide
+                    (PaCO₂), and blood pH balance.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>PFT</strong>
+
+                <span>
+                    Pulmonary Function Test
+                </span>
+
+                <p>
+                    Non-invasive breathing tests that measure
+                    how much air your lungs can hold and how
+                    quickly you can exhale.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>FEV₁</strong>
+
+                <span>
+                    Forced Expiratory Volume in 1 Second
+                </span>
+
+                <p>
+                    The volume of air you can forcefully blow
+                    out in one second; lower numbers can be
+                    associated with airway obstruction.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>FVC</strong>
+
+                <span>
+                    Forced Vital Capacity
+                </span>
+
+                <p>
+                    The total amount of air you can forcibly
+                    exhale after taking the deepest breath
+                    possible.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Chest X-Ray / CT Scan</strong>
+
+                <p>
+                    Imaging tests used to look for lung fluid,
+                    infections, structural blockages, or
+                    scar tissue.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             MISCELLANEOUS LINKS
+        ================================================== -->
+
+        <div class="bio-topic-links">
+
+            <div class="bio-info-heading">
+
+                <span>02</span>
+
+                <h2>
+                    MISCELLANEOUS
+                    <em>LINKS</em>
+                </h2>
+
+            </div>
+
+
+            <div class="bio-links-grid">
+
+
+                <a
+                    href="https://www.lung.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        AMERICAN LUNG ASSOCIATION
+                    </span>
+
+                    <strong>
+                        Learn About Your Lungs & Diagnostic Tests
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <a
+                    href="https://medlineplus.gov/pulmonaryfunctiontests.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        MEDLINEPLUS
+                    </span>
+
+                    <strong>
+                        Respiratory System & Lung Tests
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <a
+                    href="https://www.nhlbi.nih.gov"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NATIONAL HEART, LUNG, AND BLOOD INSTITUTE
+                    </span>
+
+                    <strong>
+                        Understanding Respiratory Health
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            class="bio-topic-back"
+            onclick="closeRespiratoryTopic()"
+        >
+            ← BACK TO BIO LEARN
+        </button>
+
+
+    </div>
+
+</section>
+<!-- =====================================================
+     HUMAN BIOLOGY DETAIL PAGE
+===================================================== -->
+
+<section
+    id="humanBiologyTopic"
+    class="bio-topic-detail"
+>
+
+    <div class="bio-topic-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="bio-topic-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                HUMAN BIOLOGY
+            </span>
+
+            <h1>
+                HUMAN
+                <span>BIOLOGY</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                Human Biology is the study of the human body,
+                its structure, functions, growth, development,
+                and interactions between organ systems.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="bio-topic-hero-image human-biology-image">
+
+            <img
+                src="images/human biology b.jpeg"
+                alt="Human Biology"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ACRONYMS
+    ================================================== -->
+
+    <div class="bio-topic-information">
+
+        <div class="bio-info-heading">
+
+            <span>01</span>
+
+            <h2>
+                HUMAN BIOLOGY
+                <em>ACRONYMS</em>
+            </h2>
+
+        </div>
+
+
+        <div class="bio-terms-list">
+
+
+            <div class="bio-term">
+
+                <strong>RBC</strong>
+
+                <span>
+                    Red Blood Cell
+                </span>
+
+                <p>
+                    Carries oxygen through the blood.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>WBC</strong>
+
+                <span>
+                    White Blood Cell
+                </span>
+
+                <p>
+                    Helps defend the body against infection.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>Hb</strong>
+
+                <span>
+                    Haemoglobin
+                </span>
+
+                <p>
+                    Oxygen-carrying protein in RBCs.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>CBC</strong>
+
+                <span>
+                    Complete Blood Count
+                </span>
+
+                <p>
+                    Measures major blood-cell parameters.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ESR</strong>
+
+                <span>
+                    Erythrocyte Sedimentation Rate
+                </span>
+
+                <p>
+                    Blood test used as an inflammation indicator.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>BP</strong>
+
+                <span>
+                    Blood Pressure
+                </span>
+
+                <p>
+                    Pressure exerted by blood on artery walls.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ECG</strong>
+
+                <span>
+                    Electrocardiogram
+                </span>
+
+                <p>
+                    Records the electrical activity of the heart.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>BMI</strong>
+
+                <span>
+                    Body Mass Index
+                </span>
+
+                <p>
+                    Weight-to-height index used for
+                    population-level weight classification.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>LFT</strong>
+
+                <span>
+                    Liver Function Test
+                </span>
+
+                <p>
+                    Group of tests assessing liver-related
+                    biochemical markers.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>RFT</strong>
+
+                <span>
+                    Renal Function Test
+                </span>
+
+                <p>
+                    Tests used to assess kidney function.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ELISA</strong>
+
+                <span>
+                    Enzyme-Linked Immunosorbent Assay
+                </span>
+
+                <p>
+                    Detects or measures specific antigens
+                    or antibodies.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             LEARNING LINKS
+        ================================================== -->
+
+        <div class="bio-topic-links">
+
+            <div class="bio-info-heading">
+
+                <span>02</span>
+
+                <h2>
+                    EXPLORE
+                    <em>FURTHER</em>
+                </h2>
+
+            </div>
+
+
+            <div class="bio-links-grid">
+
+
+                <!-- Khan Academy -->
+
+                <a
+                    href="https://www.khanacademy.org/science/biology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        KHAN ACADEMY
+                    </span>
+
+                    <strong>
+                        Biology
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- OpenStax -->
+
+                <a
+                    href="https://openstax.org/subjects/science"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        OPENSTAX
+                    </span>
+
+                    <strong>
+                        Free Science & Biology Textbooks
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- NCBI Bookshelf -->
+
+                <a
+                    href="https://www.ncbi.nlm.nih.gov/books/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NCBI BOOKSHELF
+                    </span>
+
+                    <strong>
+                        Biomedical & Life Science Resources
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- MedlinePlus -->
+
+                <a
+                    href="https://medlineplus.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        MEDLINEPLUS
+                    </span>
+
+                    <strong>
+                        Human Body & Health Information
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- NIH -->
+
+                <a
+                    href="https://www.nih.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NATIONAL INSTITUTES OF HEALTH
+                    </span>
+
+                    <strong>
+                        Biomedical Research & Education
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- Britannica -->
+
+                <a
+                    href="https://www.britannica.com/science/human-body"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        BRITANNICA
+                    </span>
+
+                    <strong>
+                        Human Body
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            class="bio-topic-back"
+            onclick="closeHumanBiologyTopic()"
+        >
+            ← BACK TO BIO LEARN
+        </button>
+
+
+    </div>
+
+</section>
+<!-- =====================================================
+     BIOCHEMISTRY DETAIL PAGE
+===================================================== -->
+
+<section
+    id="biochemistryTopic"
+    class="bio-topic-detail"
+>
+
+    <div class="bio-topic-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="bio-topic-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                BIOCHEMISTRY
+            </span>
+
+            <h1>
+                BIO
+                <span>CHEMISTRY</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                Biochemistry is the study of the chemical substances
+                and chemical reactions occurring in living organisms.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="bio-topic-hero-image biochemistry-image">
+
+            <img
+                src="images/biochemistry b.jpeg"
+                alt="Biochemistry"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ACRONYMS
+    ================================================== -->
+
+    <div class="bio-topic-information">
+
+        <div class="bio-info-heading">
+
+            <span>01</span>
+
+            <h2>
+                BIOCHEMISTRY
+                <em>ACRONYMS</em>
+            </h2>
+
+        </div>
+
+
+        <div class="bio-terms-list">
+
+
+            <div class="bio-term">
+
+                <strong>ATP</strong>
+
+                <span>
+                    Adenosine Triphosphate
+                </span>
+
+                <p>
+                    Main immediate energy-transfer molecule
+                    of cells.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ADP</strong>
+
+                <span>
+                    Adenosine Diphosphate
+                </span>
+
+                <p>
+                    Lower-energy form that can be converted
+                    to ATP.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>NAD⁺</strong>
+
+                <span>
+                    Nicotinamide Adenine Dinucleotide
+                </span>
+
+                <p>
+                    Electron-accepting coenzyme in metabolic
+                    reactions.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>NADH</strong>
+
+                <span>
+                    Reduced NAD⁺
+                </span>
+
+                <p>
+                    Electron-rich form used in cellular
+                    energy production.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>FAD</strong>
+
+                <span>
+                    Flavin Adenine Dinucleotide
+                </span>
+
+                <p>
+                    Redox coenzyme involved in metabolism.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>BSA</strong>
+
+                <span>
+                    Bovine Serum Albumin
+                </span>
+
+                <p>
+                    Common protein standard/reagent used
+                    in biochemical assays.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>HDL</strong>
+
+                <span>
+                    High-Density Lipoprotein
+                </span>
+
+                <p>
+                    Transports cholesterol from tissues
+                    toward the liver.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>LDL</strong>
+
+                <span>
+                    Low-Density Lipoprotein
+                </span>
+
+                <p>
+                    Major carrier of cholesterol to
+                    peripheral tissues.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>AST / SGOT</strong>
+
+                <span>
+                    Aspartate Aminotransferase
+                </span>
+
+                <p>
+                    Enzyme measured in blood as a marker
+                    of tissue injury.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ALT / SGPT</strong>
+
+                <span>
+                    Alanine Aminotransferase
+                </span>
+
+                <p>
+                    Enzyme commonly measured to assess
+                    liver-cell injury.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             LEARNING LINKS
+        ================================================== -->
+
+        <div class="bio-topic-links">
+
+            <div class="bio-info-heading">
+
+                <span>02</span>
+
+                <h2>
+                    EXPLORE
+                    <em>FURTHER</em>
+                </h2>
+
+            </div>
+
+
+            <div class="bio-links-grid">
+
+
+                <!-- LibreTexts -->
+
+                <a
+                    href="https://chem.libretexts.org/Bookshelves/Biological_Chemistry"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        LIBRETEXTS
+                    </span>
+
+                    <strong>
+                        Biological Chemistry
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- NCBI Bookshelf -->
+
+                <a
+                    href="https://www.ncbi.nlm.nih.gov/books/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NCBI BOOKSHELF
+                    </span>
+
+                    <strong>
+                        Biomedical & Life Science Resources
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- Khan Academy -->
+
+                <a
+                    href="https://www.khanacademy.org/science/biology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        KHAN ACADEMY
+                    </span>
+
+                    <strong>
+                        Biology & Biochemistry Learning
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- OpenStax -->
+
+                <a
+                    href="https://openstax.org/subjects/science"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        OPENSTAX
+                    </span>
+
+                    <strong>
+                        Open Science Textbooks
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- Biochemical Society -->
+
+                <a
+                    href="https://www.biochemistry.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        BIOCHEMICAL SOCIETY
+                    </span>
+
+                    <strong>
+                        Biochemistry Resources
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- IUBMB -->
+
+                <a
+                    href="https://iubmb.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        IUBMB
+                    </span>
+
+                    <strong>
+                        International Union of Biochemistry
+                        and Molecular Biology
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            class="bio-topic-back"
+            onclick="closeBiochemistryTopic()"
+        >
+            ← BACK TO BIO LEARN
+        </button>
+
+
+    </div>
+
+</section>
+<!-- =====================================================
+     GENETICS DETAIL PAGE
+===================================================== -->
+
+<section
+    id="geneticsTopic"
+    class="bio-topic-detail"
+>
+
+    <div class="bio-topic-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="bio-topic-content">
+
+            <span class="bio-topic-eyebrow">
+                BIOQUEST KNOWLEDGE
+            </span>
+
+            <span class="bio-topic-category">
+                GENETICS
+            </span>
+
+            <h1>
+                GENETICS
+                <span>&amp; HEREDITY</span>
+            </h1>
+
+            <div class="bio-topic-line"></div>
+
+            <p class="bio-topic-introduction">
+                Genetics is the branch of biology that studies
+                heredity, variation and the transmission of
+                genetic information from one generation to another.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="bio-topic-hero-image genetics-image">
+
+            <img
+                src="images/genetics b.jpeg"
+                alt="Genetics"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ACRONYMS
+    ================================================== -->
+
+    <div class="bio-topic-information">
+
+        <div class="bio-info-heading">
+
+            <span>01</span>
+
+            <h2>
+                GENETICS
+                <em>ACRONYMS</em>
+            </h2>
+
+        </div>
+
+
+        <div class="bio-terms-list">
+
+            <div class="bio-term">
+
+                <strong>DNA</strong>
+
+                <span>
+                    Deoxyribonucleic Acid
+                </span>
+
+                <p>
+                    Main molecule storing hereditary information.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>RNA</strong>
+
+                <span>
+                    Ribonucleic Acid
+                </span>
+
+                <p>
+                    Nucleic acid involved in gene expression
+                    and protein synthesis.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>PCR</strong>
+
+                <span>
+                    Polymerase Chain Reaction
+                </span>
+
+                <p>
+                    Amplifies a selected DNA sequence.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>RT-PCR</strong>
+
+                <span>
+                    Reverse Transcription PCR
+                </span>
+
+                <p>
+                    Converts RNA to cDNA and then amplifies it.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>SNP</strong>
+
+                <span>
+                    Single Nucleotide Polymorphism
+                </span>
+
+                <p>
+                    Variation at a single nucleotide position.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>NGS</strong>
+
+                <span>
+                    Next-Generation Sequencing
+                </span>
+
+                <p>
+                    High-throughput DNA/RNA sequencing technology.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>bp</strong>
+
+                <span>
+                    Base Pair
+                </span>
+
+                <p>
+                    Pair of complementary nucleotides in
+                    double-stranded DNA.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>kb</strong>
+
+                <span>
+                    Kilobase
+                </span>
+
+                <p>
+                    Approximately 1,000 nucleotide bases.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>cDNA</strong>
+
+                <span>
+                    Complementary DNA
+                </span>
+
+                <p>
+                    DNA synthesized using an RNA template.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>ORF</strong>
+
+                <span>
+                    Open Reading Frame
+                </span>
+
+                <p>
+                    DNA/RNA sequence that can potentially
+                    encode a protein.
+                </p>
+
+            </div>
+
+
+            <div class="bio-term">
+
+                <strong>BLAST</strong>
+
+                <span>
+                    Basic Local Alignment Search Tool
+                </span>
+
+                <p>
+                    Compares biological sequences to find
+                    similarities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LEARNING LINKS
+        ================================================== -->
+
+        <div class="bio-topic-links">
+
+            <div class="bio-info-heading">
+
+                <span>02</span>
+
+                <h2>
+                    EXPLORE
+                    <em>FURTHER</em>
+                </h2>
+
+            </div>
+
+
+            <div class="bio-links-grid">
+
+
+                <!-- MedlinePlus Genetics -->
+
+                <a
+                    href="https://medlineplus.gov/genetics/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        MEDLINEPLUS
+                    </span>
+
+                    <strong>
+                        Genetics
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- NHGRI -->
+
+                <a
+                    href="https://www.genome.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NHGRI
+                    </span>
+
+                    <strong>
+                        National Human Genome Research Institute
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- NCBI -->
+
+                <a
+                    href="https://www.ncbi.nlm.nih.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NCBI
+                    </span>
+
+                    <strong>
+                        National Center for Biotechnology Information
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- NCBI Bookshelf -->
+
+                <a
+                    href="https://www.ncbi.nlm.nih.gov/books/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NCBI BOOKSHELF
+                    </span>
+
+                    <strong>
+                        Genetics & Molecular Biology Resources
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- Nature Education -->
+
+                <a
+                    href="https://www.nature.com/scitable/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        NATURE EDUCATION
+                    </span>
+
+                    <strong>
+                        Genetics & Molecular Biology
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- Khan Academy -->
+
+                <a
+                    href="https://www.khanacademy.org/science/biology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        KHAN ACADEMY
+                    </span>
+
+                    <strong>
+                        Biology & Genetics
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- EMBL-EBI -->
+
+                <a
+                    href="https://www.ebi.ac.uk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        EMBL-EBI
+                    </span>
+
+                    <strong>
+                        European Bioinformatics Institute
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+                <!-- Genome.gov Education -->
+
+                <a
+                    href="https://www.genome.gov/about-genomics/fact-sheets"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        GENOME.GOV
+                    </span>
+
+                    <strong>
+                        Genomics Fact Sheets
+                    </strong>
+
+                    <b>↗</b>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            class="bio-topic-back"
+            onclick="closeGeneticsTopic()"
+        >
+            ← BACK TO BIO LEARN
+        </button>
+
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     WHY BIOQUEST — PROBLEM / SOLUTION / DIFFERENCE
+========================================================= -->
+
+<section class="why-bioquest" id="whyBioQuest">
+
+    <div class="why-bg-word">BIOQUEST</div>
+
+    <div class="why-header">
+
+        <div class="why-kicker">
+            <span class="kicker-line"></span>
+            WHY BIOQUEST
+            <span class="kicker-line"></span>
+        </div>
+
+        <h2>
+            FROM NUMBERS
+            <span>TO UNDERSTANDING.</span>
+        </h2>
+
+        <p>
+            We believe biological data should not simply be displayed.
+            It should be understood.
+        </p>
+
+    </div>
+    <div class="why-bioquest-logo">
+    <img src="images/bioquest logo b.png" alt="BioQuest">
+</div>
+
+
+    <div class="why-timeline">
+
+
+        <!-- ================= PROBLEM ================= -->
+
+        <article class="why-step">
+
+            <div class="step-marker">
+
+                <span class="step-number">01</span>
+
+                <span class="marker-dot"></span>
+
+            </div>
+
+            <div class="step-content">
+
+                <span class="step-label">
+                    THE PROBLEM
+                </span>
+
+                <h3>
+                    NUMBERS
+                    <em>WITHOUT</em>
+                    CONTEXT.
+                </h3>
+
+                <p>
+                    Laboratory reports contain valuable biological
+                    information, yet many of those numbers remain
+                    difficult to interpret without scientific context.
+                </p>
+
+                <div class="step-detail">
+                    <span></span>
+                    INFORMATION
+                    <b>01</b>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CONNECTOR -->
+
+        <div class="timeline-connector">
+            <span></span>
+        </div>
+
+
+        <!-- ================= SOLUTION ================= -->
+
+        <article class="why-step featured">
+
+            <div class="step-marker">
+
+                <span class="step-number">02</span>
+
+                <span class="marker-dot"></span>
+
+            </div>
+
+            <div class="step-content">
+
+                <span class="step-label">
+                    OUR SOLUTION
+                </span>
+
+                <h3>
+                    TURNING
+                    <em>DATA</em>
+                    INTO BIOLOGY.
+                </h3>
+
+                <p>
+                    BioQuest connects selected laboratory parameters
+                    with biological meaning, allowing users to explore
+                    what their values represent.
+                </p>
+
+                <div class="step-detail">
+                    <span></span>
+                    INTERPRETATION
+                    <b>02</b>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CONNECTOR -->
+
+        <div class="timeline-connector">
+            <span></span>
+        </div>
+
+
+        <!-- ================= DIFFERENCE ================= -->
+
+        <article class="why-step">
+
+            <div class="step-marker">
+
+                <span class="step-number">03</span>
+
+                <span class="marker-dot"></span>
+
+            </div>
+
+            <div class="step-content">
+
+                <span class="step-label">
+                    WHAT MAKES US DIFFERENT
+                </span>
+
+                <h3>
+                    WE DON'T JUST
+                    <em>SHOW</em>
+                    RESULTS.
+                </h3>
+
+                <p>
+                    We combine laboratory data, biological education
+                    and visual interpretation into one experience
+                    designed around understanding.
+                </p>
+
+                <div class="step-detail">
+                    <span></span>
+                    UNDERSTANDING
+                    <b>03</b>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <div class="why-footer">
+
+        <div class="footer-rule"></div>
+
+        <p>
+            YOUR HEALTH DATA SHOULD FEEL
+            <strong>UNDERSTANDABLE.</strong>
+        </p>
+
+        <div class="footer-rule"></div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     PRIVACY
+========================================================= -->
+
+<section class="privacy-section" id="privacy">
+
+    <div class="privacy-inner">
+
+        <div class="privacy-icon">
+            <span></span>
+        </div>
+
+        <div class="privacy-content">
+
+            <span class="privacy-label">
+                YOUR PRIVACY MATTERS
+            </span>
+
+            <h2>
+                YOUR DATA.
+                <span>YOUR CONTROL.</span>
+            </h2>
+
+            <p>
+                BioQuest is designed with privacy in mind.
+                Your health information is treated as personal data
+                and should only be used for the purpose you choose.
+            </p>
+
+        </div>
+
+        <div class="privacy-mark">
+            <span>PRIVATE</span>
+            <span>BY DESIGN</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     FOOTER
+================================================= -->
+
+<footer>
+
+    <span>
+        © 2026 BIOCHECK
+    </span>
+
+    <span>
+        BIOLOGICAL INTELLIGENCE
+    </span>
+
+</footer>
+
+
+
+<!-- =================================================
+     PDF.JS
+================================================= -->
+
+<script type="module">
+
+    import * as pdfjsLib from
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs";
+
+
+    window.pdfjsLib = pdfjsLib;
+
+</script>
+
+
+<!-- MAIN JAVASCRIPT -->
+ <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

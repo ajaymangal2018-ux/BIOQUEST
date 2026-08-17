@@ -1,0 +1,11243 @@
+/* =========================================================
+   BIOCHECK FULL UPGRADE STYLES
+   Additive stylesheet — keeps the existing BioCheck theme.
+========================================================= */
+
+/* SEX / REFERENCE PROFILE */
+.sex-selector-card {
+    margin-top: 35px;
+    max-width: 800px;
+    padding: 25px 28px;
+    border: 1px solid rgba(41,33,27,0.10);
+    background: #FFF8EF;
+    box-shadow: 0 10px 30px rgba(75,52,35,0.05);
+}
+
+.sex-selector-label {
+    color: #687C70;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.sex-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.sex-option {
+    cursor: pointer;
+}
+
+.sex-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sex-option span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 145px;
+    padding: 12px 20px;
+    border: 1px solid rgba(69,92,81,0.25);
+    border-radius: 30px;
+    color: #455C51;
+    background: rgba(255,255,255,0.35);
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.sex-option span:hover {
+    border-color: #687C70;
+    transform: translateY(-2px);
+}
+
+.sex-option input:checked + span {
+    background: #687C70;
+    border-color: #687C70;
+    color: #FFF8EF;
+    box-shadow: 0 8px 20px rgba(104,124,112,0.15);
+}
+
+.sex-selector-note {
+    margin-top: 14px;
+    color: #796E64;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* SEX-SPECIFIC REFERENCE CARD */
+.parameter-reference {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(41,33,27,0.09);
+    color: #796E64;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.reference-sex-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.reference-sex-line + .reference-sex-line {
+    margin-top: 5px;
+}
+
+.reference-sex-line strong {
+    color: #455C51;
+    font-weight: 600;
+}
+
+.reference-selected {
+    margin-top: 9px;
+    color: #C8794F;
+    font-size: 9px;
+    letter-spacing: 0.6px;
+}
+
+/* ANALYZED COUNT / PROFILE */
+.parameter-heading > p:last-child {
+    text-align: right;
+}
+
+/* BIOLEARN */
+.biolearn-section {
+    padding: 120px 7%;
+    background: #E8D2BC;
+    color: #29211B;
+    border-top: 1px solid rgba(41,33,27,0.10);
+}
+
+.biolearn-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    line-height: 1.05;
+    font-weight: 500;
+    color: #29211B;
+}
+
+.biolearn-section h2 span {
+    color: #C8794F;
+}
+
+.biolearn-intro {
+    max-width: 650px;
+    margin-top: 25px;
+    color: #665D55;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.biolearn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 55px;
+}
+
+.biolearn-card {
+    padding: 30px;
+    min-height: 220px;
+    background: rgba(255,248,239,0.72);
+    border: 1px solid rgba(41,33,27,0.10);
+    box-shadow: 0 12px 30px rgba(75,52,35,0.06);
+    transition: 0.35s ease;
+}
+
+.biolearn-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(104,124,112,0.40);
+}
+
+.biolearn-card > span {
+    color: #687C70;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.biolearn-card h3 {
+    margin-top: 28px;
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 500;
+    color: #29211B;
+}
+
+.biolearn-card p {
+    margin-top: 14px;
+    color: #796E64;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.biolearn-disclaimer {
+    margin-top: 35px;
+    padding: 20px;
+    border-left: 3px solid #C8794F;
+    background: rgba(255,248,239,0.50);
+    color: #796E64;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.biolearn-disclaimer strong {
+    color: #455C51;
+}
+
+/* Make the existing dashboard's newer insight styles fit the light theme. */
+#biologicalInsights,
+#biologicalOverview,
+.overall-summary,
+.reference-info-panel {
+    color: #29211B;
+}
+
+.insights-heading h3,
+#biologicalOverview h3,
+.overall-summary h3,
+.reference-info-content h3 {
+    color: #29211B;
+}
+
+.insights-heading p,
+#biologicalOverview p,
+.overall-summary p,
+.reference-info-content p,
+.reference-warning,
+.insight-card p,
+.parameter-insight p {
+    color: #796E64;
+}
+
+.insight-card,
+.reference-warning {
+    background: rgba(255,248,239,0.70);
+    border-color: rgba(41,33,27,0.09);
+}
+
+.insight-card h4 {
+    color: #29211B;
+}
+
+.parameter-insight {
+    border-top-color: rgba(41,33,27,0.08);
+}
+
+.gauge-marker {
+    background: #FFFDF8;
+    border-color: #29211B;
+}
+
+.gauge-marker span {
+    color: #455C51;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+
+    .sex-selector-card {
+        padding: 22px;
+    }
+
+    .sex-options {
+        flex-direction: column;
+    }
+
+    .sex-option span {
+        width: 100%;
+    }
+
+    .reference-sex-line {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .biolearn-section {
+        padding: 90px 5%;
+    }
+
+    .biolearn-section h2 {
+        font-size: 45px;
+    }
+
+    .biolearn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .parameter-heading > p:last-child {
+        text-align: left;
+    }
+}
+/* =========================================================
+   BIOCHECK — REPORT SECTION
+========================================================= */
+
+#dashboardSection {
+    display: none;
+}
+
+.report-section {
+    width: 100%;
+    padding: 120px 6vw 140px;
+    background: var(--bg, #0a0a09);
+    color: var(--paper, #e8e3da);
+}
+
+.report-container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.report-header {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.report-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.report-header h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: 0.9;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.report-header h2 span {
+    display: block;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.report-header p {
+    max-width: 560px;
+
+    margin-top: 28px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   OVERALL RESULT
+========================================================= */
+
+.overall-report-card {
+    padding: 42px;
+
+    margin-bottom: 24px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154,122,86,.08),
+            rgba(255,255,255,.015)
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.overall-report-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: var(--champagne, #9a7a56);
+}
+
+.overall-label {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted, #8f8a82);
+}
+
+.overall-report-card h3 {
+    margin: 14px 0 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 600;
+}
+
+.overall-report-card p {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    margin-bottom: 90px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+
+    background: var(--line, rgba(232,227,218,.12));
+}
+
+.summary-card {
+    min-height: 180px;
+
+    padding: 28px;
+
+    background: var(--bg-soft, #11110f);
+}
+
+.summary-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 46px;
+    line-height: 1;
+
+    color: var(--paper, #e8e3da);
+}
+
+.summary-label {
+    display: block;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.summary-card p {
+    margin-top: 14px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: var(--muted-2, #68645d);
+}
+
+
+/* =========================================================
+   RESULTS HEADING
+========================================================= */
+
+.results-heading {
+    margin-bottom: 30px;
+}
+
+.results-heading span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.results-heading h3 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PARAMETER RESULTS
+========================================================= */
+
+.parameter-results {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 80px;
+}
+
+
+/* =========================================================
+   PARAMETER CARD
+========================================================= */
+
+.parameter-card {
+    padding: 30px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+
+    background: var(--bg-soft, #11110f);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.parameter-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        var(--champagne-soft, rgba(154,122,86,.38));
+}
+
+.parameter-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.parameter-name {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.parameter-status {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+}
+
+.parameter-value {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    line-height: 1;
+}
+
+.parameter-unit {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   GAUGE
+========================================================= */
+
+.parameter-gauge {
+    margin: 25px 0;
+}
+
+.gauge-labels {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 8px;
+    letter-spacing: .12em;
+
+    color: var(--muted-2, #68645d);
+}
+
+.gauge-track {
+    position: relative;
+
+    display: flex;
+
+    height: 6px;
+
+    overflow: visible;
+
+    border-radius: 10px;
+
+    background: #24231f;
+}
+
+.gauge-low,
+.gauge-normal,
+.gauge-high {
+    height: 100%;
+}
+
+.gauge-low {
+    width: 25%;
+}
+
+.gauge-normal {
+    width: 50%;
+    background: #6f715f;
+}
+
+.gauge-high {
+    width: 25%;
+}
+
+.gauge-marker {
+    position: absolute;
+
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        var(--paper, #e8e3da);
+
+    border: 2px solid
+        var(--bg-soft, #11110f);
+}
+
+.gauge-marker span {
+    position: absolute;
+
+    top: 18px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    white-space: nowrap;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 9px;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   REFERENCE / EXPLANATION
+========================================================= */
+
+.parameter-reference {
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top:
+        1px solid var(--line, rgba(232,227,218,.12));
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    line-height: 1.6;
+
+    color: var(--muted, #8f8a82);
+}
+
+.parameter-reference strong {
+    color: var(--paper, #e8e3da);
+}
+
+.parameter-explanation {
+    margin-top: 20px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.parameter-insight {
+    margin-top: 24px;
+    padding: 18px;
+
+    background: rgba(154,122,86,.05);
+
+    border-left:
+        1px solid var(--champagne, #9a7a56);
+}
+
+.insight-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 9px;
+    letter-spacing: .16em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.parameter-insight p {
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    line-height: 1.6;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   REFERENCE PANEL
+========================================================= */
+
+.reference-info-panel {
+    padding: 32px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+}
+
+.reference-info-title {
+    margin-bottom: 14px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .18em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.reference-info-content p {
+    max-width: 850px;
+
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 12px;
+    line-height: 1.8;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.report-disclaimer {
+    padding: 25px;
+
+    margin-bottom: 35px;
+
+    background: rgba(255,255,255,.025);
+
+    border: 1px solid var(--line, rgba(232,227,218,.08));
+}
+
+.report-disclaimer span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 9px;
+    letter-spacing: .18em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.report-disclaimer p {
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    line-height: 1.7;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.report-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download-report-btn {
+    padding: 16px 25px;
+
+    border: 1px solid
+        var(--champagne, #9a7a56);
+
+    background: transparent;
+
+    color: var(--paper, #e8e3da);
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .16em;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.download-report-btn span {
+    margin-right: 8px;
+
+    font-size: 16px;
+}
+
+.download-report-btn:hover {
+    background:
+        var(--champagne, #9a7a56);
+
+    color:
+        var(--bg, #0a0a09);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .report-section {
+        padding: 80px 20px 100px;
+    }
+
+    .overall-report-card {
+        padding: 28px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .parameter-results {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        min-height: 140px;
+    }
+
+    .report-header h2 {
+        font-size: 52px;
+    }
+
+    .parameter-card {
+        padding: 22px;
+    }
+
+    .report-actions {
+        justify-content: stretch;
+    }
+
+    .download-report-btn {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   BIOCHECK — REPORT SECTION
+========================================================= */
+
+#dashboardSection {
+    display: none;
+}
+
+.report-section {
+    width: 100%;
+    padding: 120px 6vw 140px;
+
+    background: var(--bg, #0a0a09);
+    color: var(--paper, #e8e3da);
+}
+
+.report-container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   REPORT HEADER
+========================================================= */
+
+.report-header {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.report-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.report-header h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: .9;
+    font-weight: 500;
+    letter-spacing: -.03em;
+}
+
+.report-header h2 span {
+    display: block;
+    color: var(--champagne, #9a7a56);
+}
+
+.report-header p {
+    max-width: 560px;
+
+    margin-top: 28px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   OVERALL RESULT
+========================================================= */
+
+.overall-report-card {
+    position: relative;
+
+    padding: 42px;
+    margin-bottom: 24px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154,122,86,.08),
+            rgba(255,255,255,.015)
+        );
+}
+
+.overall-report-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: var(--champagne, #9a7a56);
+}
+
+.overall-label {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .2em;
+
+    color: var(--muted, #8f8a82);
+}
+
+.overall-report-card h3 {
+    margin: 14px 0 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 600;
+}
+
+.overall-report-card p {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    margin-bottom: 90px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+
+    background: var(--line, rgba(232,227,218,.12));
+}
+
+.summary-card {
+    min-height: 180px;
+
+    padding: 28px;
+
+    background: var(--bg-soft, #11110f);
+}
+
+.summary-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 46px;
+    line-height: 1;
+
+    color: var(--paper, #e8e3da);
+}
+
+.summary-label {
+    display: block;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .18em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.summary-card p {
+    margin-top: 14px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: var(--muted-2, #68645d);
+}
+
+
+/* =========================================================
+   PARAMETER HEADING
+========================================================= */
+
+.results-heading {
+    margin-bottom: 30px;
+}
+
+.results-heading span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .2em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.results-heading h3 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PARAMETER RESULTS GRID
+========================================================= */
+
+.parameter-results {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 80px;
+}
+
+
+/* =========================================================
+   PARAMETER CARD
+========================================================= */
+
+.parameter-card {
+    padding: 30px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+
+    background: var(--bg-soft, #11110f);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.parameter-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        var(--champagne-soft, rgba(154,122,86,.38));
+}
+
+.parameter-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.parameter-name {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.parameter-status {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+}
+
+.parameter-value {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    line-height: 1;
+}
+
+.parameter-unit {
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   GAUGE
+========================================================= */
+
+.parameter-gauge {
+    margin: 25px 0;
+}
+
+.gauge-labels {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 8px;
+    letter-spacing: .12em;
+
+    color: var(--muted-2, #68645d);
+}
+
+.gauge-track {
+    position: relative;
+
+    display: flex;
+
+    height: 6px;
+
+    border-radius: 10px;
+
+    background: #24231f;
+}
+
+.gauge-low,
+.gauge-normal,
+.gauge-high {
+    height: 100%;
+}
+
+.gauge-low {
+    width: 25%;
+}
+
+.gauge-normal {
+    width: 50%;
+
+    background: #6f715f;
+}
+
+.gauge-high {
+    width: 25%;
+}
+
+.gauge-marker {
+    position: absolute;
+
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        var(--paper, #e8e3da);
+
+    border: 2px solid
+        var(--bg-soft, #11110f);
+}
+
+.gauge-marker span {
+    position: absolute;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 9px;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   PARAMETER INFORMATION
+========================================================= */
+
+.parameter-reference {
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top:
+        1px solid var(--line, rgba(232,227,218,.12));
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    line-height: 1.6;
+
+    color: var(--muted, #8f8a82);
+}
+
+.parameter-reference strong {
+    color: var(--paper, #e8e3da);
+}
+
+.parameter-explanation {
+    margin-top: 20px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.parameter-insight {
+    margin-top: 24px;
+    padding: 18px;
+
+    background: rgba(154,122,86,.05);
+
+    border-left:
+        1px solid var(--champagne, #9a7a56);
+}
+
+.insight-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 9px;
+    letter-spacing: .16em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.parameter-insight p {
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    line-height: 1.6;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   REFERENCE PANEL
+========================================================= */
+
+.reference-info-panel {
+    padding: 32px;
+    margin-bottom: 30px;
+
+    border: 1px solid var(--line, rgba(232,227,218,.12));
+}
+
+.reference-info-title {
+    margin-bottom: 14px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .18em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.reference-info-content p {
+    max-width: 850px;
+
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 12px;
+    line-height: 1.8;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.report-disclaimer {
+    padding: 25px;
+    margin-bottom: 35px;
+
+    background: rgba(255,255,255,.025);
+
+    border: 1px solid
+        var(--line, rgba(232,227,218,.08));
+}
+
+.report-disclaimer span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 9px;
+    letter-spacing: .18em;
+
+    color: var(--champagne, #9a7a56);
+}
+
+.report-disclaimer p {
+    margin: 0;
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 11px;
+    line-height: 1.7;
+
+    color: var(--muted, #8f8a82);
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.report-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download-report-btn {
+    padding: 16px 25px;
+
+    border: 1px solid
+        var(--champagne, #9a7a56);
+
+    background: transparent;
+
+    color: var(--paper, #e8e3da);
+
+    font-family: var(--sans, Arial, sans-serif);
+    font-size: 10px;
+    letter-spacing: .16em;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.download-report-btn span {
+    margin-right: 8px;
+
+    font-size: 16px;
+}
+
+.download-report-btn:hover {
+    background:
+        var(--champagne, #9a7a56);
+
+    color:
+        var(--bg, #0a0a09);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .report-section {
+        padding: 80px 20px 100px;
+    }
+
+    .overall-report-card {
+        padding: 28px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .parameter-results {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        min-height: 140px;
+    }
+
+    .report-header h2 {
+        font-size: 52px;
+    }
+
+    .parameter-card {
+        padding: 22px;
+    }
+
+    .report-actions {
+        justify-content: stretch;
+    }
+
+    .download-report-btn {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   BIOCHECK — REPORT SECTION
+========================================================= */
+
+.report-section {
+    display: none;
+    width: 100%;
+    padding: 120px 6vw;
+    background: var(--bg);
+    color: var(--paper);
+}
+
+.report-container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   REPORT HEADER
+========================================================= */
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.report-eyebrow,
+.section-heading > span,
+.reference-info-content > span,
+.report-download span,
+.overall-label {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--champagne);
+}
+
+.report-header h2 {
+    margin: 18px 0 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.82;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.report-header h2 span {
+    color: var(--champagne);
+}
+
+.report-header p {
+    max-width: 520px;
+    margin: 25px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   AWARENESS SCORE
+========================================================= */
+
+.report-score-box {
+    min-width: 170px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    text-align: center;
+}
+
+.report-score-box span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.report-score-box strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.report-score-box small {
+    font-size: 18px;
+    color: var(--champagne);
+}
+
+
+/* =========================================================
+   OVERALL RESULT
+========================================================= */
+
+.overall-result-card {
+    padding: 42px;
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+}
+
+.overall-result-card h3 {
+    margin: 12px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+}
+
+.overall-result-card p {
+    max-width: 760px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   COUNTERS
+========================================================= */
+
+.report-counters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-bottom: 100px;
+    background: var(--line);
+}
+
+.counter-card {
+    padding: 30px;
+    background: var(--bg);
+}
+
+.counter-number {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+}
+
+.counter-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h3 {
+    margin: 12px 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PARAMETER RESULTS
+========================================================= */
+
+.parameter-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.parameter-card {
+    padding: 30px;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.parameter-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--champagne-soft);
+}
+
+.parameter-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parameter-name {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.parameter-status {
+    font-size: 12px;
+}
+
+.parameter-value {
+    margin: 22px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+}
+
+.parameter-unit {
+    font-family: inherit;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   GAUGE
+========================================================= */
+
+.parameter-gauge {
+    margin: 20px 0;
+}
+
+.gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+.gauge-track {
+    position: relative;
+    display: flex;
+    height: 6px;
+    overflow: visible;
+    border-radius: 20px;
+}
+
+.gauge-low {
+    width: 30%;
+    background: #6f5550;
+}
+
+.gauge-normal {
+    width: 40%;
+    background: #65715d;
+}
+
+.gauge-high {
+    width: 30%;
+    background: #80634f;
+}
+
+.gauge-marker {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--paper);
+    border-radius: 50%;
+    background: var(--bg);
+}
+
+.gauge-marker span {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 9px;
+    color: var(--paper);
+}
+
+
+/* =========================================================
+   PARAMETER DETAILS
+========================================================= */
+
+.parameter-reference {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.parameter-reference strong {
+    color: var(--paper);
+    font-weight: 500;
+}
+
+.parameter-explanation {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.parameter-insight {
+    margin-top: 20px;
+    padding: 18px;
+    border-left: 1px solid var(--champagne);
+    background: rgba(154, 122, 86, 0.05);
+}
+
+.insight-label {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: var(--champagne);
+}
+
+.parameter-insight p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   REFERENCE PANEL
+========================================================= */
+
+.reference-info-panel {
+    margin-top: 100px;
+    padding: 45px;
+    border: 1px solid var(--line);
+}
+
+.reference-info-content h3 {
+    margin: 12px 0 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.reference-info-content p {
+    max-width: 800px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+.report-download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+    padding: 35px 40px;
+    background: var(--paper);
+    color: var(--bg);
+}
+
+.report-download h3 {
+    margin: 10px 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.download-report-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 24px;
+    border: none;
+    background: var(--bg);
+    color: var(--paper);
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    transition: transform 0.3s ease;
+}
+
+.download-report-btn:hover {
+    transform: translateY(-3px);
+}
+
+.download-report-btn span {
+    color: var(--champagne);
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.report-disclaimer {
+    margin-top: 30px;
+    padding: 25px 0;
+    border-top: 1px solid var(--line);
+}
+
+.report-disclaimer strong {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--champagne);
+}
+
+.report-disclaimer p {
+    max-width: 850px;
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .report-section {
+        padding: 80px 5vw;
+    }
+
+    .report-header {
+        display: block;
+    }
+
+    .report-score-box {
+        margin-top: 35px;
+        width: 100%;
+    }
+
+    .parameter-results {
+        grid-template-columns: 1fr;
+    }
+
+    .report-counters {
+        margin-bottom: 70px;
+    }
+
+    .report-download {
+        display: block;
+    }
+
+    .download-report-btn {
+        margin-top: 25px;
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .report-header h2 {
+        font-size: 52px;
+    }
+
+    .overall-result-card,
+    .reference-info-panel {
+        padding: 28px;
+    }
+
+    .report-counters {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================================
+   REPORT STATUS STYLING
+========================================================= */
+
+.parameter-card:has(.parameter-status:nth-child(1)) {
+    transition: all 0.3s ease;
+}
+
+.parameter-card[data-status="normal"] {
+    border-color: rgba(100, 130, 90, 0.35);
+}
+
+.parameter-card[data-status="monitor"] {
+    border-color: rgba(180, 150, 70, 0.4);
+}
+
+.parameter-card[data-status="attention"] {
+    border-color: rgba(150, 80, 70, 0.45);
+}
+
+
+/* Status text */
+
+.parameter-card[data-status="normal"] .parameter-status {
+    color: #9baa8d;
+}
+
+.parameter-card[data-status="monitor"] .parameter-status {
+    color: #c6a85c;
+}
+
+.parameter-card[data-status="attention"] .parameter-status {
+    color: #b8796d;
+}
+/* =========================================================
+   REPORT ENTRANCE ANIMATION
+========================================================= */
+
+.report-section {
+    animation: reportReveal 0.8s ease both;
+}
+
+@keyframes reportReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Cards appear individually */
+
+.parameter-card {
+    animation: parameterReveal 0.7s ease both;
+}
+
+@keyframes parameterReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/* =========================================================
+   BACK TO DATA BUTTON
+========================================================= */
+
+.back-to-data-btn {
+    position: absolute;
+    top: 30px;
+    right: 0;
+
+    padding: 10px 16px;
+
+    border: 1px solid var(--line);
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 9px;
+    letter-spacing: 0.15em;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-to-data-btn:hover {
+    color: var(--paper);
+    border-color: var(--champagne);
+    transform: translateY(-2px);
+}
+
+.report-container {
+    position: relative;
+}
+/* =========================================================
+   BIOLEARN
+========================================================= */
+
+.biolearn-section {
+    display: none;
+    width: 100%;
+    padding: 100px 6vw;
+    background: var(--bg);
+    color: var(--paper);
+}
+
+.biolearn-container {
+    width: min(1200px, 100%);
+    margin: auto;
+}
+
+.biolearn-eyebrow,
+.biolearn-content-header > span,
+.bio-related-section > span,
+.how-to-read > span,
+.bio-profile > span {
+    font-size: 10px;
+    letter-spacing: .2em;
+    color: var(--champagne);
+}
+
+.biolearn-header h2 {
+    margin: 15px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: .85;
+    font-weight: 500;
+}
+
+.biolearn-header h2 span {
+    color: var(--champagne);
+}
+
+.biolearn-header p {
+    max-width: 600px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* CHOICES */
+
+.biolearn-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 60px 0;
+}
+
+.biolearn-choice {
+    padding: 35px;
+    text-align: left;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    color: var(--paper);
+    cursor: pointer;
+}
+
+.biolearn-choice span {
+    display: block;
+    margin-bottom: 35px;
+    color: var(--champagne);
+}
+
+.biolearn-choice strong {
+    display: block;
+    font-size: 18px;
+    letter-spacing: .08em;
+}
+
+.biolearn-choice small {
+    display: block;
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+
+/* CONTENT */
+
+.biolearn-content {
+    display: none;
+}
+
+.biolearn-content-header {
+    margin-bottom: 30px;
+}
+
+.biolearn-content-header h3,
+.bio-related-section h3,
+.how-to-read h3,
+.bio-profile h3 {
+    margin-top: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+
+/* PARAMETERS */
+
+.bio-parameter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.bio-parameter-card {
+    padding: 25px;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    cursor: pointer;
+}
+
+.bio-parameter-card strong {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+}
+
+.bio-parameter-card span {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* DETAIL */
+
+.bio-parameter-detail {
+    display: none;
+    position: relative;
+    margin-top: 30px;
+    padding: 40px;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+}
+
+.close-bio-detail {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.bio-parameter-detail > span {
+    color: var(--champagne);
+    font-size: 9px;
+    letter-spacing: .2em;
+}
+
+.bio-parameter-detail h3 {
+    margin: 10px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.bio-parameter-detail > p {
+    max-width: 800px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.bio-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.bio-detail-grid > div {
+    padding: 20px;
+    border: 1px solid var(--line);
+}
+
+.bio-detail-grid span {
+    color: var(--champagne);
+    font-size: 9px;
+    letter-spacing: .15em;
+}
+
+.bio-detail-grid p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* RELATED */
+
+.bio-related-section {
+    margin-top: 90px;
+}
+
+.bio-related-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.bio-related-group {
+    padding: 25px;
+    border: 1px solid var(--line);
+}
+
+.bio-related-group strong {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.bio-related-group span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* READING */
+
+.how-to-read {
+    margin-top: 90px;
+}
+
+.reading-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 30px;
+    background: var(--line);
+}
+
+.reading-steps > div {
+    padding: 25px;
+    background: var(--bg);
+}
+
+.reading-steps strong {
+    color: var(--champagne);
+}
+
+.reading-steps h4 {
+    margin-bottom: 8px;
+}
+
+.reading-steps p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* PROFILE */
+
+.bio-profile {
+    margin-top: 90px;
+    padding: 40px;
+    border: 1px solid var(--line);
+}
+
+.bio-profile p {
+    max-width: 700px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.build-profile-btn {
+    margin-top: 20px;
+    padding: 14px 22px;
+    border: 1px solid var(--champagne);
+    background: transparent;
+    color: var(--paper);
+    cursor: pointer;
+}
+
+.bio-profile-result {
+    margin-top: 30px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .biolearn-choices,
+    .bio-parameter-grid,
+    .bio-related-groups,
+    .reading-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .bio-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================
+   NO REPORT SECTION
+========================================= */
+
+.no-report-section {
+    width: 100%;
+    margin-top: 70px;
+    padding: 70px 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.no-report-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.section-eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: 0.55;
+    margin-bottom: 20px;
+}
+
+.no-report-content h2 {
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 0.95;
+    margin: 0 0 25px;
+    font-weight: 600;
+}
+
+.no-report-content p {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.65;
+    margin-bottom: 35px;
+}
+
+.no-report-btn {
+    border: 1px solid rgba(255,255,255,0.3);
+    background: transparent;
+    color: inherit;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.no-report-btn:hover {
+    background: white;
+    color: black;
+}
+/* Container & Section */
+#healthProfileSection {
+    background-color: #fdfaf5; /* Soft cream background */
+    color: #29211b;
+    padding: 100px 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.health-profile-container {
+    max-width: 900px;
+    width: 100%;
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Typography */
+.profile-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile-eyebrow {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #8c7d70;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.profile-heading h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #29211b;
+}
+
+.profile-heading p {
+    font-size: 18px;
+    color: #63584e;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Form Layout */
+.profile-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.profile-field.full-width {
+    grid-column: span 2;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8c7d70;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Input Fields */
+.profile-field input, 
+.profile-field select {
+    padding: 15px 20px;
+    border: 1.5px solid #eeebe6;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: #faf9f7;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.profile-field input:focus, 
+.profile-field select:focus {
+    border-color: #29211b;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(41, 33, 27, 0.05);
+}
+
+/* Sex Selection Toggles */
+.sex-options {
+    display: flex;
+    gap: 15px;
+}
+
+.sex-option {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+}
+
+.sex-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.sex-option span {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    background: #faf9f7;
+    border: 1.5px solid #eeebe6;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.sex-option input:checked + span {
+    background: #29211b;
+    color: #fff;
+    border-color: #29211b;
+}
+
+/* Buttons */
+.profile-continue-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: #29211b;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.profile-continue-btn:hover {
+    background-color: #40342a;
+    transform: translateY(-2px);
+}
+
+.download-health-profile-btn {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    color: #29211b;
+    border: 2px solid #29211b;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.download-health-profile-btn:hover {
+    background-color: #29211b;
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .profile-form {
+        grid-template-columns: 1fr;
+    }
+    .profile-field.full-width {
+        grid-column: span 1;
+    }
+    .health-profile-container {
+        padding: 30px 20px;
+    }
+    .profile-heading h2 {
+        font-size: 32px;
+    }
+}
+/* =========================================================
+   RIGHT SUMMARY PANEL
+========================================================= */
+
+.health-profile-container
+.health-results {
+
+    padding:
+        48px 38px;
+
+    border-left:
+        1px solid
+        rgba(
+            180,
+            137,
+            62,
+            0.20
+        );
+
+    background:
+        rgba(
+            249,
+            243,
+            231,
+            0.65
+        );
+}
+
+
+/* =========================================================
+   SUMMARY HEADING
+========================================================= */
+
+.health-results::before {
+
+    content:
+        "YOUR HEALTH SUMMARY";
+
+    display: block;
+
+    margin-bottom: 26px;
+
+    font-family:
+        var(
+            --sans,
+            "Montserrat",
+            Arial,
+            sans-serif
+        );
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.20em;
+
+    color: #40362b;
+}
+
+
+/* =========================================================
+   HEALTH INDEX
+========================================================= */
+
+.health-index-card {
+
+    grid-column:
+        1 / -1;
+
+    padding:
+        30px 25px;
+
+    margin-bottom: 16px;
+
+    border:
+        1px solid
+        #e3d3b9;
+
+    border-radius: 13px;
+
+    background:
+        rgba(
+            255,
+            253,
+            247,
+            0.82
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            100,
+            73,
+            31,
+            0.05
+        );
+}
+
+
+.health-index-top {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.health-index-title {
+
+    font-family:
+        var(
+            --sans,
+            "Montserrat",
+            Arial,
+            sans-serif
+        );
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.19em;
+
+    text-transform: uppercase;
+
+    color: #716457;
+}
+
+
+.health-index-score {
+
+    margin-top: 9px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 70px;
+
+    line-height: 0.85;
+
+    color: #33271d;
+}
+
+
+.health-index-bar {
+
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 18px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b52c24 0%,
+            #df9825 30%,
+            #d8c226 50%,
+            #76a13c 70%,
+            #3d7a43 100%
+        );
+}
+
+
+.health-index-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    margin-left: auto;
+
+    border-radius: inherit;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.68
+        );
+
+    transition:
+        width 1s ease;
+}
+
+
+.health-index-message {
+
+    margin-top: 14px;
+
+    font-family:
+        var(
+            --sans,
+            "Montserrat",
+            Arial,
+            sans-serif
+        );
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #776b5e;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.health-results {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap: 14px;
+
+    align-content: start;
+}
+
+
+.health-result-card {
+
+    min-height: 125px;
+
+    padding:
+        20px 16px;
+
+    border:
+        1px solid
+        #e4d5bc;
+
+    border-radius: 11px;
+
+    background:
+        rgba(
+            255,
+            253,
+            247,
+            0.75
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 18px
+        rgba(
+            100,
+            73,
+            31,
+            0.04
+        );
+
+    transition:
+        transform
+        0.25s ease,
+
+        box-shadow
+        0.25s ease;
+}
+
+
+.health-result-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            100,
+            73,
+            31,
+            0.08
+        );
+}
+
+
+.health-result-label {
+
+    font-family:
+        var(
+            --sans,
+            "Montserrat",
+            Arial,
+            sans-serif
+        );
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    color: #786b5c;
+}
+
+
+.health-result-value {
+
+    margin-top: 11px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    color: #34291f;
+}
+
+
+.health-result-value small {
+
+    font-family:
+        var(
+            --sans,
+            "Montserrat",
+            Arial,
+            sans-serif
+        );
+
+    font-size: 9px;
+
+    color: #837666;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .health-profile-container {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .health-profile-container
+    .health-results {
+
+        border-left: none;
+
+        border-top:
+            1px solid
+            rgba(
+                180,
+                137,
+                62,
+                0.20
+            );
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .health-profile-section {
+
+        padding:
+            65px 16px 75px;
+    }
+
+    .health-profile-header {
+
+        margin-bottom: 38px;
+    }
+
+    .health-profile-header h2 {
+
+        font-size: 50px;
+    }
+
+    .health-profile-header p {
+
+        font-size: 13px;
+    }
+
+    .health-profile-card {
+
+        padding:
+            32px 22px;
+    }
+
+    .health-profile-form {
+
+        grid-template-columns:
+            1fr;
+
+        row-gap: 22px;
+    }
+
+    .health-input-group.full-width {
+
+        grid-column: auto;
+    }
+
+    .health-profile-container
+    .health-results {
+
+        padding:
+            32px 22px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .health-profile-header h2 {
+
+        font-size: 43px;
+    }
+
+    .health-results {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .health-result-card {
+
+        min-height: 110px;
+
+        padding:
+            16px 8px;
+    }
+
+    .health-result-value {
+
+        font-size: 29px;
+    }
+}
+/* =========================================================
+   DOWNLOAD HEALTH PROFILE BUTTON
+========================================================= */
+
+.download-health-profile-btn {
+
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 14px;
+
+    border: 1px solid #b88a3b;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #8f631e;
+
+    font-family:
+        var(
+            --sans,
+            "Montserrat",
+            Arial,
+            sans-serif
+        );
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.20em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.download-health-profile-btn:hover {
+
+    background:
+        #b9852b;
+
+    color:
+        #fffaf0;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(174,116,24,0.18);
+}
+
+
+.download-health-profile-btn:active {
+
+    transform:
+        translateY(0);
+}
+/* =========================================================
+   BIOQUEST — BIO LEARN
+========================================================= */
+
+.bio-learn-section {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        110px 5vw 120px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(205,166,92,0.15),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(205,166,92,0.10),
+            transparent 30%
+        ),
+        #f5eee1;
+
+    color: #30271e;
+}
+
+
+/* subtle scientific circles */
+
+.bio-learn-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -220px;
+    top: 100px;
+
+    border:
+        1px solid
+        rgba(170,125,47,0.10);
+
+    border-radius: 50%;
+
+    box-shadow:
+        80px 60px 0 -45px
+        rgba(170,125,47,0.07);
+
+    pointer-events: none;
+}
+
+
+.bio-learn-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    right: -180px;
+    bottom: -130px;
+
+    border:
+        1px solid
+        rgba(170,125,47,0.08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.bio-learn-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin:
+        0 auto 65px;
+
+    text-align: center;
+}
+
+
+.bio-learn-eyebrow {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family:
+        var(--sans,
+        "Montserrat",
+        Arial,
+        sans-serif);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .30em;
+
+    color: #a7731d;
+}
+
+
+.bio-learn-eyebrow::after {
+
+    content: "✦";
+
+    display: block;
+
+    margin:
+        15px auto 0;
+
+    font-size: 12px;
+
+    color: #b78329;
+}
+
+
+.bio-learn-header h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            60px,
+            8vw,
+            100px
+        );
+
+    font-weight: 500;
+
+    line-height: .85;
+
+    letter-spacing: -.035em;
+
+    color: #2c2117;
+}
+
+
+.bio-learn-header p {
+
+    max-width: 650px;
+
+    margin:
+        25px auto 0;
+
+    font-family:
+        var(--sans,
+        "Montserrat",
+        Arial,
+        sans-serif);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #776b5d;
+}
+
+
+/* =========================================================
+   TOPIC GRID
+========================================================= */
+
+.bio-learn-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.bio-learn-card {
+
+    position: relative;
+
+    min-height: 255px;
+
+    padding:
+        25px 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: left;
+
+    border:
+        1px solid
+        rgba(176,132,55,0.28);
+
+    border-radius: 14px;
+
+    background:
+        rgba(
+            255,
+            253,
+            247,
+            .58
+        );
+
+    color: #332a21;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            90,
+            66,
+            30,
+            .055
+        );
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+
+.bio-learn-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(
+            176,
+            132,
+            55,
+            .65
+        );
+
+    background:
+        rgba(
+            255,
+            252,
+            244,
+            .90
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(
+            90,
+            66,
+            30,
+            .12
+        );
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.bio-card-number {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    color:
+        rgba(
+            153,
+            107,
+            29,
+            .55
+        );
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.bio-card-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    border:
+        1px solid
+        rgba(
+            177,
+            132,
+            53,
+            .40
+        );
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            196,
+            149,
+            60,
+            .08
+        );
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    color: #a7721c;
+
+    transition:
+        transform .35s ease;
+}
+
+
+.bio-learn-card:hover
+.bio-card-icon {
+
+    transform:
+        rotate(8deg)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.bio-learn-card h3 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    color: #34291f;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.bio-learn-card p {
+
+    margin:
+        12px 0 0;
+
+    max-width: 220px;
+
+    font-family:
+        var(--sans,
+        "Montserrat",
+        Arial,
+        sans-serif);
+
+    font-size: 11px;
+
+    line-height: 1.65;
+
+    color: #7d7061;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.bio-card-arrow {
+
+    margin-top: auto;
+
+    padding-top: 22px;
+
+    font-size: 18px;
+
+    color: #a7721c;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.bio-learn-card:hover
+.bio-card-arrow {
+
+    transform:
+        translateX(7px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .bio-learn-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .bio-learn-section {
+
+        padding:
+            75px 18px 85px;
+    }
+
+    .bio-learn-header {
+
+        margin-bottom: 45px;
+    }
+
+    .bio-learn-header h2 {
+
+        font-size: 55px;
+    }
+
+    .bio-learn-header p {
+
+        font-size: 13px;
+    }
+
+    .bio-learn-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 14px;
+    }
+
+    .bio-learn-card {
+
+        min-height: 220px;
+    }
+
+}
+/* =========================================================
+   IDEA SECTION — BIOLOGICAL HEALTH VISUAL
+========================================================= */
+
+.idea-visual {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 60px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* soft premium glow */
+
+.idea-visual::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 65%;
+
+    height: 65%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190, 150, 82, .18),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    z-index: 0;
+}
+
+
+/* image */
+
+.idea-health-image {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 950px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    mix-blend-mode: multiply;
+
+    filter:
+        contrast(.98)
+        saturate(.92);
+
+    box-shadow:
+        0 30px 70px
+        rgba(70, 50, 25, .13);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+
+/* elegant hover */
+
+.idea-visual:hover .idea-health-image {
+
+    transform:
+        translateY(-6px)
+        scale(1.015);
+
+    box-shadow:
+        0 40px 90px
+        rgba(70, 50, 25, .18);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .idea-visual {
+
+        margin-top: 35px;
+
+        padding: 10px;
+    }
+
+    .idea-health-image {
+
+        border-radius: 14px;
+    }
+
+}
+.bio-card-icon {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 252, 245, 0.8);
+
+    border: 1px solid rgba(166, 123, 62, 0.2);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.bio-card-icon img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.bio-learn-card:hover .bio-card-icon {
+    transform: translateY(-5px);
+
+    border-color: rgba(166, 123, 62, 0.45);
+
+    box-shadow:
+        0 12px 30px rgba(70, 50, 25, 0.12);
+}
+
+.bio-learn-card:hover .bio-card-icon img {
+    transform: scale(1.08);
+}
+/* =========================================================
+   BIOQUEST GOAL TRACKER
+========================================================= */
+
+.goal-tracker-section {
+
+    position: relative;
+
+    padding: 120px 7vw 130px;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(184, 145, 88, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(184, 145, 88, 0.08),
+            transparent 32%
+        ),
+        #f7f1e6;
+
+    color: #211d18;
+
+    overflow: hidden;
+}
+
+
+.goal-tracker-label {
+
+    margin-bottom: 55px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.18em;
+
+    color: #a27a42;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.goal-tracker-heading {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(280px, 0.8fr);
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 65px;
+}
+
+
+.goal-eyebrow {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+
+    letter-spacing: 0.15em;
+
+    color: #987142;
+}
+
+
+.goal-tracker-heading h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(48px, 6vw, 88px);
+
+    line-height: 0.92;
+
+    font-weight: 600;
+
+    letter-spacing: -0.03em;
+}
+
+
+.goal-tracker-heading h2 span {
+
+    color: #b17645;
+}
+
+
+.goal-tracker-heading > p {
+
+    margin: 0;
+
+    max-width: 430px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #776f65;
+}
+
+
+/* =========================================================
+   CREATE GOAL BOX
+========================================================= */
+
+.goal-creator {
+
+    padding: 35px;
+
+    margin-bottom: 45px;
+
+    border: 1px solid rgba(155, 117, 67, 0.25);
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 252, 246, 0.72);
+
+    box-shadow:
+        0 20px 60px rgba(74, 52, 27, 0.07);
+}
+
+
+.goal-creator-title {
+
+    margin-bottom: 28px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.17em;
+
+    color: #9b713d;
+
+    font-weight: 600;
+}
+
+
+.goal-form {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        1fr
+        auto;
+
+    gap: 18px;
+
+    align-items: end;
+}
+
+
+.goal-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.goal-field label {
+
+    font-size: 11px;
+
+    letter-spacing: 0.13em;
+
+    color: #766d62;
+
+    font-weight: 600;
+}
+
+
+.goal-field input,
+.goal-field select {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(120, 91, 52, 0.22);
+
+    border-radius: 12px;
+
+    background: #fffdf8;
+
+    color: #29241e;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.goal-field input:focus,
+.goal-field select:focus {
+
+    border-color: #b4844d;
+
+    box-shadow:
+        0 0 0 3px rgba(180, 132, 77, 0.10);
+}
+
+
+.create-goal-btn {
+
+    height: 52px;
+
+    padding: 0 25px;
+
+    border: 1px solid #a9773e;
+
+    border-radius: 12px;
+
+    background: #a9773e;
+
+    color: #fffaf1;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.create-goal-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: #8f6231;
+
+    box-shadow:
+        0 10px 25px rgba(100, 70, 30, 0.18);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.goals-empty {
+
+    padding: 75px 30px;
+
+    text-align: center;
+
+    border: 1px dashed rgba(155, 117, 67, 0.28);
+
+    border-radius: 25px;
+
+    color: #9b9185;
+}
+
+
+.goals-empty span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.16em;
+
+    color: #9b713d;
+}
+
+
+.goals-empty p {
+
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   GOAL CARDS
+========================================================= */
+
+.goals-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+.goal-card {
+
+    position: relative;
+
+    padding: 32px;
+
+    min-height: 280px;
+
+    border: 1px solid rgba(155, 117, 67, 0.22);
+
+    border-radius: 24px;
+
+    background: #fcf8f0;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.goal-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 50px rgba(74, 52, 27, 0.10);
+}
+
+
+.goal-card-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 28px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    color: #b08a55;
+}
+
+
+.goal-card-type {
+
+    margin-bottom: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.16em;
+
+    color: #a27743;
+
+    font-weight: 600;
+}
+
+
+.goal-card h3 {
+
+    margin: 0 0 12px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 32px;
+
+    font-weight: 600;
+}
+
+
+.goal-target {
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+
+    color: #766d63;
+}
+
+
+.goal-progress-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    font-size: 12px;
+
+    color: #756c62;
+}
+
+
+.goal-progress-percent {
+
+    color: #a6733c;
+
+    font-weight: 600;
+}
+
+
+.goal-progress {
+
+    width: 100%;
+
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e7dfd2;
+}
+
+
+.goal-progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b88348,
+            #d0a56c
+        );
+
+    transition:
+        width .7s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.goal-update-row {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.goal-update-row input {
+
+    flex: 1;
+
+    height: 44px;
+
+    padding: 0 13px;
+
+    border: 1px solid rgba(120, 91, 52, 0.20);
+
+    border-radius: 10px;
+
+    background: #fffdf9;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+
+.goal-update-btn {
+
+    height: 44px;
+
+    padding: 0 18px;
+
+    border: 1px solid #a9773e;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #93652f;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    letter-spacing: .08em;
+
+    transition: all .25s ease;
+}
+
+
+.goal-update-btn:hover {
+
+    background: #a9773e;
+
+    color: white;
+}
+
+
+.goal-delete {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    right: 28px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #aaa096;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.goal-delete:hover {
+
+    color: #9a553f;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.goal-tracker-note {
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(120, 91, 52, 0.15);
+
+    color: #8b8176;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .goal-tracker-heading {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .goal-form {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .create-goal-btn {
+
+        width: 100%;
+    }
+
+    .goals-grid {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .goal-tracker-section {
+
+        padding: 80px 6vw;
+    }
+
+    .goal-tracker-heading h2 {
+
+        font-size: 50px;
+    }
+
+    .goal-creator {
+
+        padding: 25px;
+    }
+
+    .goal-form {
+
+        grid-template-columns: 1fr;
+    }
+
+    .goal-card {
+
+        padding: 26px;
+
+        min-height: 270px;
+    }
+}
+/* =========================================================
+   HEALTH TRENDS
+========================================================= */
+
+.health-trends-section {
+
+    padding: 100px 7vw 110px;
+
+    background: #f3ede2;
+
+    color: #211d18;
+}
+
+
+.health-trends-label {
+
+    margin-bottom: 45px;
+
+    font-size: 11px;
+
+    letter-spacing: .18em;
+
+    color: #a27843;
+
+    font-weight: 600;
+}
+
+
+.health-trends-heading {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 70px;
+
+    align-items: end;
+
+    margin-bottom: 50px;
+}
+
+
+.health-trends-eyebrow {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 12px;
+
+    letter-spacing: .15em;
+
+    color: #9b713d;
+}
+
+
+.health-trends-heading h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(45px, 5vw, 72px);
+
+    line-height: .95;
+
+    font-weight: 600;
+}
+
+
+.health-trends-heading h2 span {
+
+    color: #b17b46;
+}
+
+
+.health-trends-heading p {
+
+    max-width: 400px;
+
+    margin: 0;
+
+    color: #786f64;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GRAPH BOX
+========================================================= */
+
+.health-trends-box {
+
+    padding: 32px;
+
+    border: 1px solid
+        rgba(155,117,67,.23);
+
+    border-radius: 26px;
+
+    background:
+        rgba(255,252,246,.78);
+
+    box-shadow:
+        0 18px 55px
+        rgba(72,50,25,.07);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.health-trends-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.trend-small-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    letter-spacing: .15em;
+
+    color: #9a7650;
+}
+
+
+.health-trends-top h3 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+}
+
+
+#trendParameter {
+
+    width: 190px;
+
+    height: 45px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid
+        rgba(120,91,52,.22);
+
+    background: #fffdf8;
+
+    color: #2b261f;
+
+    font-family: inherit;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GRAPH
+========================================================= */
+
+.trend-chart {
+
+    display: grid;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 12px;
+
+    height: 250px;
+}
+
+
+.trend-y-axis {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 2px 0;
+
+    font-size: 10px;
+
+    color: #9a9186;
+
+    text-align: right;
+}
+
+
+.trend-chart-area {
+
+    position: relative;
+
+    height: 250px;
+
+    border-left: 1px solid
+        rgba(120,91,52,.15);
+
+    border-bottom: 1px solid
+        rgba(120,91,52,.15);
+
+    overflow: hidden;
+}
+
+
+.trend-grid-line {
+
+    position: relative;
+
+    height: 33.33%;
+
+    border-top: 1px dashed
+        rgba(120,91,52,.11);
+}
+
+
+.trend-chart-area svg {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+}
+
+
+#trendLine {
+
+    fill: none;
+
+    stroke: #b17b46;
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            0 3px 4px
+            rgba(100,70,30,.12)
+        );
+
+    transition:
+        points .5s ease;
+}
+
+
+.trend-point {
+
+    fill: #fffaf2;
+
+    stroke: #b17b46;
+
+    stroke-width: 3;
+}
+
+
+/* =========================================================
+   X AXIS
+========================================================= */
+
+.trend-x-axis {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 12px 0 0 47px;
+
+    color: #968d82;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.trend-summary {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid
+        rgba(120,91,52,.13);
+}
+
+
+.trend-summary-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    letter-spacing: .13em;
+
+    color: #9a9186;
+}
+
+
+.trend-summary strong {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+
+.trend-direction {
+
+    color: #9b713d;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.trend-note {
+
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    color: #8d8378;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .health-trends-section {
+
+        padding:
+            75px 6vw 85px;
+    }
+
+
+    .health-trends-heading {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .health-trends-top {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    #trendParameter {
+
+        width: 100%;
+    }
+
+
+    .health-trends-box {
+
+        padding: 22px;
+    }
+
+
+    .trend-summary {
+
+        gap: 20px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+/* =========================================================
+   BIOQUEST AI — LAUNCHING SOON
+========================================================= */
+
+.bioquest-ai-section {
+
+    position: relative;
+
+    min-height: 560px;
+
+    padding: 120px 7vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(180, 137, 76, 0.13),
+            transparent 42%
+        ),
+        #171512;
+
+    color: #f5eee3;
+
+}
+
+
+/* Ambient glow */
+
+.ai-glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190, 145, 82, 0.13),
+            transparent 68%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+
+    animation:
+        aiPulse 5s ease-in-out infinite;
+}
+
+
+@keyframes aiPulse {
+
+    0%,
+    100% {
+
+        transform: scale(0.9);
+
+        opacity: .55;
+
+    }
+
+    50% {
+
+        transform: scale(1.12);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Main content */
+
+.bioquest-ai-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    text-align: center;
+
+}
+
+
+/* Eyebrow */
+
+.ai-eyebrow {
+
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-size: 11px;
+
+    letter-spacing: .28em;
+
+    color: #b99662;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.ai-title-wrap {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.ai-coming,
+.ai-soon {
+
+    font-size: 12px;
+
+    letter-spacing: .2em;
+
+    color: #8e877c;
+}
+
+
+.ai-title-wrap h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(
+        65px,
+        10vw,
+        140px
+    );
+
+    line-height: .8;
+
+    letter-spacing: -.045em;
+
+    font-weight: 600;
+
+}
+
+
+.ai-title-wrap h2 span {
+
+    color: #b7894f;
+
+}
+
+
+/* Description */
+
+.ai-description {
+
+    max-width: 620px;
+
+    margin: 48px auto 35px;
+
+    color: #aaa39a;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* Status */
+
+.ai-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    border: 1px solid
+        rgba(183,137,79,.25);
+
+    border-radius: 100px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    font-size: 10px;
+
+    letter-spacing: .15em;
+
+    color: #aaa096;
+
+}
+
+
+.ai-status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #b7894f;
+
+    box-shadow:
+        0 0 12px
+        rgba(183,137,79,.8);
+
+    animation:
+        aiDotPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes aiDotPulse {
+
+    0%,
+    100% {
+
+        opacity: .45;
+
+        transform: scale(.8);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.15);
+
+    }
+
+}
+
+
+/* Bottom line */
+
+.ai-line {
+
+    width: 100px;
+
+    height: 1px;
+
+    margin: 45px auto 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b7894f,
+            transparent
+        );
+
+}
+
+
+.ai-footer {
+
+    margin: 0;
+
+    font-size: 10px;
+
+    letter-spacing: .28em;
+
+    color: #756e64;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .bioquest-ai-section {
+
+        min-height: 500px;
+
+        padding: 90px 6vw;
+
+    }
+
+    .ai-title-wrap {
+
+        gap: 10px;
+
+    }
+
+    .ai-coming,
+    .ai-soon {
+
+        width: 100%;
+
+        font-size: 10px;
+
+    }
+
+    .ai-title-wrap h2 {
+
+        font-size: 65px;
+
+    }
+
+    .ai-description {
+
+        margin-top: 35px;
+
+        font-size: 14px;
+
+    }
+
+}
+
+/* =========================================================
+   BIOLEARN — PREMIUM SECTION
+========================================================= */
+
+.bio-learn-section {
+
+    position: relative;
+
+    padding: 130px 7vw 140px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(174, 123, 67, .09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(174, 123, 67, .07),
+            transparent 32%
+        ),
+        #f1e9dc;
+
+    color: #211d18;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND TEXT
+========================================================= */
+
+.bio-learn-section::before {
+
+    content: "BIOLOGY";
+
+    position: absolute;
+
+    top: 20px;
+    right: -20px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(
+        150px,
+        20vw,
+        300px
+    );
+
+    line-height: .7;
+
+    font-weight: 600;
+
+    color:
+        rgba(120, 91, 52, .035);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+
+/* =========================================================
+   BIOLEARN HEADER — FORCE PREMIUM STYLING
+========================================================= */
+
+section.bio-learn-section {
+    position: relative;
+    padding: 150px 7vw 120px !important;
+    overflow: hidden;
+}
+
+
+/* HEADER CONTAINER */
+
+section.bio-learn-section .bio-learn-header {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 0 90px 0 !important;
+
+    padding: 0 !important;
+}
+
+
+/* SMALL LABEL */
+
+section.bio-learn-section
+.bio-learn-header
+.bio-learn-eyebrow {
+
+    display: block !important;
+
+    margin: 0 0 25px 0 !important;
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.2 !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: .28em !important;
+
+    text-transform: uppercase !important;
+
+    color: #a7743d !important;
+}
+
+
+/* =========================================================
+   MAIN BIO LEARN HEADING
+========================================================= */
+
+section.bio-learn-section
+.bio-learn-header
+h2 {
+
+    display: block !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif !important;
+
+    font-size:
+        clamp(85px, 11vw, 155px) !important;
+
+    line-height: .78 !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: -.045em !important;
+
+    text-transform: uppercase !important;
+
+    color: #211d18 !important;
+
+    max-width: 1000px !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+section.bio-learn-section
+.bio-learn-header
+p {
+
+    display: block !important;
+
+    max-width: 760px !important;
+
+    margin: 40px 0 0 0 !important;
+
+    padding: 0 !important;
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif !important;
+
+    font-size: 18px !important;
+
+    line-height: 1.8 !important;
+
+    font-weight: 400 !important;
+
+    letter-spacing: .01em !important;
+
+    color: #70675c !important;
+}
+
+
+/* =========================================================
+   GOLD DECORATIVE LINE
+========================================================= */
+
+section.bio-learn-section
+.bio-learn-header::after {
+
+    content: "";
+
+    display: block;
+
+    width: 150px;
+
+    height: 2px;
+
+    margin-top: 38px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ad7740 0%,
+            rgba(173,119,64,.15) 100%
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND WORD
+========================================================= */
+
+section.bio-learn-section::before {
+
+    content: "BIOLOGY";
+
+    position: absolute;
+
+    top: 35px;
+
+    right: -20px;
+
+    z-index: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(150px, 20vw, 300px);
+
+    line-height: .7;
+
+    font-weight: 600;
+
+    letter-spacing: -.05em;
+
+    color:
+        rgba(120, 91, 52, .035);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    section.bio-learn-section {
+
+        padding:
+            100px 6vw 90px !important;
+    }
+
+    section.bio-learn-section
+    .bio-learn-header {
+
+        margin-bottom: 60px !important;
+    }
+
+    section.bio-learn-section
+    .bio-learn-header
+    .bio-learn-eyebrow {
+
+        font-size: 10px !important;
+
+        letter-spacing: .20em !important;
+
+        margin-bottom: 20px !important;
+    }
+
+    section.bio-learn-section
+    .bio-learn-header
+    h2 {
+
+        font-size:
+            clamp(65px, 18vw, 95px) !important;
+
+        line-height: .82 !important;
+    }
+
+    section.bio-learn-section
+    .bio-learn-header
+    p {
+
+        margin-top: 30px !important;
+
+        font-size: 14px !important;
+
+        line-height: 1.75 !important;
+    }
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.bio-learn-grid {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.bio-learn-card {
+
+    position: relative;
+
+    min-height: 330px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: left;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(120, 91, 52, .15);
+
+    border-radius: 3px;
+
+    background:
+        rgba(255, 250, 242, .76);
+
+    color: #211d18;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px
+        rgba(70, 48, 26, .045);
+
+    transition:
+        transform .5s
+        cubic-bezier(.2,.75,.2,1),
+
+        box-shadow .5s ease,
+
+        border-color .4s ease,
+
+        background .4s ease;
+}
+
+
+.bio-learn-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background: #ad7941;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
+
+    transition:
+        transform .45s ease;
+}
+
+
+.bio-learn-card:hover {
+
+    transform:
+        translateY(-9px);
+
+    background:
+        #fffaf2;
+
+    border-color:
+        rgba(173,121,65,.35);
+
+    box-shadow:
+        0 25px 60px
+        rgba(70,48,26,.12);
+}
+
+
+.bio-learn-card:hover::before {
+
+    transform:
+        scaleX(1);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.bio-card-number {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    color: #a98255;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.bio-card-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(160,115,62,.28);
+
+    background:
+        rgba(174,123,67,.07);
+
+    color: #a6743e;
+
+    font-size: 25px;
+
+    font-weight: 300;
+
+    transition:
+        transform .5s ease,
+
+        background .4s ease,
+
+        color .4s ease;
+}
+
+
+.bio-learn-card:hover
+.bio-card-icon {
+
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+    background:
+        #ae7b43;
+
+    color:
+        #fffaf2;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.bio-learn-card h3 {
+
+    margin: 30px 0 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    color: #272119;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.bio-learn-card p {
+
+    margin: 14px 0 0;
+
+    color: #7d7468;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.bio-card-arrow {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 23px;
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(120,91,52,.18);
+
+    border-radius: 50%;
+
+    color: #9d713f;
+
+    font-size: 17px;
+
+    transition:
+        transform .4s ease,
+
+        background .4s ease,
+
+        color .4s ease;
+}
+
+
+.bio-learn-card:hover
+.bio-card-arrow {
+
+    transform:
+        translateX(5px);
+
+    background:
+        #ae7b43;
+
+    color:
+        #fffaf2;
+}
+
+
+/* =========================================================
+   CARD REVEAL ANIMATION
+========================================================= */
+
+.bio-learn-card {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    animation:
+        bioLearnReveal
+        .8s
+        cubic-bezier(.2,.75,.2,1)
+        forwards;
+}
+
+
+.bio-learn-card:nth-child(1) {
+    animation-delay: .05s;
+}
+
+.bio-learn-card:nth-child(2) {
+    animation-delay: .12s;
+}
+
+.bio-learn-card:nth-child(3) {
+    animation-delay: .19s;
+}
+
+.bio-learn-card:nth-child(4) {
+    animation-delay: .26s;
+}
+
+.bio-learn-card:nth-child(5) {
+    animation-delay: .33s;
+}
+
+.bio-learn-card:nth-child(6) {
+    animation-delay: .40s;
+}
+
+.bio-learn-card:nth-child(7) {
+    animation-delay: .47s;
+}
+
+.bio-learn-card:nth-child(8) {
+    animation-delay: .54s;
+}
+
+
+@keyframes bioLearnReveal {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .bio-learn-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .bio-learn-section {
+
+        padding:
+            90px 6vw 100px;
+
+    }
+
+
+    .bio-learn-header {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .bio-learn-header h2 {
+
+        font-size: 70px;
+
+    }
+
+
+    .bio-learn-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .bio-learn-card {
+
+        min-height: 290px;
+
+    }
+
+}
+/* =========================================================
+   WHY BIOQUEST
+========================================================= */
+
+.why-bioquest {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 150px 8vw 130px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 12% 30%,
+            rgba(181,126,72,.09),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 88% 70%,
+            rgba(181,126,72,.06),
+            transparent 30%
+        ),
+        #f5eee3;
+
+    color: #211c17;
+}
+
+
+/* =========================================================
+   GIANT BACKGROUND WORD
+========================================================= */
+
+.why-bg-word {
+
+    position: absolute;
+
+    top: 5%;
+
+    right: -4%;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(160px, 23vw, 380px);
+
+    line-height: .7;
+
+    font-weight: 600;
+
+    letter-spacing: -.07em;
+
+    color:
+        rgba(117,87,52,.035);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.why-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1050px;
+
+    margin-bottom: 110px;
+}
+
+
+.why-kicker {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 32px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: .28em;
+
+    font-weight: 600;
+
+    color: #a67542;
+}
+
+
+.kicker-line {
+
+    width: 42px;
+
+    height: 1px;
+
+    background:
+        #b98751;
+
+    transform-origin: left;
+
+    transform: scaleX(0);
+
+    transition:
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible .kicker-line {
+
+    transform: scaleX(1);
+}
+
+
+.why-header h2 {
+
+    margin: 0;
+
+    max-width: 900px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(65px, 9vw, 135px);
+
+    line-height: .78;
+
+    letter-spacing: -.045em;
+
+    font-weight: 600;
+}
+
+
+.why-header h2 span {
+
+    display: block;
+
+    color: #b87545;
+}
+
+
+.why-header p {
+
+    max-width: 670px;
+
+    margin: 38px 0 0;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #766d63;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 1s ease .45s,
+        transform 1s cubic-bezier(.16,1,.3,1) .45s;
+}
+
+
+.why-bioquest.visible .why-header p {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.why-timeline {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* vertical line */
+
+.why-timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 32px;
+
+    width: 1px;
+
+    background:
+        rgba(154,116,74,.18);
+
+    transform-origin: top;
+
+    transform: scaleY(0);
+
+    transition:
+        transform 2s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible .why-timeline::before {
+
+    transform: scaleY(1);
+}
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.why-step {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 65px 1fr;
+
+    gap: 45px;
+
+    min-height: 340px;
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition:
+        opacity 1s ease,
+        transform 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible .why-step:nth-child(1) {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: .35s;
+}
+
+
+.why-bioquest.visible .why-step:nth-child(3) {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 1.25s;
+}
+
+
+.why-bioquest.visible .why-step:nth-child(5) {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 2.15s;
+}
+
+
+/* =========================================================
+   MARKER
+========================================================= */
+
+.step-marker {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    z-index: 3;
+}
+
+
+.step-number {
+
+    position: absolute;
+
+    top: 0;
+
+    left: -4px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: .12em;
+
+    color: #a87a48;
+
+    background: #f5eee3;
+
+    padding: 7px 5px;
+
+    z-index: 2;
+}
+
+
+.marker-dot {
+
+    position: absolute;
+
+    top: 48px;
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #f5eee3;
+
+    border: 1px solid #b9854e;
+
+    box-shadow:
+        0 0 0 6px #f5eee3;
+
+    transform: scale(0);
+
+    transition:
+        transform .7s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(1)
+.marker-dot {
+
+    transform: scale(1);
+
+    transition-delay: .7s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(3)
+.marker-dot {
+
+    transform: scale(1);
+
+    transition-delay: 1.6s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(5)
+.marker-dot {
+
+    transform: scale(1);
+
+    transition-delay: 2.5s;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.step-content {
+
+    position: relative;
+
+    padding:
+        0 0 75px;
+
+    max-width: 760px;
+}
+
+
+.step-label {
+
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: .25em;
+
+    font-weight: 600;
+
+    color: #aa7744;
+
+    opacity: 0;
+
+    transform: translateX(-25px);
+
+    transition:
+        opacity .8s ease,
+        transform .9s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(1)
+.step-label {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: .55s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(3)
+.step-label {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 1.45s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(5)
+.step-label {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 2.35s;
+}
+
+
+/* =========================================================
+   BIG TITLES
+========================================================= */
+
+.step-content h3 {
+
+    margin: 0;
+
+    max-width: 700px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(55px, 7vw, 105px);
+
+    line-height: .78;
+
+    letter-spacing: -.04em;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateX(-40px);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(1)
+h3 {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: .7s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(3)
+h3 {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 1.6s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(5)
+h3 {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 2.5s;
+}
+
+
+.step-content h3 em {
+
+    font-style: normal;
+
+    color: #b97545;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.step-content > p {
+
+    max-width: 610px;
+
+    margin-top: 30px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #746b60;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity .8s ease,
+        transform .9s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(1)
+.step-content > p {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 1s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(3)
+.step-content > p {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 1.9s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(5)
+.step-content > p {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 2.8s;
+}
+
+
+/* =========================================================
+   DETAIL LINE
+========================================================= */
+
+.step-detail {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+    color: #a77949;
+
+    opacity: 0;
+}
+
+
+.step-detail > span {
+
+    width: 0;
+
+    height: 1px;
+
+    background: #ae7945;
+
+    transition:
+        width 1s cubic-bezier(.16,1,.3,1);
+}
+
+
+.step-detail b {
+
+    font-weight: 400;
+
+    color: #a99177;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(1)
+.step-detail {
+
+    opacity: 1;
+
+    transition-delay: 1.25s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(1)
+.step-detail > span {
+
+    width: 55px;
+
+    transition-delay: 1.25s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(3)
+.step-detail {
+
+    opacity: 1;
+
+    transition-delay: 2.15s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(3)
+.step-detail > span {
+
+    width: 55px;
+
+    transition-delay: 2.15s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(5)
+.step-detail {
+
+    opacity: 1;
+
+    transition-delay: 3.05s;
+}
+
+
+.why-bioquest.visible
+.why-step:nth-child(5)
+.step-detail > span {
+
+    width: 55px;
+
+    transition-delay: 3.05s;
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.timeline-connector {
+
+    height: 80px;
+
+    margin-left: 32px;
+
+    position: relative;
+}
+
+
+.timeline-connector::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 1px;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #b98751,
+            transparent
+        );
+
+    transform-origin: top;
+
+    transform: scaleY(0);
+}
+
+
+.why-bioquest.visible
+.timeline-connector:nth-child(2)::before {
+
+    transform: scaleY(1);
+
+    transition:
+        transform .9s cubic-bezier(.16,1,.3,1) 1.05s;
+}
+
+
+.why-bioquest.visible
+.timeline-connector:nth-child(4)::before {
+
+    transform: scaleY(1);
+
+    transition:
+        transform .9s cubic-bezier(.16,1,.3,1) 1.95s;
+}
+
+
+/* =========================================================
+   FEATURED MIDDLE STEP
+========================================================= */
+
+.why-step.featured .step-content {
+
+    padding: 45px 55px 90px;
+
+    margin-left: -25px;
+
+    background:
+        rgba(255,250,242,.55);
+
+    border:
+        1px solid
+        rgba(168,122,72,.15);
+
+    box-shadow:
+        0 25px 80px
+        rgba(70,48,26,.07);
+}
+
+
+.why-step.featured .step-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 3px;
+
+    height: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #b87643,
+            transparent
+        );
+
+    transition:
+        height 1.4s cubic-bezier(.16,1,.3,1);
+}
+
+
+.why-bioquest.visible
+.why-step.featured
+.step-content::before {
+
+    height: 100%;
+
+    transition-delay: 1.4s;
+}
+
+
+/* =========================================================
+   FOOTER STATEMENT
+========================================================= */
+
+.why-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 100px auto 0;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 1s ease 3.2s,
+        transform 1s cubic-bezier(.16,1,.3,1) 3.2s;
+}
+
+
+.why-bioquest.visible .why-footer {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.footer-rule {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(130,98,62,.18);
+}
+
+
+.why-footer p {
+
+    margin: 0;
+
+    white-space: nowrap;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    color: #756b60;
+}
+
+
+.why-footer strong {
+
+    color: #ae7143;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .why-bioquest {
+
+        padding:
+            100px 6vw;
+    }
+
+    .why-header {
+
+        margin-bottom: 70px;
+    }
+
+    .why-header h2 {
+
+        font-size: 65px;
+    }
+
+    .why-timeline::before {
+
+        left: 17px;
+    }
+
+    .why-step {
+
+        grid-template-columns:
+            35px 1fr;
+
+        gap: 25px;
+
+        min-height: 400px;
+    }
+
+    .step-marker {
+
+        justify-content: center;
+    }
+
+    .step-number {
+
+        left: -8px;
+    }
+
+    .marker-dot {
+
+        top: 48px;
+    }
+
+    .step-content h3 {
+
+        font-size: 54px;
+    }
+
+    .why-step.featured .step-content {
+
+        margin-left: 0;
+
+        padding:
+            35px 25px 65px;
+    }
+
+    .timeline-connector {
+
+        margin-left: 17px;
+
+        height: 55px;
+    }
+
+    .why-footer {
+
+        margin-top: 70px;
+    }
+
+    .why-footer p {
+
+        font-size: 17px;
+
+        white-space: normal;
+
+        text-align: center;
+    }
+
+}
+/* =========================================================
+   PRIVACY SECTION
+========================================================= */
+
+.privacy-section {
+
+    position: relative;
+
+    padding: 65px 7vw;
+
+    background: #eee5d8;
+
+    border-top: 1px solid rgba(112, 82, 48, .14);
+
+    border-bottom: 1px solid rgba(112, 82, 48, .14);
+
+    overflow: hidden;
+}
+
+
+/* subtle background detail */
+
+.privacy-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    top: -220px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(161, 116, 68, .10);
+
+    pointer-events: none;
+}
+
+
+.privacy-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -80px;
+    top: -130px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(161, 116, 68, .07);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.privacy-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        75px 1fr auto;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.privacy-icon {
+
+    width: 58px;
+    height: 58px;
+
+    border: 1px solid rgba(157, 112, 66, .35);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.privacy-icon::before {
+
+    content: "";
+
+    width: 19px;
+    height: 22px;
+
+    border: 1.5px solid #9f7043;
+
+    border-radius: 5px 5px 9px 9px;
+
+    position: absolute;
+}
+
+
+.privacy-icon::after {
+
+    content: "";
+
+    width: 10px;
+    height: 8px;
+
+    border-left: 1.5px solid #9f7043;
+    border-bottom: 1.5px solid #9f7043;
+
+    transform: rotate(-45deg);
+
+    position: absolute;
+
+    top: 22px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.privacy-content {
+
+    border-left: 1px solid rgba(120, 89, 53, .18);
+
+    padding-left: 35px;
+}
+
+
+.privacy-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .22em;
+
+    color: #a67442;
+}
+
+
+.privacy-content h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 42px;
+
+    line-height: .9;
+
+    letter-spacing: -.025em;
+
+    font-weight: 600;
+
+    color: #241f1a;
+}
+
+
+.privacy-content h2 span {
+
+    color: #ad7444;
+}
+
+
+.privacy-content p {
+
+    max-width: 650px;
+
+    margin: 12px 0 0;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #766c61;
+}
+
+
+/* =========================================================
+   RIGHT MARK
+========================================================= */
+
+.privacy-mark {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 4px;
+
+    padding-right: 10px;
+}
+
+
+.privacy-mark span {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+    color: #9b8063;
+}
+
+
+.privacy-mark span:first-child {
+
+    color: #a66f3d;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.privacy-section {
+
+    transition:
+        background .5s ease;
+}
+
+
+.privacy-section:hover {
+
+    background: #f2e9dd;
+}
+
+
+.privacy-icon {
+
+    transition:
+        transform .5s cubic-bezier(.16,1,.3,1),
+        background .5s ease;
+}
+
+
+.privacy-section:hover .privacy-icon {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(255,250,242,.5);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .privacy-section {
+
+        padding: 50px 6vw;
+    }
+
+    .privacy-inner {
+
+        grid-template-columns: 55px 1fr;
+
+        gap: 20px;
+    }
+
+    .privacy-icon {
+
+        width: 48px;
+        height: 48px;
+    }
+
+    .privacy-content {
+
+        padding-left: 20px;
+    }
+
+    .privacy-content h2 {
+
+        font-size: 34px;
+    }
+
+    .privacy-content p {
+
+        font-size: 11px;
+    }
+
+    .privacy-mark {
+
+        display: none;
+    }
+
+}
+/* =========================================================
+   BIOQUEST — HEART & CIRCULATION PAGE
+   PREMIUM SINGLE-PAGE DESIGN
+========================================================= */
+
+
+/* =========================================================
+   HIDDEN BY DEFAULT
+========================================================= */
+
+.bio-topic-page {
+
+    display: none;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: #f4ecdf;
+
+    color: #211c17;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.bio-topic-page.active {
+
+    display: block;
+
+    animation:
+        bioTopicAppear
+        .7s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+@keyframes bioTopicAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
+.bio-topic-navigation {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        28px 6vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #f4ecdf;
+}
+
+
+.bio-back-btn {
+
+    border: none;
+
+    padding: 0;
+
+    background: transparent;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    color: #75695d;
+
+    cursor: pointer;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.bio-back-btn:hover {
+
+    color: #aa7141;
+
+    transform:
+        translateX(-5px);
+}
+
+
+.bio-topic-number {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+
+    color: #aa7445;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.bio-topic-hero {
+
+    width: 100%;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        52% 48%;
+
+    background: #211c17;
+
+    color: #f7efe4;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.bio-topic-hero-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        80px 7vw;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.bio-topic-eyebrow {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: .3em;
+
+    color: #c18b57;
+
+    margin-bottom: 25px;
+
+    animation:
+        heroFadeUp
+        .7s
+        ease
+        .2s
+        both;
+}
+
+
+.bio-topic-category {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+
+    color: #9f9487;
+
+    margin-bottom: 20px;
+
+    animation:
+        heroFadeUp
+        .7s
+        ease
+        .3s
+        both;
+}
+
+
+.bio-topic-hero h1 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(70px, 9vw, 135px);
+
+    line-height: .72;
+
+    letter-spacing: -.055em;
+
+    font-weight: 600;
+
+    animation:
+        heroTitle
+        1s
+        cubic-bezier(.16,1,.3,1)
+        .35s
+        both;
+}
+
+
+.bio-topic-hero h1 span {
+
+    color: #b97847;
+
+    font-size: .7em;
+}
+
+
+@keyframes heroFadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes heroTitle {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(45px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+.bio-topic-line {
+
+    width: 110px;
+
+    height: 2px;
+
+    margin:
+        38px 0 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #bd7e4a,
+            transparent
+        );
+
+    animation:
+        lineReveal
+        1s
+        cubic-bezier(.16,1,.3,1)
+        .7s
+        both;
+}
+
+
+@keyframes lineReveal {
+
+    from {
+
+        width: 0;
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        width: 110px;
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.bio-topic-hero-content > p {
+
+    max-width: 570px;
+
+    margin: 0;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #bdb3a6;
+
+    animation:
+        heroFadeUp
+        .8s
+        ease
+        .9s
+        both;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.bio-topic-hero-image {
+
+    position: relative;
+
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+
+.bio-topic-hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    animation:
+        heroImageReveal
+        1.4s
+        cubic-bezier(.16,1,.3,1)
+        both;
+}
+
+
+@keyframes heroImageReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(1.12);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+.bio-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #211c17 0%,
+            rgba(33,28,23,.35) 25%,
+            transparent 60%
+        );
+}
+
+
+.bio-image-caption {
+
+    position: absolute;
+
+    left: 35px;
+
+    bottom: 30px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+
+    color: rgba(255,255,255,.7);
+}
+
+
+/* =========================================================
+   SINGLE CONTINUOUS CONTENT AREA
+========================================================= */
+
+.bio-topic-content {
+
+    width: 100%;
+
+    background: #f4ecdf;
+
+    padding:
+        100px 6vw 120px;
+}
+
+
+/* =========================================================
+   CONTENT BLOCKS
+========================================================= */
+
+.bio-content-block {
+
+    max-width: 1100px;
+
+    margin:
+        0 auto 130px;
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr;
+
+    gap: 45px;
+}
+
+
+.bio-content-number {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    color: #a97142;
+
+    padding-top: 4px;
+}
+
+
+.bio-content-main {
+
+    min-width: 0;
+}
+
+
+.bio-content-label {
+
+    display: block;
+
+    margin-bottom: 22px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .25em;
+
+    color: #a87342;
+}
+
+
+.bio-content-main h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(55px, 7vw, 90px);
+
+    line-height: .78;
+
+    letter-spacing: -.045em;
+
+    font-weight: 600;
+}
+
+
+.bio-content-main h2 em {
+
+    display: block;
+
+    color: #ad7544;
+
+    font-style: normal;
+}
+
+
+.bio-content-main > p {
+
+    max-width: 760px;
+
+    margin-top: 30px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #71675c;
+}
+
+
+/* =========================================================
+   TERMINOLOGY
+========================================================= */
+
+.terminology-heading {
+
+    margin-bottom: 60px !important;
+}
+
+
+.bio-terms-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1px;
+
+    background:
+        rgba(103,76,46,.18);
+
+    border:
+        1px solid
+        rgba(103,76,46,.18);
+
+    margin-top: 55px;
+}
+
+
+.bio-term-card {
+
+    min-height: 270px;
+
+    padding: 35px;
+
+    background: #f9f2e7;
+
+    position: relative;
+
+    transition:
+        transform .45s
+        cubic-bezier(.16,1,.3,1),
+        background .35s ease,
+        box-shadow .45s ease;
+}
+
+
+.bio-term-card:hover {
+
+    background: #fffaf3;
+
+    transform:
+        translateY(-6px);
+
+    z-index: 2;
+
+    box-shadow:
+        0 25px 60px
+        rgba(67,48,30,.12);
+}
+
+
+.bio-term-top {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 35px;
+}
+
+
+.bio-term-top span {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+
+    color: #aa7141;
+}
+
+
+.bio-term-card h3 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 600;
+}
+
+
+.bio-term-card small {
+
+    display: block;
+
+    margin-top: 9px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+
+    color: #a87142;
+}
+
+
+.bio-term-card p {
+
+    max-width: 470px;
+
+    margin:
+        18px 0 0;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: #756b60;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.bio-links-block {
+
+    margin-bottom: 80px;
+}
+
+
+.bio-resource-list {
+
+    margin-top: 60px;
+
+    border-top:
+        1px solid
+        rgba(105,77,48,.18);
+}
+
+
+.bio-resource {
+
+    display: grid;
+
+    grid-template-columns:
+        55px 1fr 40px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding:
+        25px 10px;
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid
+        rgba(105,77,48,.18);
+
+    transition:
+        background .35s ease,
+        padding .35s ease;
+}
+
+
+.bio-resource:hover {
+
+    background: #faf3e8;
+
+    padding-left: 22px;
+}
+
+
+.resource-number {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+
+    color: #a97142;
+}
+
+
+.bio-resource strong {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    color: #29231e;
+}
+
+
+.bio-resource small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    color: #786e62;
+}
+
+
+.resource-arrow {
+
+    font-size: 18px;
+
+    color: #a97142;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.bio-resource:hover .resource-arrow {
+
+    transform:
+        translate(4px,-4px);
+}
+
+
+/* =========================================================
+   EDUCATIONAL NOTE
+========================================================= */
+
+.bio-topic-note {
+
+    background: #211c17;
+
+    padding:
+        28px 6vw;
+}
+
+
+.bio-note-inner {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+.bio-note-inner > span {
+
+    white-space: nowrap;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: .22em;
+
+    color: #c18a55;
+}
+
+
+.bio-note-inner p {
+
+    max-width: 800px;
+
+    margin: 0;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+    color: #aaa095;
+}
+
+
+/* =========================================================
+   BOTTOM BACK
+========================================================= */
+
+.bio-topic-bottom {
+
+    padding:
+        80px;
+
+    text-align: center;
+
+    background: #211c17;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .bio-topic-navigation {
+
+        padding:
+            22px 25px;
+    }
+
+
+    .bio-topic-hero {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .bio-topic-hero-content {
+
+        min-height: 520px;
+
+        padding:
+            70px 30px;
+    }
+
+
+    .bio-topic-hero h1 {
+
+        font-size: 75px;
+
+    }
+
+
+    .bio-topic-hero-image {
+
+        min-height: 400px;
+
+    }
+
+
+    .bio-topic-content {
+
+        padding:
+            75px 25px;
+    }
+
+
+    .bio-content-block {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin-bottom: 90px;
+    }
+
+
+    .bio-content-number {
+
+        padding: 0;
+    }
+
+
+    .bio-content-main h2 {
+
+        font-size: 58px;
+    }
+
+
+    .bio-terms-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .bio-term-card {
+
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+
+    .bio-resource {
+
+        grid-template-columns:
+            35px 1fr 25px;
+
+        gap: 10px;
+
+    }
+
+
+    .bio-resource strong {
+
+        font-size: 20px;
+
+    }
+
+
+    .bio-topic-note {
+
+        padding:
+            25px;
+    }
+
+
+    .bio-note-inner {
+
+        display: block;
+    }
+
+
+    .bio-note-inner p {
+
+        margin-top: 12px;
+    }
+
+
+    .bio-topic-bottom {
+
+        padding:
+            35px 20px;
+    }
+
+}
+/* =========================================================
+   BIO TOPIC HERO — FIXED PREMIUM LAYOUT
+========================================================= */
+
+.bio-topic-hero {
+    position: relative;
+    width: 100%;
+    min-height: 780px;
+
+    display: grid;
+    grid-template-columns: 46% 54%;
+
+    background: #f3eadb;
+    overflow: hidden;
+}
+
+
+/* LEFT CONTENT
+========================================================= */
+
+.bio-topic-hero-content {
+    position: relative;
+    z-index: 3;
+
+    padding: 110px 70px 90px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+/* SMALL TOP LABEL */
+
+.bio-topic-eyebrow {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: #ae7746;
+
+    margin-bottom: 42px;
+}
+
+
+/* CATEGORY */
+
+.bio-topic-category {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: #82786c;
+
+    margin-bottom: 20px;
+}
+
+
+/* MAIN TITLE */
+
+.bio-topic-title {
+    position: relative;
+
+    margin: 0;
+
+    max-width: 100%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(72px, 7vw, 125px);
+    font-weight: 500;
+
+    line-height: 0.82;
+    letter-spacing: -4px;
+
+    color: #211d19;
+
+    word-break: normal;
+}
+
+
+/* SECOND LINE / ACCENT */
+
+.bio-topic-title span {
+    display: block;
+
+    color: #b87949;
+
+    margin-top: 12px;
+}
+
+
+/* DECORATIVE LINE */
+
+.bio-topic-line {
+    width: 140px;
+    height: 1px;
+
+    background: #b87949;
+
+    margin: 65px 0 45px;
+
+    position: relative;
+}
+
+.bio-topic-line::after {
+    content: "";
+
+    position: absolute;
+
+    right: -5px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #b87949;
+}
+
+
+/* INTRODUCTION */
+
+.bio-topic-intro {
+    max-width: 560px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+    line-height: 2;
+
+    color: #82796d;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   RIGHT IMAGE
+========================================================= */
+
+.bio-topic-hero-image {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9ddca;
+}
+
+
+/* IMAGE */
+
+.bio-topic-hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* SOFT IMAGE OVERLAY */
+
+.bio-topic-hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(233,221,202,0.15),
+            transparent 20%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* PAGE NUMBER */
+
+.bio-topic-page-number {
+    position: absolute;
+
+    right: 70px;
+    bottom: 25px;
+
+    z-index: 5;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: #9a8068;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .bio-topic-hero {
+        grid-template-columns: 1fr 1fr;
+        min-height: 680px;
+    }
+
+    .bio-topic-hero-content {
+        padding: 80px 45px;
+    }
+
+    .bio-topic-title {
+        font-size: clamp(60px, 7vw, 90px);
+        letter-spacing: -3px;
+    }
+
+    .bio-topic-intro {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .bio-topic-hero {
+        display: flex;
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+    .bio-topic-hero-content {
+        padding: 75px 28px 55px;
+    }
+
+    .bio-topic-eyebrow {
+        margin-bottom: 30px;
+    }
+
+    .bio-topic-category {
+        margin-bottom: 18px;
+    }
+
+    .bio-topic-title {
+        font-size: clamp(45px, 15vw, 70px);
+
+        line-height: 0.86;
+
+        letter-spacing: -2px;
+    }
+
+    .bio-topic-title span {
+        margin-top: 8px;
+    }
+
+    .bio-topic-line {
+        margin: 45px 0 30px;
+    }
+
+    .bio-topic-intro {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .bio-topic-hero-image {
+        height: 420px;
+
+        min-height: 420px;
+    }
+
+    .bio-topic-hero-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+
+    .bio-topic-page-number {
+        right: 25px;
+        bottom: 18px;
+    }
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.bio-topic-back {
+    position: relative;
+    z-index: 5;
+
+    border: none;
+    background: transparent;
+
+    color: #8d6338;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    padding: 0;
+    margin-bottom: 75px;
+
+    transition:
+        letter-spacing 0.3s ease,
+        transform 0.3s ease;
+}
+
+.bio-topic-back:hover {
+    letter-spacing: 4px;
+    transform: translateX(-5px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.bio-topic-hero {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1450px;
+    margin: 0 auto 150px;
+
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 48% 52%;
+
+    align-items: center;
+}
+
+
+/* LEFT */
+
+.bio-topic-hero-content {
+    position: relative;
+    z-index: 3;
+
+    padding-right: 70px;
+
+    animation: brainContentIn 1s ease 0.15s both;
+}
+
+
+.bio-topic-eyebrow {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: #a87643;
+
+    margin-bottom: 38px;
+}
+
+
+.bio-topic-category {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: #85786a;
+
+    margin-bottom: 18px;
+}
+
+
+.bio-topic-hero h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(70px, 7.8vw, 145px);
+
+    font-weight: 500;
+
+    line-height: 0.80;
+
+    letter-spacing: -5px;
+
+    color: #241e1a;
+
+    text-transform: uppercase;
+}
+
+
+.bio-topic-hero h1 span {
+    display: block;
+
+    color: #ad7043;
+
+    margin-top: 15px;
+}
+
+
+.bio-topic-line {
+    width: 105px;
+    height: 1px;
+
+    background: #ae7747;
+
+    margin: 55px 0 35px;
+
+    position: relative;
+}
+
+
+.bio-topic-line::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ae7747;
+
+    right: -3px;
+    top: -3px;
+}
+
+
+.bio-topic-introduction {
+    max-width: 680px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+    line-height: 2;
+
+    color: #766b60;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.bio-topic-hero-image {
+    position: relative;
+
+    height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: brainImageIn 1.2s ease 0.2s both;
+}
+
+
+.bio-topic-image-frame {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+}
+
+
+.bio-topic-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(0 30px 50px rgba(65, 43, 26, 0.18));
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        filter 0.8s ease;
+}
+
+
+.bio-topic-image-frame:hover img {
+    transform: scale(1.035);
+
+    filter:
+        drop-shadow(0 40px 70px rgba(65, 43, 26, 0.25));
+}
+
+
+.bio-topic-image-caption {
+    position: absolute;
+
+    bottom: 10px;
+    right: 10px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: #9a8167;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.bio-topic-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1450px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.bio-topic-section-heading {
+    max-width: 800px;
+
+    margin-bottom: 75px;
+}
+
+
+.bio-topic-section-heading > span,
+.bio-topic-resource-heading > span {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: #a87543;
+
+    margin-bottom: 25px;
+}
+
+
+.bio-topic-section-heading h2,
+.bio-topic-resource-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(48px, 5vw, 80px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+}
+
+
+.bio-topic-section-heading h2 em,
+.bio-topic-resource-heading h2 em {
+    color: #ad7043;
+
+    font-style: normal;
+}
+
+
+.bio-topic-section-heading p,
+.bio-topic-resource-heading p {
+    max-width: 650px;
+
+    margin-top: 30px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #7d7165;
+}
+
+
+/* =========================================================
+   TERMINOLOGY GRID
+========================================================= */
+
+.brain-terms-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: rgba(151, 111, 70, 0.20);
+
+    border-top: 1px solid rgba(151, 111, 70, 0.20);
+    border-left: 1px solid rgba(151, 111, 70, 0.20);
+
+    margin-bottom: 150px;
+}
+
+
+.brain-term-card {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 45px 48px;
+
+    background: #f3ecdf;
+
+    border-right: 1px solid rgba(151, 111, 70, 0.20);
+    border-bottom: 1px solid rgba(151, 111, 70, 0.20);
+
+    overflow: hidden;
+
+    transition:
+        background 0.45s ease,
+        transform 0.45s ease;
+}
+
+
+.brain-term-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    background: #ad7043;
+
+    left: 0;
+    top: 0;
+
+    transition: width 0.5s ease;
+}
+
+
+.brain-term-card:hover::before {
+    width: 100%;
+}
+
+
+.brain-term-card:hover {
+    background: #eee3d3;
+
+    transform: translateY(-5px);
+}
+
+
+.brain-term-number {
+    position: absolute;
+
+    top: 30px;
+    right: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: #b68b5b;
+}
+
+
+.brain-term-label {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #aa7545;
+
+    margin-bottom: 22px;
+}
+
+
+.brain-term-card h3 {
+    margin: 0 50px 18px 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: #29221d;
+}
+
+
+.brain-term-card p {
+    max-width: 600px;
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #75695e;
+}
+
+
+/* =========================================================
+   RESOURCES
+========================================================= */
+
+.bio-topic-resources {
+    margin-bottom: 130px;
+}
+
+
+.bio-topic-resource-heading {
+    margin-bottom: 55px;
+}
+
+
+.brain-resource-list {
+    border-top: 1px solid rgba(151, 111, 70, 0.25);
+}
+
+
+.brain-resource {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 60px;
+
+    align-items: center;
+
+    min-height: 120px;
+
+    padding: 20px 25px;
+
+    border-bottom: 1px solid rgba(151, 111, 70, 0.25);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        background 0.4s ease,
+        padding 0.4s ease;
+}
+
+
+.brain-resource:hover {
+    background: rgba(174, 119, 71, 0.06);
+
+    padding-left: 40px;
+}
+
+
+.resource-number {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: #ad7043;
+}
+
+
+.brain-resource small {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #a17955;
+
+    margin-bottom: 7px;
+}
+
+
+.brain-resource h3 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    color: #2a231e;
+}
+
+
+.resource-arrow {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(151, 111, 70, 0.3);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    color: #a76d3d;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.brain-resource:hover .resource-arrow {
+    transform: rotate(45deg);
+
+    background: rgba(174, 119, 71, 0.08);
+}
+
+
+/* =========================================================
+   EDUCATIONAL NOTE
+========================================================= */
+
+.bio-topic-note {
+    border-top: 1px solid rgba(151, 111, 70, 0.25);
+
+    padding-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 40px;
+}
+
+
+.bio-topic-note > span {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #a87543;
+}
+
+
+.bio-topic-note p {
+    max-width: 800px;
+
+    margin: 0;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    color: #817569;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes brainPageReveal {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes brainContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes brainImageIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(60px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .bio-topic-page {
+        padding: 80px 5vw 100px;
+    }
+
+    .bio-topic-hero {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 100px;
+    }
+
+    .bio-topic-hero-content {
+        padding-right: 0;
+
+        margin-bottom: 60px;
+    }
+
+    .bio-topic-hero-image {
+        height: 500px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .bio-topic-page {
+        padding: 60px 25px 80px;
+    }
+
+    .bio-topic-back {
+        margin-bottom: 50px;
+    }
+
+    .bio-topic-hero h1 {
+        font-size: 62px;
+
+        letter-spacing: -3px;
+    }
+
+    .bio-topic-introduction {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .bio-topic-hero-image {
+        height: 360px;
+    }
+
+    .brain-terms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brain-term-card {
+        min-height: auto;
+
+        padding: 35px 30px;
+    }
+
+    .brain-term-card h3 {
+        font-size: 30px;
+    }
+
+    .brain-resource {
+        grid-template-columns: 45px 1fr 45px;
+
+        padding: 20px 5px;
+    }
+
+    .brain-resource h3 {
+        font-size: 22px;
+    }
+
+    .bio-topic-note {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+}
+
+/* =====================================================
+   BLOOD & HEMATOLOGY TOPIC PAGE
+===================================================== */
+
+.bio-topic-page {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+
+    background: #eee5d6;
+    color: #211d19;
+
+    overflow: hidden;
+
+    animation: bioTopicReveal 0.8s ease forwards;
+}
+
+
+/* OPEN STATE */
+
+.bio-topic-page.active {
+    display: block;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.bio-topic-container {
+
+    min-height: 760px;
+
+    display: grid;
+    grid-template-columns: 48% 52%;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.bio-topic-content {
+
+    padding: 110px 70px 80px 8vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+.bio-topic-eyebrow {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: #a66f3c;
+
+    margin-bottom: 50px;
+}
+
+
+.bio-topic-category {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: #82766a;
+
+    margin-bottom: 18px;
+}
+
+
+.bio-topic-content h1 {
+
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 7vw, 125px);
+
+    line-height: .78;
+
+    font-weight: 600;
+
+    letter-spacing: -5px;
+
+    color: #211d19;
+
+    max-width: 650px;
+}
+
+
+.bio-topic-content h1 span {
+
+    display: block;
+
+    color: #ad7040;
+
+    margin-top: 20px;
+}
+
+
+.bio-topic-line {
+
+    width: 135px;
+    height: 1px;
+
+    background: #ad7040;
+
+    margin: 65px 0 45px;
+
+    position: relative;
+}
+
+
+.bio-topic-line::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -4px;
+    top: -4px;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #ad7040;
+}
+
+
+.bio-topic-introduction {
+
+    max-width: 650px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    color: #766d64;
+}
+
+
+/* =====================================================
+   IMAGE AREA
+===================================================== */
+
+.bio-topic-hero-image {
+
+    min-height: 760px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #171613;
+}
+
+
+/*
+   BLACKISH BACKGROUND SPECIFICALLY FOR
+   HEMATOLOGY IMAGE
+*/
+
+.hematology-image {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #181714 55%,
+            #0e0e0c 100%
+        );
+}
+
+
+/* IMAGE */
+
+.bio-topic-hero-image img {
+
+    width: 82%;
+    height: 82%;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(0 25px 50px rgba(0,0,0,.45));
+
+    transition:
+        transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.bio-topic-hero-image:hover img {
+
+    transform: scale(1.035);
+}
+
+
+/* subtle overlay */
+
+.bio-topic-hero-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14,14,12,.85) 0%,
+            rgba(14,14,12,.15) 30%,
+            transparent 60%
+        );
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   INFORMATION SECTION
+===================================================== */
+
+.bio-topic-information {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 110px 50px 130px;
+}
+
+
+.bio-info-heading {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 25px;
+
+    margin-bottom: 60px;
+
+    border-bottom: 1px solid rgba(33,29,25,.15);
+
+    padding-bottom: 25px;
+}
+
+
+.bio-info-heading > span {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #ad7040;
+}
+
+
+.bio-info-heading h2 {
+
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 4vw, 62px);
+
+    line-height: .9;
+
+    letter-spacing: -2px;
+}
+
+
+.bio-info-heading h2 em {
+
+    color: #ad7040;
+
+    font-style: normal;
+}
+
+
+/* =====================================================
+   TERMINOLOGIES
+===================================================== */
+
+.bio-terms-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0 60px;
+}
+
+
+.bio-term {
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid rgba(33,29,25,.13);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation: termReveal .7s ease forwards;
+}
+
+
+.bio-term:nth-child(1) { animation-delay: .05s; }
+.bio-term:nth-child(2) { animation-delay: .10s; }
+.bio-term:nth-child(3) { animation-delay: .15s; }
+.bio-term:nth-child(4) { animation-delay: .20s; }
+.bio-term:nth-child(5) { animation-delay: .25s; }
+.bio-term:nth-child(6) { animation-delay: .30s; }
+.bio-term:nth-child(7) { animation-delay: .35s; }
+.bio-term:nth-child(8) { animation-delay: .40s; }
+
+
+.bio-term strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    color: #a96838;
+
+    margin-right: 8px;
+}
+
+
+.bio-term span {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color: #716961;
+}
+
+
+.bio-term p {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #716961;
+
+    margin: 13px 0 0;
+
+    max-width: 560px;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.bio-topic-links {
+
+    margin-top: 120px;
+}
+
+
+.bio-links-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.bio-links-grid a {
+
+    min-height: 120px;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(33,29,25,.15);
+
+    background: rgba(255,255,255,.25);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+}
+
+
+.bio-links-grid a:hover {
+
+    transform: translateY(-5px);
+
+    background: #211d19;
+
+    border-color: #211d19;
+}
+
+
+.bio-links-grid a span {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #ad7040;
+
+    margin-bottom: 10px;
+}
+
+
+.bio-links-grid a strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: #211d19;
+}
+
+
+.bio-links-grid a:hover strong {
+
+    color: #f2eadf;
+}
+
+
+.bio-links-grid a b {
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 22px;
+
+    font-size: 18px;
+
+    color: #ad7040;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.bio-topic-back {
+
+    margin-top: 80px;
+
+    padding: 16px 28px;
+
+    background: transparent;
+
+    border: 1px solid #ad7040;
+
+    color: #8d5d35;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+
+.bio-topic-back:hover {
+
+    background: #211d19;
+
+    color: #f2eadf;
+
+    border-color: #211d19;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes bioTopicReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes termReveal {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .bio-topic-container {
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+
+    .bio-topic-content {
+
+        padding: 80px 30px 60px;
+    }
+
+
+    .bio-topic-content h1 {
+
+        font-size: 70px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .bio-topic-hero-image {
+
+        min-height: 450px;
+    }
+
+
+    .bio-topic-hero-image img {
+
+        width: 85%;
+        height: 85%;
+    }
+
+
+    .bio-terms-list {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .bio-links-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .bio-topic-information {
+
+        padding: 80px 25px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .bio-topic-content h1 {
+
+        font-size: 55px;
+    }
+
+
+    .bio-topic-hero-image {
+
+        min-height: 350px;
+    }
+
+
+    .bio-topic-introduction {
+
+        font-size: 13px;
+    }
+
+}
+/* =====================================================
+   MICROBIOLOGY TOPIC PAGE
+===================================================== */
+
+
+/* -----------------------------------------------------
+   HIDDEN BY DEFAULT
+----------------------------------------------------- */
+
+#microbiologyTopic {
+    display: none !important;
+}
+
+
+/* -----------------------------------------------------
+   OPEN STATE
+----------------------------------------------------- */
+
+#microbiologyTopic.bio-topic-active {
+    display: block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+
+    animation: microbiologyReveal 0.8s ease forwards;
+}
+
+
+/* =====================================================
+   IMAGE AREA
+===================================================== */
+
+.microbiology-image {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #181714 55%,
+            #0d0d0b 100%
+        );
+
+    min-height: 760px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Dark atmospheric glow */
+
+.microbiology-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178,120,65,.12),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    z-index: 1;
+}
+
+
+/* Image */
+
+.microbiology-image img {
+
+    width: 84%;
+
+    height: 84%;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(
+            0 25px 50px rgba(0,0,0,.55)
+        );
+
+    transition:
+        transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.microbiology-image:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+/* =====================================================
+   PAGE ANIMATION
+===================================================== */
+
+@keyframes microbiologyReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    #microbiologyTopic .bio-topic-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #microbiologyTopic
+    .bio-topic-hero-image {
+
+        min-height: 450px;
+
+        order: 2;
+
+    }
+
+
+    #microbiologyTopic
+    .bio-topic-content {
+
+        padding:
+            80px
+            30px
+            60px;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    #microbiologyTopic
+    .bio-topic-hero-image {
+
+        min-height: 350px;
+
+    }
+
+
+    #microbiologyTopic
+    .bio-topic-hero-image img {
+
+        width: 88%;
+
+        height: 88%;
+
+    }
+
+}
+/* =====================================================
+   BIOLEARN DETAIL PAGES — FORCE HIDDEN
+===================================================== */
+
+/* Every topic information page is hidden */
+.bio-topic-detail {
+    display: none !important;
+}
+
+/* Only the page that JS activates is visible */
+.bio-topic-detail.bio-topic-active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+/* =====================================================
+   RESPIRATORY SYSTEM
+===================================================== */
+
+
+/* -----------------------------------------------------
+   HIDDEN BY DEFAULT
+----------------------------------------------------- */
+
+#respiratoryTopic {
+    display: none !important;
+}
+
+
+/* -----------------------------------------------------
+   OPEN STATE
+----------------------------------------------------- */
+
+#respiratoryTopic.bio-topic-active {
+
+    display: block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+
+    animation:
+        respiratoryReveal
+        0.8s
+        ease
+        forwards;
+}
+
+
+/* =====================================================
+   RESPIRATORY IMAGE
+===================================================== */
+
+.respiratory-image {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #181714 55%,
+            #0c0c0b 100%
+        );
+
+    min-height: 760px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Atmospheric glow */
+
+.respiratory-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+
+    height: 520px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178,120,65,.13),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+}
+
+
+/* Image */
+
+.respiratory-image img {
+
+    width: 84%;
+
+    height: 84%;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 25px 50px rgba(0,0,0,.55)
+        );
+
+    transition:
+        transform
+        1s
+        cubic-bezier(.2,.7,.2,1);
+}
+
+
+.respiratory-image:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+/* =====================================================
+   PAGE REVEAL
+===================================================== */
+
+@keyframes respiratoryReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    #respiratoryTopic
+    .bio-topic-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #respiratoryTopic
+    .bio-topic-content {
+
+        padding:
+            80px
+            30px
+            60px;
+
+    }
+
+
+    #respiratoryTopic
+    .bio-topic-hero-image {
+
+        min-height: 450px;
+
+        order: 2;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    #respiratoryTopic
+    .bio-topic-hero-image {
+
+        min-height: 350px;
+
+    }
+
+
+    #respiratoryTopic
+    .bio-topic-hero-image img {
+
+        width: 88%;
+
+        height: 88%;
+
+    }
+
+}
+.bio-topic-content h1 span {
+  display: block;
+}
+
+.bio-topic-content h1 {
+  white-space: normal;
+  width: auto;
+  max-width: none;
+  font-size: clamp(50px, 5vw, 90px);
+  line-height: 0.9;
+}
+/* =====================================================
+   HUMAN BIOLOGY
+===================================================== */
+
+#humanBiologyTopic {
+    display: none !important;
+}
+
+#humanBiologyTopic.bio-topic-active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    animation:
+        humanBiologyReveal
+        0.8s
+        ease
+        forwards;
+}
+
+
+/* HERO IMAGE */
+
+.human-biology-image {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #181714 55%,
+            #0c0c0b 100%
+        );
+
+    min-height: 760px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.human-biology-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178,120,65,.13),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+}
+
+
+.human-biology-image img {
+
+    width: 84%;
+    height: 84%;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 25px 50px rgba(0,0,0,.55)
+        );
+
+    transition:
+        transform
+        1s
+        cubic-bezier(.2,.7,.2,1);
+}
+
+
+.human-biology-image:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+/* REVEAL */
+
+@keyframes humanBiologyReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    #humanBiologyTopic
+    .bio-topic-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    #humanBiologyTopic
+    .bio-topic-content {
+
+        padding:
+            80px
+            30px
+            60px;
+
+    }
+
+    #humanBiologyTopic
+    .bio-topic-hero-image {
+
+        min-height: 450px;
+
+        order: 2;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    #humanBiologyTopic
+    .bio-topic-hero-image {
+
+        min-height: 350px;
+
+    }
+
+    #humanBiologyTopic
+    .bio-topic-hero-image img {
+
+        width: 88%;
+        height: 88%;
+
+    }
+
+}
+/* =====================================================
+   BIOCHEMISTRY
+===================================================== */
+
+#biochemistryTopic {
+    display: none !important;
+}
+
+#biochemistryTopic.bio-topic-active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    animation:
+        biochemistryReveal
+        0.8s
+        ease
+        forwards;
+}
+
+
+/* IMAGE */
+
+.biochemistry-image {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #181714 55%,
+            #0c0c0b 100%
+        );
+
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.biochemistry-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178,120,65,.13),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+}
+
+
+.biochemistry-image img {
+
+    width: 84%;
+    height: 84%;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 25px 50px rgba(0,0,0,.55)
+        );
+
+    transition:
+        transform
+        1s
+        cubic-bezier(.2,.7,.2,1);
+}
+
+
+.biochemistry-image:hover img {
+    transform: scale(1.035);
+}
+
+
+/* REVEAL */
+
+@keyframes biochemistryReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    #biochemistryTopic
+    .bio-topic-container {
+        grid-template-columns: 1fr;
+    }
+
+    #biochemistryTopic
+    .bio-topic-content {
+        padding: 80px 30px 60px;
+    }
+
+    #biochemistryTopic
+    .bio-topic-hero-image {
+        min-height: 450px;
+        order: 2;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    #biochemistryTopic
+    .bio-topic-hero-image {
+        min-height: 350px;
+    }
+
+    #biochemistryTopic
+    .bio-topic-hero-image img {
+        width: 88%;
+        height: 88%;
+    }
+
+}
+/* =====================================================
+   GENETICS
+===================================================== */
+
+#geneticsTopic {
+    display: none !important;
+}
+
+#geneticsTopic.bio-topic-active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    animation:
+        geneticsReveal
+        0.8s
+        ease
+        forwards;
+}
+
+
+/* =====================================================
+   GENETICS IMAGE
+===================================================== */
+
+.genetics-image {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #181714 55%,
+            #0c0c0b 100%
+        );
+
+    min-height: 760px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.genetics-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+
+    height: 520px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178,120,65,.14),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+}
+
+
+.genetics-image img {
+
+    width: 84%;
+
+    height: 84%;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 25px 50px rgba(0,0,0,.55)
+        );
+
+    transition:
+        transform
+        1s
+        cubic-bezier(.2,.7,.2,1);
+}
+
+
+.genetics-image:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+@keyframes geneticsReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    #geneticsTopic
+    .bio-topic-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    #geneticsTopic
+    .bio-topic-content {
+
+        padding:
+            80px
+            30px
+            60px;
+
+    }
+
+    #geneticsTopic
+    .bio-topic-hero-image {
+
+        min-height: 450px;
+
+        order: 2;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    #geneticsTopic
+    .bio-topic-hero-image {
+
+        min-height: 350px;
+
+    }
+
+    #geneticsTopic
+    .bio-topic-hero-image img {
+
+        width: 88%;
+
+        height: 88%;
+
+    }
+
+}
+/* =========================================
+   BIOQUEST HEADER LOGO
+========================================= */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    height: 55px;
+    width: auto;
+
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    display: block;
+
+    width: auto;
+    height: 65px;
+
+    max-width: 200px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+
+/* Elegant hover */
+
+.header-logo:hover img {
+    transform: scale(1.04);
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .header-logo {
+        height: 48px;
+    }
+
+    .header-logo img {
+        height: 43px;
+        max-width: 155px;
+    }
+
+}
+/* =========================================
+   WHY BIOQUEST LOGO — FIXED
+========================================= */
+
+.why-bioquest-logo {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* Logo image */
+
+.why-bioquest-logo img {
+    position: relative;
+
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto;
+
+    animation: bioquestFloat 5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 18px 30px rgba(0,0,0,.14))
+        drop-shadow(0 0 25px rgba(184,134,79,.12));
+}
+
+
+/* Floating animation */
+
+@keyframes bioquestFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================
+   WHY BIOQUEST SECTION
+========================================= */
+
+.why-bioquest {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 100px 7%;
+
+    overflow: hidden;
+}
+
+.why-bioquest-content {
+    position: relative;
+    z-index: 2;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .why-bioquest {
+        grid-template-columns: 1fr;
+
+        padding: 80px 6%;
+
+        gap: 30px;
+    }
+
+    .why-bioquest-logo {
+        width: 100%;
+        max-width: 380px;
+        height: 350px;
+
+        margin: 0 auto;
+    }
+
+    .why-bioquest-logo img {
+        max-width: 320px;
+    }
+}
