@@ -8,7 +8,7 @@
    BIOQUEST BACKEND — SAVE HEALTH PROFILE
 ========================================================= */
 
-const BIOQUEST_API = "http://localhost:5000/api";
+const BIOQUEST_API = "https://bioquest-4.onrender.com/api";
 
 async function saveHealthProfileToDatabase(profile) {
 
@@ -4289,7 +4289,7 @@ if (editProfileBtn) {
 
                 const response =
                     await fetch(
-                        `http://localhost:5000/api/users/${userId}`
+                        `https://bioquest-4.onrender.com/api/users/${userId}`
                     );
 
 
@@ -9281,7 +9281,7 @@ async function saveHealthProfileToDatabase(profile) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/users/${userId}`,
+                `https://bioquest-4.onrender.com/api/users/${userId}`,
                 {
 
                     method: "PUT",
@@ -9407,7 +9407,7 @@ async function saveAnalysisToDatabase() {
 
 
         const response = await fetch(
-            "http://localhost:5000/api/reports",
+            "https://bioquest-4.onrender.com/api/reports",
             {
                 method: "POST",
 
@@ -9480,7 +9480,7 @@ async function loadSavedReports() {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/reports/user/${userId}`
+            `https://bioquest-4.onrender.com/api/reports/user/${userId}`
         );
 
         const data =
@@ -9687,7 +9687,7 @@ if (authSubmit) {
                 }
 
                 url =
-                    "http://localhost:5000/api/auth/signup";
+                    "https://bioquest-4.onrender.com/api/auth/signup";
 
                 body = {
 
@@ -9704,7 +9704,7 @@ if (authSubmit) {
             else {
 
                 url =
-                    "http://localhost:5000/api/auth/login";
+                    "https://bioquest-4.onrender.com/api/auth/login";
 
                 body = {
 
@@ -9957,7 +9957,7 @@ async function loadProfileReports(userId) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/reports/user/${userId}`
+            `https://bioquest-4.onrender.com/api/reports/user/${userId}`
         );
 
         const data = await response.json();
@@ -10177,7 +10177,7 @@ if (deleteBtn) {
 
                 const response =
                     await fetch(
-                        `http://localhost:5000/api/reports/${report._id}`,
+                        `https://bioquest-4.onrender.com/api/reports/${report._id}`,
                         {
                             method: "DELETE"
                         }
