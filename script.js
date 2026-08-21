@@ -3226,46 +3226,58 @@ if (analyzeBtn) {
                     : 0;
 
 
-            updateDashboardCounters();
+           updateDashboardCounters();
 
-            updateOverallSummary();
+updateOverallSummary();
 
-            updateReferencePanel();
-                        await saveAnalysisToDatabase();
+updateReferencePanel();
 
+await saveAnalysisToDatabase();
 
-            if (dashboardSection) {
+if (dashboardSection) {
 
-                dashboardSection.style.display =
-                    "block";
+    dashboardSection.style.display = "block";
 
+    // Move Personalized Precautions into the
+    // dashboard section that is actually displayed
+    const precautions =
+        document.getElementById("personalizedPrecautions");
 
-                setTimeout(
-                    function () {
+    if (precautions &&
+        !dashboardSection.contains(precautions)) {
 
-                        dashboardSection
-                            .scrollIntoView({
+        const reportContainer =
+            dashboardSection.querySelector(
+                ".report-container"
+            );
 
-                                behavior:
-                                    "smooth",
+        if (reportContainer) {
+            reportContainer.appendChild(
+                precautions
+            );
+        } else {
+            dashboardSection.appendChild(
+                precautions
+            );
+        }
+    }
 
-                                block:
-                                    "start"
+    renderPersonalizedPrecautions();
 
-                            });
+    setTimeout(function () {
 
-                    },
-                    300
-                );
+        dashboardSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
-            }
+    }, 300);
 
+}
         }
     );
 
 }
-
-
 /* =========================================================
    33. PARAMETER CARD
 ========================================================= */
@@ -10944,6 +10956,354 @@ if (profileLogout) {
             profileModal.classList.add(
                 "active"
             );
+
+        }
+    );
+
+}
+/* =====================================================
+   BIOQUEST — PERSONALIZED PRECAUTIONS
+===================================================== */
+
+const BIOQUEST_PRECAUTIONS = {
+
+    hemoglobin: {
+        low: {
+            title: "Hemoglobin is below the provided range",
+            tips: [
+                "Include iron-rich foods such as leafy greens, legumes and fortified foods.",
+                "Pair iron-containing foods with vitamin-C-rich foods.",
+                "Discuss persistent low results with a healthcare professional."
+            ]
+        },
+
+        high: {
+            title: "Hemoglobin is above the provided range",
+            tips: [
+                "Maintain adequate hydration unless a healthcare professional has advised fluid restriction.",
+                "Consider the result together with your other blood parameters.",
+                "Discuss persistent elevation with a healthcare professional."
+            ]
+        }
+    },
+
+    glucose: {
+        low: {
+            title: "Glucose is below the provided range",
+            tips: [
+                "Avoid regularly skipping meals.",
+                "Pay attention to symptoms such as shakiness, sweating or unusual weakness.",
+                "Discuss recurring low readings with a healthcare professional."
+            ]
+        },
+
+        high: {
+            title: "Glucose is above the provided range",
+            tips: [
+                "Limit foods and drinks high in added sugars.",
+                "Prefer balanced meals containing vegetables, whole grains and protein.",
+                "Discuss persistent elevated readings with a healthcare professional."
+            ]
+        }
+    },
+
+    ldl: {
+        high: {
+            title: "LDL cholesterol is above the provided range",
+            tips: [
+                "Prefer foods lower in saturated and trans fats.",
+                "Include more vegetables, legumes, fruits and whole grains.",
+                "Regular physical activity can support cardiovascular health.",
+                "Discuss persistently elevated LDL with a healthcare professional."
+            ]
+        }
+    },
+
+    wbc: {
+        low: {
+            title: "White blood cell count is below the provided range",
+            tips: [
+                "Maintain good hygiene and general health practices.",
+                "Pay attention to signs of infection such as fever.",
+                "Discuss persistent low results with a healthcare professional."
+            ]
+        },
+
+        high: {
+            title: "White blood cell count is above the provided range",
+            tips: [
+                "Consider the result together with symptoms and other blood parameters.",
+                "Maintain adequate hydration and rest.",
+                "Discuss persistent elevation with a healthcare professional."
+            ]
+        }
+    },
+
+    mcv: {
+        low: {
+            title: "MCV is below the provided range",
+            tips: [
+                "Maintain a balanced diet containing iron and other essential nutrients.",
+                "Avoid starting supplements without professional advice.",
+                "Discuss persistent low MCV with a healthcare professional."
+            ]
+        },
+
+        high: {
+            title: "MCV is above the provided range",
+            tips: [
+                "Maintain a balanced diet with adequate vitamin B12 and folate sources.",
+                "Discuss persistent elevation with a healthcare professional.",
+                "Interpret MCV together with other blood parameters."
+            ]
+        }
+    },
+
+    platelets: {
+        low: {
+            title: "Platelet count is below the provided range",
+            tips: [
+                "Take care to avoid unnecessary injuries.",
+                "Discuss unexplained or persistent low results with a healthcare professional.",
+                "Ask a healthcare professional before taking medicines that may affect bleeding."
+            ]
+        },
+
+        high: {
+            title: "Platelet count is above the provided range",
+            tips: [
+                "Do not interpret an elevated platelet count in isolation.",
+                "Consider the result alongside other blood parameters.",
+                "Discuss persistent elevation with a healthcare professional."
+            ]
+        }
+    }
+
+};
+/* =====================================================
+   RENDER PERSONALIZED PRECAUTIONS
+===================================================== */
+
+function renderPersonalizedPrecautions() {
+
+    const container =
+        document.getElementById(
+            "precautionsList"
+        );
+
+    const summary =
+        document.getElementById(
+            "precautionsSummary"
+        );
+
+    if (!container || !summary) {
+        return;
+    }
+
+    container.innerHTML = "";
+    summary.innerHTML = "";
+
+
+    const parameters =
+        currentAnalysis.parameters || [];
+
+
+    const attentionParameters =
+        parameters.filter(function (parameter) {
+
+            return (
+                parameter.status !== "normal" &&
+                parameter.level
+            );
+
+        });
+
+
+    const normalCount =
+        parameters.filter(function (parameter) {
+
+            return parameter.status === "normal";
+
+        }).length;
+
+
+    const highCount =
+        attentionParameters.filter(function (parameter) {
+
+            return parameter.level === "HIGH";
+
+        }).length;
+
+
+    const lowCount =
+        attentionParameters.filter(function (parameter) {
+
+            return parameter.level === "LOW";
+
+        }).length;
+
+
+    /* ================================================
+       SUMMARY
+    ================================================ */
+
+    summary.innerHTML = `
+
+        <div class="precaution-summary-item">
+            ✓ ${normalCount} within range
+        </div>
+
+        <div class="precaution-summary-item">
+            ↑ ${highCount} elevated
+        </div>
+
+        <div class="precaution-summary-item">
+            ↓ ${lowCount} below range
+        </div>
+
+    `;
+
+
+    /* ================================================
+       NOTHING NEEDS ATTENTION
+    ================================================ */
+
+    if (attentionParameters.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="precaution-item">
+
+                <div class="precaution-item-header">
+
+                    <div class="precaution-status">
+                        ✓
+                    </div>
+
+                    <h4 class="precaution-title">
+                        All analyzed parameters are
+                        within the provided ranges
+                    </h4>
+
+                </div>
+
+                <ul class="precaution-list">
+
+                    <li>
+                        Continue maintaining a balanced
+                        lifestyle and regular health monitoring.
+                    </li>
+
+                    <li>
+                        Keep your laboratory reports for
+                        future comparison.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    /* ================================================
+       CREATE PRECAUTION CARDS
+    ================================================ */
+
+    attentionParameters.forEach(
+        function (parameter) {
+
+            const rule =
+                BIOQUEST_PRECAUTIONS[
+                    parameter.key
+                ];
+
+
+            if (!rule) {
+                return;
+            }
+
+
+            const advice =
+                rule[
+                    parameter.level.toLowerCase()
+                ];
+
+
+            if (!advice) {
+                return;
+            }
+
+
+            const statusIcon =
+                parameter.level === "HIGH"
+                    ? "↑"
+                    : "↓";
+
+
+            const tips =
+                advice.tips
+                    .map(function (tip) {
+
+                        return `
+                            <li>${tip}</li>
+                        `;
+
+                    })
+                    .join("");
+
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "precaution-item";
+
+
+            card.innerHTML = `
+
+                <div class="precaution-item-header">
+
+                    <div class="precaution-status ${
+                        parameter.level.toLowerCase()
+                    }">
+
+                        ${statusIcon}
+
+                    </div>
+
+
+                    <h4 class="precaution-title">
+
+                        ${advice.title}
+
+                    </h4>
+
+
+                    <span class="precaution-value">
+
+                        ${parameter.value}
+                        ${parameter.unit}
+
+                    </span>
+
+                </div>
+
+
+                <ul class="precaution-list">
+
+                    ${tips}
+
+                </ul>
+
+            `;
+
+
+            container.appendChild(card);
 
         }
     );
