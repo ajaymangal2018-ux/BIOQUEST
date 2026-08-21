@@ -132,44 +132,6 @@ router.get("/", async (req, res) => {
 });
 
 
-// =====================================================
-// GET SINGLE USER
-// =====================================================
-
-router.get("/:userId", async (req, res) => {
-
-    try {
-
-        const user =
-            await User.findById(
-                req.params.userId
-            );
-
-        if (!user) {
-
-            return res.status(404).json({
-                success: false,
-                message: "User not found"
-            });
-
-        }
-
-        res.json({
-            success: true,
-            user
-        });
-
-    } catch (error) {
-
-        res.status(400).json({
-            success: false,
-            message: error.message
-        });
-
-    }
-
-});
-
 
 // =====================================================
 // SAVE / UPDATE HEALTH PASSPORT
@@ -449,6 +411,45 @@ router.post("/:userId/emergency/disable", async (req, res) => {
     }
 
 });
+// =====================================================
+// GET SINGLE USER
+// =====================================================
+
+router.get("/:userId", async (req, res) => {
+
+    try {
+
+        const user =
+            await User.findById(
+                req.params.userId
+            );
+
+        if (!user) {
+
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+
+        }
+
+        res.json({
+            success: true,
+            user
+        });
+
+    } catch (error) {
+
+        res.status(400).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+
+});
+
+
 
 
 // =====================================================
