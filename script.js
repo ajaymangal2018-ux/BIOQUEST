@@ -4724,7 +4724,7 @@ if (generateEmergencyQRBtn) {
 
                 const response =
                     await fetch(
-                        `https:// https://bioquest-5.onrender.com/api/users/${userId}/emergency/enable`,
+                        `https://bioquest-5.onrender.com/api/users/${userId}/emergency/enable`,
                         {
                             method: "POST",
 
