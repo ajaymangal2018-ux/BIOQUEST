@@ -349,6 +349,192 @@ router.get("/:userId/passport", async (req, res) => {
     }
 
 });
+// =====================================================
+// GENERATE / ENABLE EMERGENCY QR
+// =====================================================
 
+router.post("/:userId/emergency/enable", async (req, res) => {
+
+    try {
+
+        const crypto = require("crypto");
+
+        const user = await User.findById(
+            req.params.userId
+        );
+
+        if (!user) {
+
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+
+        }
+
+        // Generate a secure random token
+        const token = crypto.randomBytes(32).toString("hex");
+
+        user.emergencyToken = token;
+        user.emergencyEnabled = true;
+
+        await user.save();
+
+        res.json({
+            success: true,
+            message: "Emergency access enabled",
+            emergencyToken: token,
+            emergencyEnabled: true
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Emergency QR generation error:",
+            error
+        );
+
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+
+});
+
+
+// =====================================================
+// DISABLE EMERGENCY ACCESS
+// =====================================================
+
+router.post("/:userId/emergency/disable", async (req, res) => {
+
+    try {
+
+        const user = await User.findById(
+            req.params.userId
+        );
+
+        if (!user) {
+
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+
+        }
+
+        user.emergencyEnabled = false;
+
+        await user.save();
+
+        res.json({
+            success: true,
+            message: "Emergency access disabled"
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Emergency access disable error:",
+            error
+        );
+
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+
+});
+
+
+// =====================================================
+// PUBLIC EMERGENCY INFORMATION
+// =====================================================
+
+router.get("/emergency/:token", async (req, res) => {
+
+    try {
+
+        const user = await User.findOne({
+            emergencyToken: req.params.token,
+            emergencyEnabled: true
+        });
+
+        if (!user) {
+
+            return res.status(404).json({
+                success: false,
+                message:
+                    "Emergency information unavailable"
+            });
+
+        }
+
+        const passport =
+            user.healthPassport || {};
+
+        const emergencyData = {};
+
+        // Only return fields explicitly approved
+        if (passport.shareBloodGroup) {
+
+            emergencyData.bloodGroup =
+                passport.bloodGroup || "";
+
+        }
+
+        if (passport.shareAllergies) {
+
+            emergencyData.allergies =
+                passport.allergies || "";
+
+        }
+
+        if (passport.shareMedications) {
+
+            emergencyData.medications =
+                passport.medications || "";
+
+        }
+
+        if (passport.shareEmergencyContact) {
+
+            emergencyData.emergencyContactName =
+                passport.emergencyContactName || "";
+
+            emergencyData.emergencyContactPhone =
+                passport.emergencyContactPhone || "";
+
+        }
+
+        res.json({
+
+            success: true,
+
+            name: user.name,
+
+            emergencyData
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Emergency information error:",
+            error
+        );
+
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+
+});
 
 module.exports = router;

@@ -4685,6 +4685,219 @@ if (saveHealthPassportBtn) {
     );
 
 }
+/* =========================================================
+   GENERATE EMERGENCY QR
+========================================================= */
+
+if (generateEmergencyQRBtn) {
+
+    generateEmergencyQRBtn.addEventListener(
+        "click",
+        async function () {
+
+            const userId =
+                localStorage.getItem(
+                    "bioQuestUserId"
+                );
+
+            if (!userId) {
+
+                alert(
+                    "Please log in first."
+                );
+
+                return;
+
+            }
+
+            const originalText =
+                generateEmergencyQRBtn.textContent;
+
+            generateEmergencyQRBtn.disabled =
+                true;
+
+            generateEmergencyQRBtn.textContent =
+                "CREATING QR...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `https:// https://bioquest-5.onrender.com/api/users/${userId}/emergency/enable`,
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            }
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !response.ok ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "Could not generate Emergency QR"
+                    );
+
+                }
+
+
+                const token =
+                    data.emergencyToken;
+
+
+                /*
+                 * Public emergency page
+                 *
+                 * IMPORTANT:
+                 * Change this URL to your actual
+                 * Netlify frontend URL.
+                 */
+
+                const emergencyURL =
+                    `${window.location.origin}/emergency.html?token=${encodeURIComponent(token)}`;
+
+
+                console.log(
+                    "Emergency URL:",
+                    emergencyURL
+                );
+
+
+                /* -----------------------------------------
+                   SHOW QR SECTION
+                ----------------------------------------- */
+
+                const qrSection =
+                    document.getElementById(
+                        "passportQRSection"
+                    );
+
+                if (qrSection) {
+
+                    qrSection.style.display =
+                        "block";
+
+                }
+
+
+                /* -----------------------------------------
+                   GENERATE QR
+                ----------------------------------------- */
+
+                const qrContainer =
+                    document.getElementById(
+                        "emergencyQRCode"
+                    );
+
+                if (!qrContainer) {
+
+                    throw new Error(
+                        "QR container not found"
+                    );
+
+                }
+
+
+                qrContainer.innerHTML = "";
+
+
+                /*
+                 * QRCode library
+                 *
+                 * This requires the QRCode.js
+                 * library in index.html.
+                 */
+
+                if (
+                    typeof QRCode ===
+                    "undefined"
+                ) {
+
+                    throw new Error(
+                        "QRCode library not loaded"
+                    );
+
+                }
+
+
+                new QRCode(
+                    qrContainer,
+                    {
+                        text: emergencyURL,
+
+                        width: 170,
+
+                        height: 170,
+
+                        colorDark:
+                            "#163b59",
+
+                        colorLight:
+                            "#ffffff",
+
+                        correctLevel:
+                            QRCode.CorrectLevel.H
+                    }
+                );
+
+
+                generateEmergencyQRBtn.textContent =
+                    "✓ EMERGENCY QR CREATED";
+
+
+                generateEmergencyQRBtn.style.background =
+                    "#e8f7ef";
+
+
+                generateEmergencyQRBtn.style.color =
+                    "#37815f";
+
+
+                console.log(
+                    "✅ Emergency QR created"
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "❌ Emergency QR error:",
+                    error
+                );
+
+
+                alert(
+                    error.message ||
+                    "Could not create Emergency QR."
+                );
+
+
+                generateEmergencyQRBtn.textContent =
+                    originalText;
+
+            } finally {
+
+                generateEmergencyQRBtn.disabled =
+                    false;
+
+            }
+
+        }
+    );
+
+}
 }
 /* =========================================================
    43. EDIT PROFILE

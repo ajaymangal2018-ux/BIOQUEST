@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BioQuest Emergency Access</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf7ff,
+                    #f8fcff
+                );
+
+            color: #173b57;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+        }
+
+
+        .emergency-container {
+
+            width: 100%;
+            max-width: 520px;
+
+            background: white;
+
+            border-radius: 28px;
+
+            padding: 32px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(62, 133, 169, 0.15);
+
+            border:
+                1px solid #dceff8;
+        }
+
+
+        /* -----------------------------------------
+           HEADER
+        ----------------------------------------- */
+
+        .brand {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .brand-name {
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            color: #63a9ca;
+
+            margin-bottom: 8px;
+        }
+
+        .brand h1 {
+
+            font-size: 30px;
+
+            color: #173f5d;
+
+            margin-bottom: 8px;
+        }
+
+        .brand p {
+
+            font-size: 13px;
+
+            color: #7591a3;
+
+            line-height: 1.6;
+        }
+
+
+        /* -----------------------------------------
+           EMERGENCY BADGE
+        ----------------------------------------- */
+
+        .emergency-badge {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            width: fit-content;
+
+            margin: 0 auto 25px;
+
+            padding: 9px 16px;
+
+            border-radius: 50px;
+
+            background: #fff3f3;
+
+            color: #c55b66;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .emergency-dot {
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #dc707a;
+        }
+
+
+        /* -----------------------------------------
+           USER
+        ----------------------------------------- */
+
+        .user-card {
+
+            text-align: center;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef9ff,
+                    #f9fdff
+                );
+
+            border:
+                1px solid #dceff8;
+
+            border-radius: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .user-label {
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            color: #7a96a7;
+
+            margin-bottom: 7px;
+        }
+
+        #personName {
+
+            font-size: 26px;
+
+            color: #214762;
+
+            font-weight: 700;
+        }
+
+
+        /* -----------------------------------------
+           INFORMATION
+        ----------------------------------------- */
+
+        .info-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .info-card {
+
+            padding: 18px;
+
+            background: #fbfdff;
+
+            border:
+                1px solid #e0eff6;
+
+            border-radius: 16px;
+        }
+
+        .info-label {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.3px;
+
+            color: #7290a2;
+
+            margin-bottom: 7px;
+        }
+
+        .info-value {
+
+            font-size: 15px;
+
+            color: #234a65;
+
+            line-height: 1.5;
+
+            word-break: break-word;
+        }
+
+
+        /* -----------------------------------------
+           CALL BUTTON
+        ----------------------------------------- */
+
+        .call-button {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 12px;
+
+            padding: 10px 16px;
+
+            border-radius: 10px;
+
+            background: #e7f7ee;
+
+            color: #39805d;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .7px;
+        }
+
+
+        /* -----------------------------------------
+           LOADING
+        ----------------------------------------- */
+
+        .loading {
+
+            text-align: center;
+
+            padding: 40px 10px;
+
+            color: #7190a2;
+
+            font-size: 14px;
+        }
+
+
+        /* -----------------------------------------
+           ERROR
+        ----------------------------------------- */
+
+        .error {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 35px 15px;
+        }
+
+        .error-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .error h2 {
+
+            font-size: 22px;
+
+            color: #294c64;
+
+            margin-bottom: 10px;
+        }
+
+        .error p {
+
+            color: #7891a0;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* -----------------------------------------
+           FOOTER
+        ----------------------------------------- */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid #e7f0f5;
+
+            color: #91a5b1;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+        }
+
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .emergency-container {
+                padding: 24px 18px;
+                border-radius: 22px;
+            }
+
+            .brand h1 {
+                font-size: 25px;
+            }
+
+            #personName {
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="emergency-container">
+
+
+    <!-- HEADER -->
+
+    <div class="brand">
+
+        <div class="brand-name">
+            BIOQUEST
+        </div>
+
+        <h1>
+            Emergency Access
+        </h1>
+
+        <p>
+            Essential health information
+            shared by the user.
+        </p>
+
+    </div>
+
+
+    <!-- STATUS -->
+
+    <div class="emergency-badge">
+
+        <span class="emergency-dot"></span>
+
+        EMERGENCY INFORMATION
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div
+        id="loading"
+        class="loading">
+
+        Verifying emergency access...
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+        id="error"
+        class="error">
+
+        <div class="error-icon">
+            ⚠️
+        </div>
+
+        <h2>
+            Information Unavailable
+        </h2>
+
+        <p>
+            This emergency QR code is invalid,
+            expired, or has been disabled by
+            the user.
+        </p>
+
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <div
+        id="emergencyContent"
+        style="display:none;">
+
+        <div class="user-card">
+
+            <div class="user-label">
+                PERSON
+            </div>
+
+            <div id="personName">
+                —
+            </div>
+
+        </div>
+
+
+        <div
+            id="infoList"
+            class="info-list">
+        </div>
+
+
+        <div class="footer">
+
+            This information is provided through
+            BioQuest Emergency Access.
+
+            <br>
+
+            Only information explicitly shared
+            by the user is displayed.
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   CONFIGURATION
+===================================================== */
+
+const API_BASE_URL =
+    "https://https://bioquest-5.onrender.com";
+
+
+/* =====================================================
+   GET TOKEN FROM URL
+===================================================== */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const token =
+    params.get("token");
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const loading =
+    document.getElementById(
+        "loading"
+    );
+
+const errorBox =
+    document.getElementById(
+        "error"
+    );
+
+const emergencyContent =
+    document.getElementById(
+        "emergencyContent"
+    );
+
+const personName =
+    document.getElementById(
+        "personName"
+    );
+
+const infoList =
+    document.getElementById(
+        "infoList"
+    );
+
+
+/* =====================================================
+   CREATE INFORMATION CARD
+===================================================== */
+
+function addInfoCard(
+    label,
+    value,
+    phone = false
+) {
+
+    if (
+        value === undefined ||
+        value === null ||
+        value === ""
+    ) {
+
+        return;
+
+    }
+
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+    card.className =
+        "info-card";
+
+
+    const labelElement =
+        document.createElement(
+            "div"
+        );
+
+    labelElement.className =
+        "info-label";
+
+    labelElement.textContent =
+        label;
+
+
+    const valueElement =
+        document.createElement(
+            "div"
+        );
+
+    valueElement.className =
+        "info-value";
+
+    valueElement.textContent =
+        value;
+
+
+    card.appendChild(
+        labelElement
+    );
+
+    card.appendChild(
+        valueElement
+    );
+
+
+    if (phone) {
+
+        const callButton =
+            document.createElement(
+                "a"
+            );
+
+        callButton.className =
+            "call-button";
+
+        callButton.href =
+            `tel:${value}`;
+
+        callButton.textContent =
+            "CALL EMERGENCY CONTACT";
+
+        card.appendChild(
+            callButton
+        );
+
+    }
+
+
+    infoList.appendChild(
+        card
+    );
+
+}
+
+
+/* =====================================================
+   LOAD EMERGENCY INFORMATION
+===================================================== */
+
+async function loadEmergencyInformation() {
+
+
+    if (!token) {
+
+        loading.style.display =
+            "none";
+
+        errorBox.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE_URL}/api/users/emergency/${encodeURIComponent(token)}`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Emergency information unavailable"
+            );
+
+        }
+
+
+        /* ---------------------------------------------
+           USER NAME
+        --------------------------------------------- */
+
+        personName.textContent =
+            data.name || "BioQuest User";
+
+
+        /* ---------------------------------------------
+           SHARED INFORMATION
+        --------------------------------------------- */
+
+        const emergencyData =
+            data.emergencyData || {};
+
+
+        addInfoCard(
+            "BLOOD GROUP",
+            emergencyData.bloodGroup
+        );
+
+
+        addInfoCard(
+            "ALLERGIES",
+            emergencyData.allergies
+        );
+
+
+        addInfoCard(
+            "CURRENT MEDICATIONS",
+            emergencyData.medications
+        );
+
+
+        addInfoCard(
+            "EMERGENCY CONTACT",
+            emergencyData.emergencyContactName
+        );
+
+
+        addInfoCard(
+            "CONTACT PHONE",
+            emergencyData.emergencyContactPhone,
+            true
+        );
+
+
+        /* ---------------------------------------------
+           SHOW CONTENT
+        --------------------------------------------- */
+
+        loading.style.display =
+            "none";
+
+        emergencyContent.style.display =
+            "block";
+
+
+    } catch (error) {
+
+        console.error(
+            "Emergency access error:",
+            error
+        );
+
+
+        loading.style.display =
+            "none";
+
+        errorBox.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadEmergencyInformation();
+
+
+</script>
+
+
+</body>
+
+</html>
