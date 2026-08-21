@@ -8,7 +8,7 @@
    BIOQUEST BACKEND — SAVE HEALTH PROFILE
 ========================================================= */
 
-const BIOQUEST_API = "https://bioquest-4.onrender.com/api";
+const BIOQUEST_API = "https://bioquest-5.onrender.com/api";
 
 async function saveHealthProfileToDatabase(profile) {
 
@@ -4322,7 +4322,7 @@ async function loadHealthPassport() {
     try {
 
         const response = await fetch(
-            `https://bioquest-4.onrender.com/api/users/${userId}/passport`
+            `https://bioquest-5.onrender.com/api/users/${userId}/passport`
         );
 
         const data =
@@ -4573,7 +4573,7 @@ if (saveHealthPassportBtn) {
 
                 const response =
                     await fetch(
-                        `https://bioquest-4.onrender.com/api/users/${userId}/passport`,
+                        `https://bioquest-5.onrender.com/api/users/${userId}/passport`,
                         {
                             method: "PUT",
 
@@ -4715,8 +4715,8 @@ if (editProfileBtn) {
             try {
 
                 const response =
-                    await fetch
-                        fetch("http://localhost:5000/api/auth/signup",
+                    await fetch(
+                        `https://bioquest-5.onrender.com/api/users/${userId}`
                     );
 
 
@@ -9708,7 +9708,7 @@ async function saveHealthProfileToDatabase(profile) {
 
         const response =
             await fetch(
-                `https://bioquest-4.onrender.com/api/users/${userId}`,
+                `https://bioquest-5.onrender.com/api/users/${userId}`,
                 {
 
                     method: "PUT",
@@ -9834,7 +9834,7 @@ async function saveAnalysisToDatabase() {
 
 
         const response = await fetch(
-            "https://bioquest-4.onrender.com/api/reports",
+            "https://bioquest-5.onrender.com/api/reports",
             {
                 method: "POST",
 
@@ -9907,7 +9907,7 @@ async function loadSavedReports() {
     try {
 
         const response = await fetch(
-            `https://bioquest-4.onrender.com/api/reports/user/${userId}`
+            `https://bioquest-5.onrender.com/api/reports/user/${userId}`
         );
 
         const data =
@@ -10114,7 +10114,7 @@ if (authSubmit) {
                 }
 
                 url =
-                    "https://bioquest-4.onrender.com/api/auth/signup";
+                    "https://bioquest-5.onrender.com/api/auth/signup";
 
                 body = {
 
@@ -10131,7 +10131,7 @@ if (authSubmit) {
             else {
 
                 url =
-                    "https://bioquest-4.onrender.com/api/auth/login";
+                    "https://bioquest-5.onrender.com/api/auth/login";
 
                 body = {
 
@@ -10384,7 +10384,7 @@ async function loadProfileReports(userId) {
     try {
 
         const response = await fetch(
-            `https://bioquest-4.onrender.com/api/reports/user/${userId}`
+            `https://bioquest-5.onrender.com/api/reports/user/${userId}`
         );
 
         const data = await response.json();
@@ -10604,7 +10604,7 @@ if (deleteBtn) {
 
                 const response =
                     await fetch(
-                        `https://bioquest-4.onrender.com/api/reports/${report._id}`,
+                        `https://bioquest-5.onrender.com/api/reports/${report._id}`,
                         {
                             method: "DELETE"
                         }
