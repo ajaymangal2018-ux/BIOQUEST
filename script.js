@@ -116,6 +116,25 @@ const parameterResults =
 
 const downloadReportBtn =
     document.getElementById("downloadReportBtn");
+    const healthPassportBtn =
+    document.getElementById(
+        "healthPassportBtn"
+    );
+
+const healthPassportSection =
+    document.getElementById(
+        "healthPassportSection"
+    );
+
+const saveHealthPassportBtn =
+    document.getElementById(
+        "saveHealthPassportBtn"
+    );
+
+const generateEmergencyQRBtn =
+    document.getElementById(
+        "generateEmergencyQRBtn"
+    );
 
     const editProfileBtn =
     document.getElementById(
@@ -4257,7 +4276,415 @@ if (buildProfileBtn) {
 
         }
     );
+if (healthPassportBtn) {
 
+    healthPassportBtn.addEventListener(
+        "click",
+        function () {
+
+            if (!healthPassportSection) {
+                return;
+            }
+
+            healthPassportSection.style.display =
+                "block";
+
+            healthPassportSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            loadHealthPassport();
+
+        }
+    );
+
+}
+/* =========================================================
+   LOAD HEALTH PASSPORT
+========================================================= */
+
+async function loadHealthPassport() {
+
+    const userId =
+        localStorage.getItem("bioQuestUserId");
+
+    if (!userId) {
+
+        alert(
+            "Please log in first to access your Health Passport."
+        );
+
+        return;
+
+    }
+
+    try {
+
+        const response = await fetch(
+            `https://bioquest-4.onrender.com/api/users/${userId}/passport`
+        );
+
+        const data =
+            await response.json();
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Could not load Health Passport"
+            );
+
+        }
+
+        const passport =
+            data.healthPassport || {};
+
+
+        /* -------------------------------
+           FILL FORM
+        -------------------------------- */
+
+        const bloodGroup =
+            document.getElementById(
+                "passportBloodGroup"
+            );
+
+        const allergies =
+            document.getElementById(
+                "passportAllergies"
+            );
+
+        const medications =
+            document.getElementById(
+                "passportMedications"
+            );
+
+        const emergencyName =
+            document.getElementById(
+                "passportEmergencyName"
+            );
+
+        const emergencyPhone =
+            document.getElementById(
+                "passportEmergencyPhone"
+            );
+
+        const emergencyNotes =
+            document.getElementById(
+                "passportEmergencyNotes"
+            );
+
+
+        if (bloodGroup)
+            bloodGroup.value =
+                passport.bloodGroup || "";
+
+        if (allergies)
+            allergies.value =
+                passport.allergies || "";
+
+        if (medications)
+            medications.value =
+                passport.medications || "";
+
+        if (emergencyName)
+            emergencyName.value =
+                passport.emergencyContactName || "";
+
+        if (emergencyPhone)
+            emergencyPhone.value =
+                passport.emergencyContactPhone || "";
+
+        if (emergencyNotes)
+            emergencyNotes.value =
+                passport.emergencyNotes || "";
+
+
+        /* -------------------------------
+           SHARING CHECKBOXES
+        -------------------------------- */
+
+        const shareBloodGroup =
+            document.getElementById(
+                "shareBloodGroup"
+            );
+
+        const shareAllergies =
+            document.getElementById(
+                "shareAllergies"
+            );
+
+        const shareMedications =
+            document.getElementById(
+                "shareMedications"
+            );
+
+        const shareEmergencyContact =
+            document.getElementById(
+                "shareEmergencyContact"
+            );
+
+
+        if (shareBloodGroup)
+            shareBloodGroup.checked =
+                Boolean(
+                    passport.shareBloodGroup
+                );
+
+        if (shareAllergies)
+            shareAllergies.checked =
+                Boolean(
+                    passport.shareAllergies
+                );
+
+        if (shareMedications)
+            shareMedications.checked =
+                Boolean(
+                    passport.shareMedications
+                );
+
+        if (shareEmergencyContact)
+            shareEmergencyContact.checked =
+                Boolean(
+                    passport.shareEmergencyContact
+                );
+
+
+        console.log(
+            "✅ Health Passport loaded:",
+            passport
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "❌ Health Passport load error:",
+            error
+        );
+
+        alert(
+            "Could not load your Health Passport."
+        );
+
+    }
+
+}
+/* =========================================================
+   SAVE HEALTH PASSPORT
+========================================================= */
+
+if (saveHealthPassportBtn) {
+
+    saveHealthPassportBtn.addEventListener(
+        "click",
+        async function savePassport() {
+
+            const userId =
+                localStorage.getItem("bioQuestUserId");
+
+            if (!userId) {
+
+                alert(
+                    "Please log in first."
+                );
+
+                return;
+
+            }
+
+
+            /* -----------------------------------------
+               GET FORM VALUES
+            ----------------------------------------- */
+
+            const bloodGroup =
+                document.getElementById(
+                    "passportBloodGroup"
+                )?.value || "";
+
+            const allergies =
+                document.getElementById(
+                    "passportAllergies"
+                )?.value.trim() || "";
+
+            const medications =
+                document.getElementById(
+                    "passportMedications"
+                )?.value.trim() || "";
+
+            const emergencyContactName =
+                document.getElementById(
+                    "passportEmergencyName"
+                )?.value.trim() || "";
+
+            const emergencyContactPhone =
+                document.getElementById(
+                    "passportEmergencyPhone"
+                )?.value.trim() || "";
+
+            const emergencyNotes =
+                document.getElementById(
+                    "passportEmergencyNotes"
+                )?.value.trim() || "";
+
+
+            /* -----------------------------------------
+               SHARING SETTINGS
+            ----------------------------------------- */
+
+            const shareBloodGroup =
+                document.getElementById(
+                    "shareBloodGroup"
+                )?.checked || false;
+
+            const shareAllergies =
+                document.getElementById(
+                    "shareAllergies"
+                )?.checked || false;
+
+            const shareMedications =
+                document.getElementById(
+                    "shareMedications"
+                )?.checked || false;
+
+            const shareEmergencyContact =
+                document.getElementById(
+                    "shareEmergencyContact"
+                )?.checked || false;
+
+
+            /* -----------------------------------------
+               BUTTON STATE
+            ----------------------------------------- */
+
+            const originalText =
+                saveHealthPassportBtn.textContent;
+
+            saveHealthPassportBtn.disabled =
+                true;
+
+            saveHealthPassportBtn.textContent =
+                "SAVING...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `https://bioquest-4.onrender.com/api/users/${userId}/passport`,
+                        {
+                            method: "PUT",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                bloodGroup,
+
+                                allergies,
+
+                                medications,
+
+                                emergencyContactName,
+
+                                emergencyContactPhone,
+
+                                emergencyNotes,
+
+                                shareBloodGroup,
+
+                                shareAllergies,
+
+                                shareMedications,
+
+                                shareEmergencyContact
+
+                            })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !response.ok ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "Could not save Health Passport"
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   SUCCESS
+                ----------------------------------------- */
+
+                saveHealthPassportBtn.textContent =
+                    "✓ PASSPORT SAVED";
+
+                saveHealthPassportBtn.style.background =
+                    "linear-gradient(135deg, #76c7a3, #55ad86)";
+
+
+                console.log(
+                    "✅ Health Passport saved:",
+                    data.healthPassport
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        saveHealthPassportBtn.textContent =
+                            originalText;
+
+                        saveHealthPassportBtn.style.background =
+                            "";
+
+                        saveHealthPassportBtn.disabled =
+                            false;
+
+                    },
+                    2500
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "❌ Health Passport save error:",
+                    error
+                );
+
+
+                saveHealthPassportBtn.disabled =
+                    false;
+
+                saveHealthPassportBtn.textContent =
+                    originalText;
+
+
+                alert(
+                    "Could not save your Health Passport. Please try again."
+                );
+
+            }
+
+        }
+    );
+
+}
 }
 /* =========================================================
    43. EDIT PROFILE
@@ -4288,8 +4715,8 @@ if (editProfileBtn) {
             try {
 
                 const response =
-                    await fetch(
-                        `https://bioquest-4.onrender.com/api/users/${userId}`
+                    await fetch
+                        fetch("http://localhost:5000/api/auth/signup",
                     );
 
 

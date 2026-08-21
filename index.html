@@ -295,6 +295,13 @@
             START
 
         </button>
+        <button
+    class="nav-button"
+    id="healthPassportBtn">
+
+    HEALTH PASSPORT
+
+</button>
 
     </div>
 
@@ -779,6 +786,249 @@
             id="profileStatus"
             class="profile-status"
         ></p>
+
+    </div>
+
+</section>
+<!-- =================================================
+     BIOQUEST HEALTH PASSPORT
+================================================= -->
+
+<section
+    id="healthPassportSection"
+    class="health-passport-section"
+    style="display:none;">
+
+    <div class="passport-header">
+
+        <span class="passport-eyebrow">
+            BIOQUEST
+        </span>
+
+        <h2>
+            HEALTH PASSPORT
+        </h2>
+
+        <p>
+            Carry the health information you choose to share,
+            wherever you go.
+        </p>
+
+    </div>
+
+
+    <div class="passport-card">
+
+        <div class="passport-card-header">
+
+            <div>
+                <span class="passport-label">
+                    PERSONAL HEALTH RECORD
+                </span>
+
+                <h3 id="passportUserName">
+                    Your Name
+                </h3>
+            </div>
+
+            <div class="passport-status">
+                <span
+                    id="passportStatusDot"
+                    class="passport-dot">
+                </span>
+
+                <span id="passportStatusText">
+                    PRIVATE
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- BLOOD GROUP -->
+
+        <div class="passport-field">
+
+            <label>
+                BLOOD GROUP
+            </label>
+
+            <select id="passportBloodGroup">
+
+                <option value="">
+                    Select
+                </option>
+
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+
+            </select>
+
+            <label class="passport-share">
+
+                <input
+                    type="checkbox"
+                    id="shareBloodGroup">
+
+                Show on emergency QR
+
+            </label>
+
+        </div>
+
+
+        <!-- ALLERGIES -->
+
+        <div class="passport-field">
+
+            <label>
+                ALLERGIES
+            </label>
+
+            <textarea
+                id="passportAllergies"
+                placeholder="e.g. Penicillin, peanuts, none">
+            </textarea>
+
+            <label class="passport-share">
+
+                <input
+                    type="checkbox"
+                    id="shareAllergies">
+
+                Show on emergency QR
+
+            </label>
+
+        </div>
+
+
+        <!-- MEDICATIONS -->
+
+        <div class="passport-field">
+
+            <label>
+                CURRENT MEDICATIONS
+            </label>
+
+            <textarea
+                id="passportMedications"
+                placeholder="List current medications">
+            </textarea>
+
+            <label class="passport-share">
+
+                <input
+                    type="checkbox"
+                    id="shareMedications">
+
+                Show on emergency QR
+
+            </label>
+
+        </div>
+
+
+        <!-- EMERGENCY CONTACT -->
+
+        <div class="passport-field">
+
+            <label>
+                EMERGENCY CONTACT NAME
+            </label>
+
+            <input
+                type="text"
+                id="passportEmergencyName"
+                placeholder="Emergency contact">
+
+        </div>
+
+
+        <div class="passport-field">
+
+            <label>
+                EMERGENCY CONTACT PHONE
+            </label>
+
+            <input
+                type="tel"
+                id="passportEmergencyPhone"
+                placeholder="+91 XXXXX XXXXX">
+
+            <label class="passport-share">
+
+                <input
+                    type="checkbox"
+                    id="shareEmergencyContact">
+
+                Show on emergency QR
+
+            </label>
+
+        </div>
+
+
+        <!-- NOTES -->
+
+        <div class="passport-field">
+
+            <label>
+                EMERGENCY NOTES
+            </label>
+
+            <textarea
+                id="passportEmergencyNotes"
+                placeholder="Anything emergency responders should know">
+            </textarea>
+
+        </div>
+
+
+        <!-- SAVE -->
+
+        <button
+            id="saveHealthPassportBtn"
+            class="passport-primary-btn">
+
+            SAVE HEALTH PASSPORT
+
+        </button>
+
+
+        <!-- QR -->
+
+        <div
+            id="passportQRSection"
+            class="passport-qr-section"
+            style="display:none;">
+
+            <div class="qr-heading">
+                EMERGENCY ACCESS
+            </div>
+
+            <p>
+                Only information marked for sharing
+                will appear through this QR.
+            </p>
+
+            <div id="emergencyQRCode"></div>
+
+            <button
+                id="generateEmergencyQRBtn"
+                class="passport-secondary-btn">
+
+                GENERATE EMERGENCY QR
+
+            </button>
+
+        </div>
 
     </div>
 

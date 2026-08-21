@@ -4,7 +4,10 @@ const User = require("../models/user");
 const router = express.Router();
 
 
+// =====================================================
 // CREATE OR UPDATE USER / PROFILE
+// =====================================================
+
 router.post("/", async (req, res) => {
 
     try {
@@ -26,6 +29,7 @@ router.post("/", async (req, res) => {
                 message: "BioQuest profile updated successfully",
                 user: existingUser
             });
+
         }
 
         // Create new profile
@@ -49,9 +53,11 @@ router.post("/", async (req, res) => {
     }
 
 });
-// ================================
+
+
+// =====================================================
 // UPDATE USER / HEALTH PROFILE
-// ================================
+// =====================================================
 
 router.put("/:userId", async (req, res) => {
 
@@ -98,7 +104,11 @@ router.put("/:userId", async (req, res) => {
 
 });
 
+
+// =====================================================
 // GET ALL USERS
+// =====================================================
+
 router.get("/", async (req, res) => {
 
     try {
@@ -121,9 +131,10 @@ router.get("/", async (req, res) => {
 
 });
 
-// ================================
+
+// =====================================================
 // GET SINGLE USER
-// ================================
+// =====================================================
 
 router.get("/:userId", async (req, res) => {
 
@@ -158,4 +169,186 @@ router.get("/:userId", async (req, res) => {
     }
 
 });
+
+
+// =====================================================
+// SAVE / UPDATE HEALTH PASSPORT
+// =====================================================
+
+router.put("/:userId/passport", async (req, res) => {
+
+    try {
+
+        const {
+            bloodGroup,
+            allergies,
+            medications,
+            emergencyContactName,
+            emergencyContactPhone,
+            emergencyNotes,
+            shareBloodGroup,
+            shareAllergies,
+            shareMedications,
+            shareEmergencyContact
+        } = req.body;
+
+
+        const user =
+            await User.findByIdAndUpdate(
+                req.params.userId,
+
+                {
+                    healthPassport: {
+
+                        bloodGroup:
+                            bloodGroup || "",
+
+                        allergies:
+                            allergies || "",
+
+                        medications:
+                            medications || "",
+
+                        emergencyContactName:
+                            emergencyContactName || "",
+
+                        emergencyContactPhone:
+                            emergencyContactPhone || "",
+
+                        emergencyNotes:
+                            emergencyNotes || "",
+
+                        shareBloodGroup:
+                            Boolean(
+                                shareBloodGroup
+                            ),
+
+                        shareAllergies:
+                            Boolean(
+                                shareAllergies
+                            ),
+
+                        shareMedications:
+                            Boolean(
+                                shareMedications
+                            ),
+
+                        shareEmergencyContact:
+                            Boolean(
+                                shareEmergencyContact
+                            )
+
+                    }
+                },
+
+                {
+                    new: true,
+                    runValidators: true
+                }
+            );
+
+
+        if (!user) {
+
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+
+        }
+
+
+        res.json({
+
+            success: true,
+
+            message:
+                "Health Passport saved successfully",
+
+            healthPassport:
+                user.healthPassport
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Health Passport save error:",
+            error
+        );
+
+        res.status(500).json({
+
+            success: false,
+
+            message:
+                error.message
+
+        });
+
+    }
+
+});
+
+
+// =====================================================
+// GET HEALTH PASSPORT
+// =====================================================
+
+router.get("/:userId/passport", async (req, res) => {
+
+    try {
+
+        const user =
+            await User.findById(
+                req.params.userId
+            );
+
+
+        if (!user) {
+
+            return res.status(404).json({
+
+                success: false,
+
+                message:
+                    "User not found"
+
+            });
+
+        }
+
+
+        res.json({
+
+            success: true,
+
+            healthPassport:
+                user.healthPassport || {}
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Health Passport load error:",
+            error
+        );
+
+        res.status(500).json({
+
+            success: false,
+
+            message:
+                error.message
+
+        });
+
+    }
+
+});
+
+
 module.exports = router;
