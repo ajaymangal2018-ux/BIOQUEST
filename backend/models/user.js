@@ -17,8 +17,7 @@ const userSchema = new mongoose.Schema(
         },
 
         password: {
-            type: String,
-        
+            type: String
         },
 
         age: {
@@ -35,8 +34,84 @@ const userSchema = new mongoose.Schema(
 
         weight: {
             type: Number
+        },
+
+        // ==========================================
+        // BIOQUEST HEALTH PASSPORT
+        // ==========================================
+
+        healthPassport: {
+
+            bloodGroup: {
+                type: String,
+                default: ""
+            },
+
+            allergies: {
+                type: String,
+                default: ""
+            },
+
+            medications: {
+                type: String,
+                default: ""
+            },
+
+            emergencyContactName: {
+                type: String,
+                default: ""
+            },
+
+            emergencyContactPhone: {
+                type: String,
+                default: ""
+            },
+
+            emergencyNotes: {
+                type: String,
+                default: ""
+            },
+
+            // Information the user allows
+            // emergency viewers to see
+
+            shareBloodGroup: {
+                type: Boolean,
+                default: false
+            },
+
+            shareAllergies: {
+                type: Boolean,
+                default: false
+            },
+
+            shareMedications: {
+                type: Boolean,
+                default: false
+            },
+
+            shareEmergencyContact: {
+                type: Boolean,
+                default: false
+            }
+        },
+
+        // ==========================================
+        // EMERGENCY QR
+        // ==========================================
+
+        emergencyToken: {
+            type: String,
+            unique: true,
+            sparse: true
+        },
+
+        emergencyEnabled: {
+            type: Boolean,
+            default: false
         }
     },
+
     {
         timestamps: true
     }
